@@ -3656,7 +3656,7 @@ body.dark-mode .btn-outline:hover {
 
     .mobile-nav-link:hover {
         background:
-            rgba(22, 199, 183, 0.08);
+            rgba(245, 247, 246, 0.08);
     }
 
     .mobile-nav-actions {
@@ -3952,12 +3952,16 @@ body.dark-mode .btn-outline:hover {
     }
 
     .founder-image-wrapper {
-        min-height: 400px;
+        min: height 100%;
     }
 
     .founder-image-placeholder {
-        width: 280px;
+        width: 200px;
+        height:200px;
+        object-fit:cover;
+        transform:translateY(-45px);
     }
+
 
     .mission-grid {
         grid-template-columns: 1fr;
