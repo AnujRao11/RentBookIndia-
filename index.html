@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rent Book India | Affordable Books on Rent</title>
+
+    <meta name="description"
+        content="Rent Book India - Affordable and convenient book rental platform for students and readers across India.">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+                <img src="images/logo.png" alt="Rent Book India Logo">
+                <div>
+                    <strong>Rent Book</strong>
+                    <span>India</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-buttons">
+                <button class="login-btn" onclick="showLoginMessage()">
+                    Login
+                </button>
+
+                <button class="register-btn" onclick="showRegisterMessage()">
+                    Register
+                </button>
+            </div>
+
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <span class="hero-badge">
+                        📚 India's Smart Book Rental Platform
+                    </span>
+
+                    <h1>
+                        Read More.
+                        <span>Spend Less.</span>
+                    </h1>
+
+                    <p>
+                        Rent the books you need without buying expensive
+                        copies. Discover, rent and return books easily with
+                        Rent Book India.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#categories" class="primary-btn">
+                            Explore Books →
+                        </a>
+
+                        <a href="#how-it-works" class="secondary-btn">
+                            How It Works
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>Affordable</strong>
+                            <small>Rental Prices</small>
+                        </div>
+
+                        <div>
+                            <strong>Easy</strong>
+                            <small>Book Rental</small>
+                        </div>
+
+                        <div>
+                            <strong>Student</strong>
+                            <small>Friendly</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image">
+
+                    <div class="logo-card">
+
+                        <img src="images/logo.png"
+                            alt="Rent Book India">
+
+                        <h3>Rent Book India</h3>
+
+                        <p>
+                            Your books, your choice,
+                            your affordable way to learn.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <div class="search-title">
+                    <h2>Find Your Book</h2>
+                    <p>Search from books available for rental.</p>
+                </div>
+
+                <div class="search-form">
+
+                    <input
+                        type="text"
+                        id="bookSearch"
+                        placeholder="Search by book name, author or subject..."
+                    >
+
+                    <select id="categorySearch">
+
+                        <option value="">All Categories</option>
+                        <option value="academic">Academic</option>
+                        <option value="competitive">Competitive Exams</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medical">Medical</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="novel">Novels</option>
+                        <option value="children">Children</option>
+
+                    </select>
+
+                    <button onclick="searchBooks()">
+                        🔍 Search
+                    </button>
+
+                </div>
+
+                <p id="searchResult"></p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CATEGORIES ================= -->
+
+        <section id="categories" class="section">
+
+            <div class="section-heading">
+
+                <span>EXPLORE</span>
+
+                <h2>Popular Categories</h2>
+
+                <p>
+                    Find books according to your learning and reading needs.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <div class="category-card"
+                    onclick="selectCategory('academic')">
+
+                    <div class="category-icon">🎓</div>
+
+                    <h3>Academic Books</h3>
+
+                    <p>
+                        School, college and university textbooks.
+                    </p>
+
+                    <a href="#">Explore →</a>
+
+                </div>
+
+
+                <div class="category-card"
+                    onclick="selectCategory('competitive')">
+
+                    <div class="category-icon">🏆</div>
+
+                    <h3>Competitive Exams</h3>
+
+                    <p>
+                        Books for SSC, UPSC, Banking, Railway and more.
+                    </p>
+
+                    <a href="#">Explore →</a>
+
+                </div>
+
+
+                <div class="category-card"
+                    onclick="selectCategory('engineering')">
+
+                    <div class="category-icon">💻</div>
+
+                    <h3>Engineering & Technology</h3>
+
+                    <p>
+                        Programming, computer science and engineering books.
+                    </p>
+
+                    <a href="#">Explore →</a>
+
+                </div>
+
+
+                <div class="category-card"
+                    onclick="selectCategory('medical')">
+
+                    <div class="category-icon">🩺</div>
+
+                    <h3>Medical</h3>
+
+                    <p>
+                        Medical, nursing and healthcare study material.
+                    </p>
+
+                    <a href="#">Explore →</a>
+
+                </div>
+
+
+                <div class="category-card"
+                    onclick="selectCategory('fiction')">
+
+                    <div class="category-icon">📖</div>
+
+                    <h3>Fiction</h3>
+
+                    <p>
+                        Discover stories, classics and popular fiction.
+                    </p>
+
+                    <a href="#">Explore →</a>
+
+                </div>
+
+
+                <div class="category-card"
+                    onclick="selectCategory('novel')">
+
+                    <div class="category-icon">❤️</div>
+
+                    <h3>Novels</h3>
+
+                    <p>
+                        Hindi, English and regional language novels.
+                    </p>
+
+                    <a href="#">Explore →</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHY US ================= -->
+
+        <section class="why-section">
+
+            <div class="section-heading">
+
+                <span>WHY RENT BOOK INDIA?</span>
+
+                <h2>Why Rent Instead of Buy?</h2>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <div class="why-card">
+                    <div>💰</div>
+                    <h3>Save Money</h3>
+                    <p>
+                        Rent books at a fraction of their purchase price.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div>📚</div>
+                    <h3>Wide Selection</h3>
+                    <p>
+                        Access academic, competitive and general reading books.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div>♻️</div>
+                    <h3>Reuse & Reduce</h3>
+                    <p>
+                        Give books a longer life and reduce unnecessary waste.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div>⚡</div>
+                    <h3>Simple Process</h3>
+                    <p>
+                        Find your book, rent it, use it and return it.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section id="how-it-works" class="section">
+
+            <div class="section-heading">
+
+                <span>SIMPLE PROCESS</span>
+
+                <h2>How Rent Book India Works</h2>
+
+                <p>
+                    Renting your next book takes only a few simple steps.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">01</div>
+
+                    <h3>Search</h3>
+
+                    <p>
+                        Search for the book you want to rent.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">02</div>
+
+                    <h3>Select</h3>
+
+                    <p>
+                        Check availability and choose your rental period.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">03</div>
+
+                    <h3>Rent</h3>
+
+                    <p>
+                        Place your rental request and complete the process.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">04</div>
+
+                    <h3>Return</h3>
+
+                    <p>
+                        Return the book after completing your reading.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="about-section">
+
+            <div class="about-content">
+
+                <span>ABOUT US</span>
+
+                <h2>Making Books More Accessible</h2>
+
+                <p>
+                    Rent Book India is a student-focused book rental platform
+                    designed to make learning resources more affordable and
+                    accessible.
+                </p>
+
+                <p>
+                    Instead of purchasing expensive books that may only be
+                    required for a semester, students and readers can rent
+                    them for the period they actually need.
+                </p>
+
+                <div class="about-points">
+
+                    <div>✓ Affordable access to books</div>
+                    <div>✓ Student-friendly platform</div>
+                    <div>✓ Easy rental and return process</div>
+                    <div>✓ Promotes book reuse</div>
+
+                </div>
+
+            </div>
+
+
+            <div class="founder-card">
+
+                <div class="founder-icon">👨‍💻</div>
+
+                <span>FOUNDER</span>
+
+                <h2>Anuj Rao</h2>
+
+                <p>
+                    Founder & Developer
+                </p>
+
+                <p>
+                    📍 Gorakhpur, Uttar Pradesh, India
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta">
+
+            <div>
+
+                <h2>Ready to Start Reading?</h2>
+
+                <p>
+                    Find your next book and make learning more affordable.
+                </p>
+
+                <a href="#categories" class="cta-btn">
+                    Explore Books
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact" class="contact-section">
+
+            <div class="section-heading">
+
+                <span>GET IN TOUCH</span>
+
+                <h2>Contact Rent Book India</h2>
+
+                <p>
+                    Have a question, suggestion or partnership idea?
+                    Contact us.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <div>📞</div>
+
+                    <h3>Phone</h3>
+
+                    <a href="tel:+919580003422">
+                        +91 95800 03422
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div>✉️</div>
+
+                    <h3>Email</h3>
+
+                    <a href="mailto:raoa12044@gmail.com">
+                        raoa12044@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div>📍</div>
+
+                    <h3>Location</h3>
+
+                    <p>
+                        Gorakhpur, Uttar Pradesh, India
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <img src="images/logo.png"
+                    alt="Rent Book India">
+
+                <h3>Rent Book India</h3>
+
+                <p>
+                    Read more. Spend less.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Quick Links</h4>
+
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h4>Contact</h4>
+
+                <p>📞 +91 95800 03422</p>
+
+                <p>✉️ raoa12044@gmail.com</p>
+
+                <p>📍 Gorakhpur, UP, India</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="year"></span> Rent Book India.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Founded by Anuj Rao
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
