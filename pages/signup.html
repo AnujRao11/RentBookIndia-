@@ -3,17 +3,127 @@
 
 <head>
 
+    <!-- ============================================================
+         RENTBOOK INDIA — SIGN UP PAGE
+         ============================================================
+
+         PURPOSE
+         ------------------------------------------------------------
+         This page allows a new user to create an account on
+         RentBook India.
+
+         A registered user can eventually:
+
+             • Rent books
+             • List books for rent
+             • Track orders
+             • Manage rentals
+             • Manage security deposits
+             • Track deliveries
+             • Save favourite books
+
+         CURRENT DEVELOPMENT STAGE
+         ------------------------------------------------------------
+         This is a FRONTEND registration prototype.
+
+         Later this form can be connected to:
+
+             HTML/CSS
+                    ↓
+             JavaScript
+                    ↓
+             Node.js / Express API
+                    ↓
+             MongoDB
+                    ↓
+             Authentication system
+
+         FUTURE SECURITY
+         ------------------------------------------------------------
+             • Password hashing
+             • Email verification
+             • Mobile OTP
+             • JWT/session authentication
+             • Account verification
+             • Seller verification
+
+         DESIGN SYSTEM
+         ------------------------------------------------------------
+             • Deep Navy
+             • Gold
+             • Orange
+             • Glassmorphism
+             • 3D Book
+             • Scientific symbols
+             • Cosmic star background
+             • Modern academic environment
+
+         No religious symbols are used.
+
+    ============================================================ -->
+
+
+    <!-- ============================================================
+         BASIC DOCUMENT CONFIGURATION
+    ============================================================ -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Create your Rent Book India account and start renting books.">
+    <meta
+        name="description"
+        content="Create your RentBook India account and start renting and sharing books."
+    >
 
-    <title>Create Account | Rent Book India</title>
+    <meta
+        name="author"
+        content="Anuj Rao"
+    >
 
-    <link rel="stylesheet" href="../css/auth.css">
+    <title>
+        Create Account | RentBook India
+    </title>
+
+
+    <!-- ============================================================
+         GOOGLE FONTS
+    ============================================================ -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ============================================================
+         AUTHENTICATION STYLESHEET
+         ------------------------------------------------------------
+         Both login.html and signup.html use this stylesheet.
+
+         File:
+
+             css/authentication.css
+    ============================================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../css/authentication.css"
+    >
 
 </head>
 
@@ -21,443 +131,1751 @@
 <body>
 
 
-    <!-- =========================================================
-         DECORATIVE BACKGROUND
-    ========================================================== -->
+<!-- ================================================================
+     BACKGROUND SYSTEM
+================================================================ -->
 
-    <div class="vedic-background">
-
-        <div class="mandala mandala-one"></div>
-        <div class="mandala mandala-two"></div>
-
-        <div class="golden-orb orb-one"></div>
-        <div class="golden-orb orb-two"></div>
-
-    </div>
+<div class="auth-background">
 
 
-    <!-- =========================================================
-         BUTTERFLIES
-    ========================================================== -->
+    <!-- Animated star layers -->
 
-    <div class="butterfly butterfly-one">
-        <span class="wing left-wing"></span>
-        <span class="body"></span>
-        <span class="wing right-wing"></span>
-    </div>
+    <div class="auth-stars stars-one"></div>
 
-    <div class="butterfly butterfly-two">
-        <span class="wing left-wing"></span>
-        <span class="body"></span>
-        <span class="wing right-wing"></span>
-    </div>
+    <div class="auth-stars stars-two"></div>
 
-    <div class="butterfly butterfly-three">
-        <span class="wing left-wing"></span>
-        <span class="body"></span>
-        <span class="wing right-wing"></span>
-    </div>
+    <div class="auth-stars stars-three"></div>
 
 
-    <!-- =========================================================
-         MAIN AREA
-    ========================================================== -->
+    <!-- Atmospheric glows -->
 
-    <main class="auth-page signup-page">
+    <div class="auth-glow glow-orange"></div>
 
+    <div class="auth-glow glow-gold"></div>
 
-        <!-- =====================================================
-             BRAND PANEL
-        ====================================================== -->
-
-        <section class="brand-panel">
-
-            <div class="brand-content">
-
-                <div class="brand-logo-wrapper">
-
-                    <img
-                        src="../assets/logo.png"
-                        alt="Rent Book India Logo"
-                        class="brand-logo">
-
-                </div>
+    <div class="auth-glow glow-blue"></div>
 
 
-                <p class="vedic-label">
-                    ज्ञान • अध्ययन • संस्कृति
-                </p>
+</div>
 
 
-                <h1>
-                    Rent Book
-                    <span>India</span>
-                </h1>
+
+<!-- ================================================================
+     SCIENTIFIC FLOATING SYMBOLS
+     ----------------------------------------------------------------
+     These replace religious decorative symbols.
+
+     Examples:
+
+         ⚛  Physics
+         π  Mathematics
+         ∑  Mathematics
+         λ  Physics
+         ⚗  Chemistry
+================================================================ -->
+
+<div class="auth-science-symbol symbol-atom">
+    ⚛
+</div>
+
+<div class="auth-science-symbol symbol-pi">
+    π
+</div>
+
+<div class="auth-science-symbol symbol-sigma">
+    ∑
+</div>
+
+<div class="auth-science-symbol symbol-lambda">
+    λ
+</div>
+
+<div class="auth-science-symbol symbol-chemistry">
+    ⚗
+</div>
 
 
-                <div class="decorative-line">
-                    <span></span>
-                    <i>❈</i>
-                    <span></span>
-                </div>
+
+<!-- ================================================================
+     MAIN AUTHENTICATION CONTAINER
+================================================================ -->
+
+<main class="auth-container signup-layout">
 
 
-                <h2>
-                    Begin Your
-                    <br>
-                    <strong>Knowledge Journey.</strong>
-                </h2>
+    <!-- ============================================================
+         LEFT SIDE — BRAND AND 3D PRESENTATION
+    ============================================================= -->
+
+    <section class="auth-showcase">
 
 
-                <p class="brand-description">
+        <!-- ========================================================
+             BACK TO HOME
+        ========================================================= -->
 
-                    Create an account and discover a smarter,
-                    affordable and sustainable way to access books.
+        <a
+            href="../index.html"
+            class="auth-home-link"
+        >
 
-                </p>
+            <span>
+                ←
+            </span>
 
+            Back to Home
 
-                <div class="wisdom-card">
-
-                    <div class="wisdom-symbol">
-                        ❖
-                    </div>
-
-                    <p>
-                        "A book shared is knowledge multiplied."
-                    </p>
-
-                    <small>
-                        — Rent Book India
-                    </small>
-
-                </div>
+        </a>
 
 
-                <div class="brand-features">
 
-                    <div class="feature">
-                        <span>📖</span>
-                        <p>Discover</p>
-                    </div>
+        <!-- ========================================================
+             BRAND
+        ========================================================= -->
 
-                    <div class="feature">
-                        <span>🤝</span>
-                        <p>Share</p>
-                    </div>
+        <a
+            href="../index.html"
+            class="auth-brand"
+        >
 
-                    <div class="feature">
-                        <span>🌿</span>
-                        <p>Reuse</p>
-                    </div>
+
+            <div class="auth-logo-container">
+
+                <img
+                    src="../assets/logo.png"
+                    alt="RentBook India Logo"
+                    class="auth-logo"
+                >
+
+            </div>
+
+
+            <div class="auth-brand-name">
+
+                <strong>
+                    RentBook
+                </strong>
+
+                <span>
+                    INDIA
+                </span>
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- ========================================================
+             SHOWCASE MESSAGE
+        ========================================================= -->
+
+        <div class="showcase-content">
+
+
+            <span class="showcase-label">
+
+                ✦ JOIN THE KNOWLEDGE NETWORK ✦
+
+            </span>
+
+
+            <h1>
+
+                Read.
+
+                <span>
+                    Share.
+                </span>
+
+                Repeat.
+
+            </h1>
+
+
+            <p>
+
+                Create your RentBook India account and become
+                part of a growing ecosystem where books can be
+                rented, shared and reused.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ========================================================
+             3D SCIENTIFIC BOOK VISUAL
+        ========================================================= -->
+
+        <div class="auth-visual">
+
+
+            <!-- Scientific orbit -->
+
+            <div class="auth-orbit orbit-large"></div>
+
+            <div class="auth-orbit orbit-small"></div>
+
+
+
+            <!-- Scientific core -->
+
+            <div class="scientific-core">
+
+                <div class="core-ring ring-one"></div>
+
+                <div class="core-ring ring-two"></div>
+
+                <div class="core-symbol">
+
+                    ∑
 
                 </div>
 
             </div>
 
-        </section>
 
 
-        <!-- =====================================================
-             SIGNUP CARD
-        ====================================================== -->
+            <!-- ====================================================
+                 3D BOOK
+            ==================================================== -->
 
-        <section class="auth-panel">
-
-            <div class="auth-card signup-card">
+            <div class="auth-book">
 
 
-                <div class="card-top-decoration">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <!-- Book cover -->
+
+                <div class="auth-book-cover">
 
 
-                <div class="auth-header">
+                    <div class="auth-book-symbol">
+                        ⚛
+                    </div>
 
-                    <p class="small-heading">
-                        JOIN US
-                    </p>
+
+                    <div class="auth-book-line"></div>
+
+
+                    <small>
+                        KNOWLEDGE
+                    </small>
+
 
                     <h2>
-                        Create
-                        <span>Your Account</span>
+                        SHARED
                     </h2>
 
-                    <p>
-                        Become a part of the Rent Book community.
-                    </p>
+
+                    <h3>
+                        FREELY
+                    </h3>
+
+
+                    <div class="auth-book-line"></div>
+
+
+                    <span>
+                        RENTBOOK INDIA
+                    </span>
+
 
                 </div>
 
 
-                <!-- =================================================
-                     SIGNUP FORM
+                <!-- Pages -->
+
+                <div class="auth-book-pages"></div>
+
+
+                <!-- Spine -->
+
+                <div class="auth-book-spine">
+                    RENTBOOK
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 FLOATING CARD — STUDENTS
+            ==================================================== -->
+
+            <div class="auth-floating-card card-one">
+
+
+                <div class="floating-icon">
+                    🎓
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        For Students
+                    </strong>
+
+                    <span>
+                        Rent what you need
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 FLOATING CARD — SELLERS
+            ==================================================== -->
+
+            <div class="auth-floating-card card-two">
+
+
+                <div class="floating-icon">
+                    🏪
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        For Sellers
+                    </strong>
+
+                    <span>
+                        List books for rent
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 FLOATING CARD — REUSE
+            ==================================================== -->
+
+            <div class="auth-floating-card card-three">
+
+
+                <div class="floating-icon">
+                    ♻
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Reuse Books
+                    </strong>
+
+                    <span>
+                        Give books another life
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ========================================================
+             SCIENTIFIC STATEMENT
+        ========================================================= -->
+
+        <div class="scientific-statement">
+
+
+            <span>
+                ∞
+            </span>
+
+
+            <p>
+                One book can educate many minds.
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ============================================================
+         RIGHT SIDE — REGISTRATION FORM
+    ============================================================= -->
+
+    <section class="auth-form-area">
+
+
+        <div class="login-card signup-card">
+
+
+            <!-- ====================================================
+                 FORM HEADER
+            ==================================================== -->
+
+            <div class="form-header">
+
+
+                <div class="form-icon">
+
+                    ✦
+
+                </div>
+
+
+                <span class="form-label">
+
+                    CREATE YOUR ACCOUNT
+
+                </span>
+
+
+                <h2>
+
+                    Join
+
+                    <span>
+                        RentBook
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Create your account to rent, share,
+                    discover and manage books.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 MESSAGE AREA
+
+                 JavaScript will use this area for validation
+                 and registration messages.
+            ==================================================== -->
+
+            <div
+                id="formMessage"
+                class="form-message"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+
+            <!-- ====================================================
+                 SIGNUP FORM
+            ==================================================== -->
+
+            <form
+                id="signupForm"
+                class="auth-form"
+                novalidate
+            >
+
+
+                <!-- ==================================================
+                     FULL NAME
                 ================================================== -->
 
-                <form class="auth-form"
-                      action="#"
-                      method="POST">
+                <div class="form-group">
 
 
-                    <!-- Full Name -->
+                    <label for="fullName">
 
-                    <div class="input-group">
+                        Full Name
 
-                        <label for="full-name">
-                            Full Name
-                        </label>
+                    </label>
 
-                        <div class="input-wrapper">
 
-                            <span class="input-icon">
-                                👤
-                            </span>
+                    <div class="input-wrapper">
 
-                            <input
-                                type="text"
-                                id="full-name"
-                                name="fullName"
-                                placeholder="Enter your full name"
-                                autocomplete="name"
-                                required
-                            >
 
-                        </div>
+                        <span class="input-icon">
+                            👤
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
 
                     </div>
 
 
-                    <!-- Email -->
+                    <small
+                        class="field-error"
+                        id="nameError"
+                    ></small>
 
-                    <div class="input-group">
 
-                        <label for="signup-email">
-                            Email Address
-                        </label>
+                </div>
 
-                        <div class="input-wrapper">
 
-                            <span class="input-icon">
-                                ✉
-                            </span>
 
-                            <input
-                                type="email"
-                                id="signup-email"
-                                name="email"
-                                placeholder="Enter your email"
-                                autocomplete="email"
-                                required
-                            >
+                <!-- ==================================================
+                     EMAIL
+                ================================================== -->
 
-                        </div>
+                <div class="form-group">
+
+
+                    <label for="email">
+
+                        Email Address
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
 
                     </div>
 
 
-                    <!-- Phone -->
+                    <small
+                        class="field-error"
+                        id="emailError"
+                    ></small>
 
-                    <div class="input-group">
 
-                        <label for="phone">
-                            Phone Number
-                        </label>
+                </div>
 
-                        <div class="input-wrapper">
 
-                            <span class="input-icon">
-                                📱
-                            </span>
 
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                placeholder="+91 XXXXX XXXXX"
-                                autocomplete="tel"
-                                required
-                            >
+                <!-- ==================================================
+                     MOBILE NUMBER
+                ================================================== -->
 
-                        </div>
+                <div class="form-group">
+
+
+                    <label for="mobile">
+
+                        Mobile Number
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+
+                        <span class="input-icon">
+                            ☎
+                        </span>
+
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            name="mobile"
+                            placeholder="10-digit mobile number"
+                            autocomplete="tel"
+                            maxlength="10"
+                            required
+                        >
+
 
                     </div>
 
 
-                    <!-- Password -->
+                    <small
+                        class="field-error"
+                        id="mobileError"
+                    ></small>
 
-                    <div class="input-group">
 
-                        <label for="signup-password">
-                            Create Password
-                        </label>
+                </div>
 
-                        <div class="input-wrapper">
 
-                            <span class="input-icon">
-                                🔐
-                            </span>
 
-                            <input
-                                type="password"
-                                id="signup-password"
-                                name="password"
-                                placeholder="Create a strong password"
-                                autocomplete="new-password"
-                                required
+                <!-- ==================================================
+                     ACCOUNT TYPE
+
+                     The same platform can have different users.
+
+                     STUDENT:
+                         Can search and rent books.
+
+                     SELLER:
+                         Can add books and rent them to users.
+
+                     Later this selection can be stored in MongoDB.
+                ================================================== -->
+
+                <div class="form-group">
+
+
+                    <label for="accountType">
+
+                        I want to join as
+
+                    </label>
+
+
+                    <div class="input-wrapper select-wrapper">
+
+
+                        <span class="input-icon">
+                            ◈
+                        </span>
+
+
+                        <select
+                            id="accountType"
+                            name="accountType"
+                            required
+                        >
+
+
+                            <option
+                                value=""
+                                selected
+                                disabled
                             >
+                                Select account type
+                            </option>
 
-                            <button
-                                type="button"
-                                class="password-toggle"
-                                aria-label="Show password">
-                                👁
-                            </button>
 
-                        </div>
+                            <option value="student">
+                                Student / Reader
+                            </option>
+
+
+                            <option value="seller">
+                                Seller / Book Owner
+                            </option>
+
+
+                        </select>
+
 
                     </div>
 
 
-                    <!-- Confirm Password -->
+                    <small
+                        class="field-error"
+                        id="accountError"
+                    ></small>
 
-                    <div class="input-group">
 
-                        <label for="confirm-password">
-                            Confirm Password
-                        </label>
+                </div>
 
-                        <div class="input-wrapper">
 
-                            <span class="input-icon">
-                                🔑
-                            </span>
 
-                            <input
-                                type="password"
-                                id="confirm-password"
-                                name="confirmPassword"
-                                placeholder="Confirm your password"
-                                autocomplete="new-password"
-                                required
-                            >
+                <!-- ==================================================
+                     PASSWORD
+                ================================================== -->
 
-                        </div>
+                <div class="form-group">
+
+
+                    <label for="signupPassword">
+
+                        Create Password
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+
+                        <span class="input-icon">
+                            🔑
+                        </span>
+
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            name="password"
+                            placeholder="Create a strong password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="signupPasswordToggle"
+                            aria-label="Show password"
+                        >
+
+                            👁
+
+                        </button>
+
 
                     </div>
 
 
-                    <!-- Terms -->
+                    <small
+                        class="field-error"
+                        id="signupPasswordError"
+                    ></small>
 
-                    <label class="terms-option">
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     PASSWORD STRENGTH INDICATOR
+                ================================================== -->
+
+                <div
+                    class="password-strength"
+                    id="passwordStrength"
+                >
+
+
+                    <div class="strength-bars">
+
+
+                        <span></span>
+
+                        <span></span>
+
+                        <span></span>
+
+                        <span></span>
+
+
+                    </div>
+
+
+                    <small id="strengthText">
+
+                        Password strength
+
+                    </small>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     CONFIRM PASSWORD
+                ================================================== -->
+
+                <div class="form-group">
+
+
+                    <label for="confirmPassword">
+
+                        Confirm Password
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+
+                        <span class="input-icon">
+                            🔐
+                        </span>
+
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="confirmPasswordToggle"
+                            aria-label="Show password"
+                        >
+
+                            👁
+
+                        </button>
+
+
+                    </div>
+
+
+                    <small
+                        class="field-error"
+                        id="confirmPasswordError"
+                    ></small>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     TERMS AND CONDITIONS
+                ================================================== -->
+
+                <div class="terms-option">
+
+
+                    <label>
+
 
                         <input
                             type="checkbox"
+                            id="terms"
                             name="terms"
-                            required>
+                            required
+                        >
+
+
+                        <span class="custom-checkbox"></span>
+
 
                         <span>
+
                             I agree to the
                             <a href="#">
-                                Terms & Conditions
+                                Terms of Service
                             </a>
                             and
                             <a href="#">
                                 Privacy Policy
                             </a>.
+
                         </span>
+
 
                     </label>
 
 
-                    <!-- Create Account -->
-
-                    <button
-                        type="submit"
-                        class="auth-button">
-
-                        <span>
-                            Create Account
-                        </span>
-
-                        <span class="button-arrow">
-                            →
-                        </span>
-
-                    </button>
+                </div>
 
 
-                </form>
+                <small
+                    class="field-error"
+                    id="termsError"
+                ></small>
 
 
-                <!-- =================================================
-                     LOGIN LINK
+
+                <!-- ==================================================
+                     CREATE ACCOUNT BUTTON
                 ================================================== -->
 
-                <div class="divider">
+                <button
+                    type="submit"
+                    class="auth-submit"
+                    id="signupButton"
+                >
 
-                    <span></span>
+                    <span>
+                        Create Account
+                    </span>
 
-                    <p>
-                        ALREADY A MEMBER?
-                    </p>
+                    <strong>
+                        →
+                    </strong>
 
-                    <span></span>
+                </button>
+
+
+
+                <!-- ==================================================
+                     DIVIDER
+                ================================================== -->
+
+                <div class="auth-divider">
+
+                    <span>
+                        OR
+                    </span>
 
                 </div>
 
 
-                <p class="switch-auth">
 
-                    Already have an account?
+                <!-- ==================================================
+                     GOOGLE SIGNUP
+
+                     FRONTEND PLACEHOLDER ONLY.
+
+                     Real OAuth will be added later.
+                ================================================== -->
+
+                <button
+                    type="button"
+                    class="social-login"
+                    id="googleSignup"
+                >
+
+                    <span class="google-icon">
+                        G
+                    </span>
+
+                    Sign up with Google
+
+                </button>
+
+
+
+                <!-- ==================================================
+                     LOGIN CONNECTION
+                ================================================== -->
+
+                <div class="signup-prompt">
+
+
+                    <span>
+                        Already have an account?
+                    </span>
+
 
                     <a href="login.html">
-                        Login Here
+
+                        Sign in
+
                     </a>
 
-                </p>
-
-
-                <a href="../index.html"
-                   class="home-link">
-
-                    ← Back to Home
-
-                </a>
-
-
-                <div class="card-bottom-decoration">
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
 
                 </div>
+
+
+            </form>
+
+
+
+            <!-- ====================================================
+                 BENEFITS OF CREATING AN ACCOUNT
+            ==================================================== -->
+
+            <div class="login-benefits">
+
+
+                <div class="benefit">
+
+
+                    <span>
+                        📚
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Discover Books
+                        </strong>
+
+                        <small>
+                            Search books available near you.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="benefit">
+
+
+                    <span>
+                        🚚
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Easy Delivery
+                        </strong>
+
+                        <small>
+                            Get books delivered through the platform.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="benefit">
+
+
+                    <span>
+                        💰
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Earn From Books
+                        </strong>
+
+                        <small>
+                            Owners can list books for rent.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
 
             </div>
 
-        </section>
 
-    </main>
+        </div>
 
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
+    </section>
 
-    <footer class="auth-footer">
 
-        <p>
-            © 2026 Rent Book India.
-            All Rights Reserved.
-        </p>
+</main>
 
-        <p>
-            Founded by <strong>Anuj Rao</strong>
-        </p>
 
-    </footer>
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+
+<footer class="auth-footer">
+
+
+    <p>
+
+        © 2026 RentBook India
+
+    </p>
+
+
+    <span>
+        Founded by Anuj Rao
+    </span>
+
+
+    <span>
+        Gorakhpur, Uttar Pradesh, India
+    </span>
+
+
+    <span>
+        +91 95800 03422
+    </span>
+
+
+</footer>
+
+
+
+<!-- ================================================================
+     FRONTEND JAVASCRIPT
+     ----------------------------------------------------------------
+     This JavaScript currently handles:
+
+         • Form validation
+         • Password visibility
+         • Password strength
+         • Password matching
+         • Mobile validation
+         • Account type validation
+         • Terms validation
+         • Loading state
+
+     It DOES NOT create an actual account yet.
+
+     Backend integration will later send this information to:
+
+         POST /api/auth/register
+
+     Example future data:
+
+         {
+             name,
+             email,
+             mobile,
+             accountType,
+             password
+         }
+
+     The backend will then:
+
+         1. Validate the information
+         2. Hash the password
+         3. Save user in MongoDB
+         4. Send OTP/email verification
+         5. Create authentication session/token
+================================================================ -->
+
+<script>
+
+
+/* ================================================================
+   PASSWORD VISIBILITY FUNCTION
+================================================================ */
+
+function setupPasswordToggle(
+    inputId,
+    buttonId
+) {
+
+
+    const input =
+        document.getElementById(
+            inputId
+        );
+
+
+    const button =
+        document.getElementById(
+            buttonId
+        );
+
+
+    button.addEventListener(
+        "click",
+        function () {
+
+
+            const hidden =
+                input.type === "password";
+
+
+            if (hidden) {
+
+                input.type = "text";
+
+                button.textContent = "🙈";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Hide password"
+                );
+
+            } else {
+
+                input.type = "password";
+
+                button.textContent = "👁";
+
+                button.setAttribute(
+                    "aria-label",
+                    "Show password"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+setupPasswordToggle(
+    "signupPassword",
+    "signupPasswordToggle"
+);
+
+
+setupPasswordToggle(
+    "confirmPassword",
+    "confirmPasswordToggle"
+);
+
+
+
+/* ================================================================
+   PASSWORD STRENGTH CHECKER
+================================================================ */
+
+const signupPassword =
+    document.getElementById(
+        "signupPassword"
+    );
+
+
+const strengthContainer =
+    document.getElementById(
+        "passwordStrength"
+    );
+
+
+const strengthBars =
+    document.querySelectorAll(
+        ".strength-bars span"
+    );
+
+
+const strengthText =
+    document.getElementById(
+        "strengthText"
+    );
+
+
+signupPassword.addEventListener(
+    "input",
+    function () {
+
+
+        const password =
+            signupPassword.value;
+
+
+        let strength = 0;
+
+
+        /* Length */
+
+        if (password.length >= 8) {
+
+            strength++;
+
+        }
+
+
+        /* Uppercase */
+
+        if (
+            /[A-Z]/.test(password)
+        ) {
+
+            strength++;
+
+        }
+
+
+        /* Number */
+
+        if (
+            /[0-9]/.test(password)
+        ) {
+
+            strength++;
+
+        }
+
+
+        /* Special character */
+
+        if (
+            /[^A-Za-z0-9]/.test(password)
+        ) {
+
+            strength++;
+
+        }
+
+
+        strengthBars.forEach(
+            function (bar, index) {
+
+
+                bar.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    index < strength
+                ) {
+
+                    bar.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+        if (!password) {
+
+            strengthText.textContent =
+                "Password strength";
+
+        }
+
+        else if (strength <= 1) {
+
+            strengthText.textContent =
+                "Weak password";
+
+        }
+
+        else if (strength === 2) {
+
+            strengthText.textContent =
+                "Fair password";
+
+        }
+
+        else if (strength === 3) {
+
+            strengthText.textContent =
+                "Good password";
+
+        }
+
+        else {
+
+            strengthText.textContent =
+                "Strong password";
+
+        }
+
+
+    }
+);
+
+
+
+/* ================================================================
+   MOBILE NUMBER INPUT
+   ----------------------------------------------------------------
+   Only numeric characters are accepted.
+================================================================ */
+
+const mobileInput =
+    document.getElementById(
+        "mobile"
+    );
+
+
+mobileInput.addEventListener(
+    "input",
+    function () {
+
+        this.value =
+            this.value
+                .replace(
+                    /\D/g,
+                    ""
+                )
+                .slice(
+                    0,
+                    10
+                );
+
+    }
+);
+
+
+
+/* ================================================================
+   SIGNUP FORM
+================================================================ */
+
+const signupForm =
+    document.getElementById(
+        "signupForm"
+    );
+
+
+const signupButton =
+    document.getElementById(
+        "signupButton"
+    );
+
+
+const formMessage =
+    document.getElementById(
+        "formMessage"
+    );
+
+
+signupForm.addEventListener(
+    "submit",
+    function (event) {
+
+
+        event.preventDefault();
+
+
+        /* ========================================================
+           CLEAR PREVIOUS ERRORS
+        ======================================================== */
+
+        document
+            .querySelectorAll(
+                ".field-error"
+            )
+            .forEach(
+                function (error) {
+
+                    error.textContent =
+                        "";
+
+                }
+            );
+
+
+        formMessage.textContent =
+            "";
+
+
+        formMessage.className =
+            "form-message";
+
+
+        let valid = true;
+
+
+
+        /* ========================================================
+           GET FORM VALUES
+        ======================================================== */
+
+        const name =
+            document
+                .getElementById("fullName")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+        const mobile =
+            document
+                .getElementById("mobile")
+                .value
+                .trim();
+
+
+        const accountType =
+            document
+                .getElementById("accountType")
+                .value;
+
+
+        const password =
+            signupPassword
+                .value;
+
+
+        const confirmPassword =
+            document
+                .getElementById(
+                    "confirmPassword"
+                )
+                .value;
+
+
+        const terms =
+            document
+                .getElementById("terms")
+                .checked;
+
+
+
+        /* ========================================================
+           NAME VALIDATION
+        ======================================================== */
+
+        if (
+            name.length < 3
+        ) {
+
+            document
+                .getElementById("nameError")
+                .textContent =
+                "Please enter your full name.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           EMAIL VALIDATION
+        ======================================================== */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (
+            !emailPattern.test(email)
+        ) {
+
+            document
+                .getElementById("emailError")
+                .textContent =
+                "Please enter a valid email address.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           MOBILE VALIDATION
+        ======================================================== */
+
+        if (
+            !/^[6-9]\d{9}$/.test(mobile)
+        ) {
+
+            document
+                .getElementById("mobileError")
+                .textContent =
+                "Enter a valid 10-digit Indian mobile number.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           ACCOUNT TYPE
+        ======================================================== */
+
+        if (!accountType) {
+
+            document
+                .getElementById("accountError")
+                .textContent =
+                "Please select an account type.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           PASSWORD
+        ======================================================== */
+
+        if (
+            password.length < 8
+        ) {
+
+            document
+                .getElementById(
+                    "signupPasswordError"
+                )
+                .textContent =
+                "Password must contain at least 8 characters.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           CONFIRM PASSWORD
+        ======================================================== */
+
+        if (
+            password !== confirmPassword
+        ) {
+
+            document
+                .getElementById(
+                    "confirmPasswordError"
+                )
+                .textContent =
+                "Passwords do not match.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           TERMS
+        ======================================================== */
+
+        if (!terms) {
+
+            document
+                .getElementById("termsError")
+                .textContent =
+                "You must agree to the terms before continuing.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           STOP IF VALIDATION FAILS
+        ======================================================== */
+
+        if (!valid) {
+
+            formMessage.textContent =
+                "Please correct the highlighted fields.";
+
+            formMessage.classList.add(
+                "error-message"
+            );
+
+            return;
+
+        }
+
+
+
+        /* ========================================================
+           FRONTEND REGISTRATION DEMONSTRATION
+        ======================================================== */
+
+        signupButton.disabled =
+            true;
+
+
+        signupButton.classList.add(
+            "loading"
+        );
+
+
+        signupButton.innerHTML =
+            "<span>Creating account...</span>";
+
+
+
+        /* ========================================================
+           SIMULATED SERVER REQUEST
+
+           Later this setTimeout() will be replaced with fetch():
+
+               fetch("/api/auth/register", {
+                   method: "POST",
+                   headers: {
+                       "Content-Type":
+                           "application/json"
+                   },
+                   body: JSON.stringify(...)
+               })
+
+        ======================================================== */
+
+        setTimeout(
+            function () {
+
+
+                signupButton.disabled =
+                    false;
+
+
+                signupButton.classList.remove(
+                    "loading"
+                );
+
+
+                signupButton.innerHTML =
+                    "<span>Create Account</span><strong>→</strong>";
+
+
+                formMessage.textContent =
+                    "Registration form validated successfully. Backend connection will be added next.";
+
+
+                formMessage.classList.add(
+                    "success-message"
+                );
+
+
+            },
+            1300
+        );
+
+
+    }
+);
+
+
+
+/* ================================================================
+   GOOGLE SIGNUP PLACEHOLDER
+================================================================ */
+
+const googleSignup =
+    document.getElementById(
+        "googleSignup"
+    );
+
+
+googleSignup.addEventListener(
+    "click",
+    function () {
+
+
+        alert(
+            "Google authentication will be connected during backend/OAuth integration."
+        );
+
+
+    }
+);
+
+
+</script>
 
 
 </body>

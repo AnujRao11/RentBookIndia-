@@ -2,386 +2,1506 @@
 <html lang="en">
 
 <head>
+
+    <!-- ============================================================
+         RENTBOOK INDIA — LOGIN PAGE
+         ============================================================
+
+         PURPOSE:
+         This page provides the frontend login interface for
+         RentBook India users.
+
+         A user should eventually be able to log in using:
+
+             • Registered email
+             • Registered mobile number
+             • Password
+
+         AFTER BACKEND INTEGRATION:
+         --------------------------------
+         This form can be connected to:
+
+             • Node.js / Express
+             • MongoDB
+             • JWT authentication
+             • Session management
+             • Password hashing
+             • Email/mobile verification
+
+         CURRENT STAGE:
+         --------------------------------
+         This is the frontend prototype for your project presentation.
+
+         DESIGN:
+         --------------------------------
+         • Scientific academic theme
+         • Navy background
+         • Gold/orange highlights
+         • Glassmorphism
+         • 3D book
+         • Scientific symbols
+         • Animated stars
+         • Responsive layout
+
+    ============================================================ -->
+
+
+    <!-- ============================================================
+         BASIC PAGE CONFIGURATION
+    ============================================================ -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Login to Rent Book India - Affordable and convenient book rental platform.">
+    <meta
+        name="description"
+        content="Login to your RentBook India account and manage your rented books."
+    >
 
-    <title>Login | Rent Book India</title>
+    <meta
+        name="author"
+        content="Anuj Rao"
+    >
 
-    <!-- Authentication CSS -->
-    <link rel="stylesheet" href="../css/auth.css">
+    <title>
+        Login | RentBook India
+    </title>
+
+
+    <!-- ============================================================
+         GOOGLE FONTS
+    ============================================================ -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ============================================================
+         AUTHENTICATION CSS
+         ------------------------------------------------------------
+         Login and signup pages use a separate stylesheet because
+         their layout is different from the homepage.
+
+         File:
+
+             css/authentication.css
+    ============================================================ -->
+
+    <link
+        rel="stylesheet"
+        href="../css/authentication.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- =========================================================
-         DECORATIVE BACKGROUND
-    ========================================================== -->
 
-    <div class="vedic-background">
+<!-- ================================================================
+     BACKGROUND SYSTEM
+     ----------------------------------------------------------------
+     The login page uses the same scientific/cosmic environment
+     as the homepage.
 
-        <div class="mandala mandala-one"></div>
-        <div class="mandala mandala-two"></div>
+     Religious symbols have intentionally NOT been used.
 
-        <div class="golden-orb orb-one"></div>
-        <div class="golden-orb orb-two"></div>
+     Instead we use:
 
-    </div>
+         ⚛  Physics
+         π  Mathematics
+         ∑  Mathematics
+         λ  Physics
+         ⚗  Chemistry
+================================================================ -->
 
-
-    <!-- =========================================================
-         BUTTERFLIES
-    ========================================================== -->
-
-    <div class="butterfly butterfly-one">
-        <span class="wing left-wing"></span>
-        <span class="body"></span>
-        <span class="wing right-wing"></span>
-    </div>
-
-    <div class="butterfly butterfly-two">
-        <span class="wing left-wing"></span>
-        <span class="body"></span>
-        <span class="wing right-wing"></span>
-    </div>
-
-    <div class="butterfly butterfly-three">
-        <span class="wing left-wing"></span>
-        <span class="body"></span>
-        <span class="wing right-wing"></span>
-    </div>
+<div class="auth-background">
 
 
-    <!-- =========================================================
-         MAIN AUTHENTICATION AREA
-    ========================================================== -->
+    <!-- Animated star layers -->
 
-    <main class="auth-page">
+    <div class="auth-stars stars-one"></div>
 
-        <!-- =====================================================
-             LEFT / BRAND SECTION
-        ====================================================== -->
+    <div class="auth-stars stars-two"></div>
 
-        <section class="brand-panel">
-
-            <div class="brand-content">
-
-                <div class="brand-logo-wrapper">
-
-                    <img src="../assets/logo.png"
-                         alt="Rent Book India Logo"
-                         class="brand-logo">
-
-                </div>
+    <div class="auth-stars stars-three"></div>
 
 
-                <p class="vedic-label">
-                    ज्ञान • अध्ययन • संस्कृति
-                </p>
+    <!-- Atmospheric glowing areas -->
+
+    <div class="auth-glow glow-orange"></div>
+
+    <div class="auth-glow glow-gold"></div>
+
+    <div class="auth-glow glow-blue"></div>
 
 
-                <h1>
-                    Rent Book
-                    <span>India</span>
-                </h1>
+</div>
 
 
-                <div class="decorative-line">
-                    <span></span>
-                    <i>❈</i>
-                    <span></span>
-                </div>
+
+<!-- ================================================================
+     FLOATING SCIENTIFIC SYMBOLS
+================================================================ -->
+
+<div class="auth-science-symbol symbol-atom">
+    ⚛
+</div>
+
+<div class="auth-science-symbol symbol-pi">
+    π
+</div>
+
+<div class="auth-science-symbol symbol-sigma">
+    ∑
+</div>
+
+<div class="auth-science-symbol symbol-lambda">
+    λ
+</div>
+
+<div class="auth-science-symbol symbol-chemistry">
+    ⚗
+</div>
 
 
-                <h2>
-                    Read More.
-                    <br>
-                    <strong>Spend Less.</strong>
-                </h2>
+
+<!-- ================================================================
+     MAIN AUTHENTICATION WRAPPER
+
+     The entire login interface is divided into two visual areas:
+
+         LEFT:
+             Brand + scientific 3D presentation
+
+         RIGHT:
+             Actual login form
+================================================================ -->
+
+<main class="auth-container">
 
 
-                <p class="brand-description">
-                    Discover books, share knowledge and make
-                    learning more affordable with Rent Book India.
-                </p>
+    <!-- ============================================================
+         LEFT SIDE — BRAND / 3D VISUAL
+    ============================================================ -->
+
+    <section class="auth-showcase">
 
 
-                <!-- Vedic-inspired quote panel -->
+        <!-- ========================================================
+             BACK TO HOME
+        ========================================================= -->
 
-                <div class="wisdom-card">
+        <a
+            href="../index.html"
+            class="auth-home-link"
+        >
 
-                    <div class="wisdom-symbol">
-                        ❖
-                    </div>
+            <span>
+                ←
+            </span>
 
-                    <p>
-                        "Knowledge grows when it is shared."
-                    </p>
+            Back to Home
 
-                    <small>
-                        — The spirit of learning
-                    </small>
-
-                </div>
+        </a>
 
 
-                <div class="brand-features">
 
-                    <div class="feature">
-                        <span></span>
-                        <p>Affordable Books</p>
-                    </div>
+        <!-- ========================================================
+             BRAND
+        ========================================================= -->
 
-                    <div class="feature">
-                        <span></span>
-                        <p>Easy Rental</p>
-                    </div>
+        <a
+            href="../index.html"
+            class="auth-brand"
+        >
 
-                    <div class="feature">
-                        <span></span>
-                        <p>Book Reuse</p>
-                    </div>
+
+            <div class="auth-logo-container">
+
+                <img
+                    src="../assets/logo.png"
+                    alt="RentBook India Logo"
+                    class="auth-logo"
+                >
+
+            </div>
+
+
+            <div class="auth-brand-name">
+
+                <strong>
+                    RentBook
+                </strong>
+
+                <span>
+                    INDIA
+                </span>
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- ========================================================
+             SHOWCASE CONTENT
+        ========================================================= -->
+
+        <div class="showcase-content">
+
+
+            <span class="showcase-label">
+
+                ✦ KNOWLEDGE • ACCESS • COMMUNITY ✦
+
+            </span>
+
+
+            <h1>
+
+                Your books.
+
+                <span>
+                    Your journey.
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Sign in to discover books,
+                manage your rentals, track returns,
+                and continue your learning journey
+                with RentBook India.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- ========================================================
+             3D SCIENTIFIC BOOK VISUAL
+
+             This is decorative and designed entirely with HTML/CSS.
+
+             It gives the login page the same 3D visual identity
+             as the homepage.
+        ========================================================= -->
+
+        <div class="auth-visual">
+
+
+            <!-- Scientific orbit -->
+
+            <div class="auth-orbit orbit-large"></div>
+
+            <div class="auth-orbit orbit-small"></div>
+
+
+
+            <!-- Atomic/scientific centre -->
+
+            <div class="scientific-core">
+
+                <div class="core-ring ring-one"></div>
+
+                <div class="core-ring ring-two"></div>
+
+                <div class="core-symbol">
+
+                    ⚛
 
                 </div>
 
             </div>
 
-        </section>
 
 
-        <!-- =====================================================
-             LOGIN CARD
-        ====================================================== -->
+            <!-- ====================================================
+                 3D BOOK
+            ==================================================== -->
 
-        <section class="auth-panel">
-
-            <div class="auth-card">
+            <div class="auth-book">
 
 
-                <!-- Card decorative top -->
+                <!-- Front cover -->
 
-                <div class="card-top-decoration">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <div class="auth-book-cover">
 
 
-                <div class="auth-header">
+                    <div class="auth-book-symbol">
+                        π
+                    </div>
 
-                    <p class="small-heading">
-                        WELCOME BACK
-                    </p>
+
+                    <div class="auth-book-line"></div>
+
+
+                    <small>
+                        THE
+                    </small>
+
 
                     <h2>
-                        Login to
-                        <span>Rent Book India</span>
+                        KNOWLEDGE
                     </h2>
 
-                    <p>
-                        Continue your journey of knowledge.
-                    </p>
+
+                    <h3>
+                        LIBRARY
+                    </h3>
+
+
+                    <div class="auth-book-line"></div>
+
+
+                    <span>
+                        RENTBOOK INDIA
+                    </span>
+
 
                 </div>
 
 
-                <!-- =================================================
-                     LOGIN FORM
+                <!-- Book pages -->
+
+                <div class="auth-book-pages"></div>
+
+
+                <!-- Book spine -->
+
+                <div class="auth-book-spine">
+                    RENTBOOK
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 FLOATING INFORMATION CARDS
+            ==================================================== -->
+
+            <div class="auth-floating-card card-one">
+
+
+                <div class="floating-icon">
+                    📚
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Rent Books
+                    </strong>
+
+                    <span>
+                        Read without buying
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="auth-floating-card card-two">
+
+
+                <div class="floating-icon">
+                    🔐
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Secure Access
+                    </strong>
+
+                    <span>
+                        Your account matters
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="auth-floating-card card-three">
+
+
+                <div class="floating-icon">
+                    ♻
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Read & Return
+                    </strong>
+
+                    <span>
+                        Keep books circulating
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ========================================================
+             SCIENTIFIC QUOTE / BRAND STATEMENT
+        ========================================================= -->
+
+        <div class="scientific-statement">
+
+
+            <span>
+                E = mc²
+            </span>
+
+
+            <p>
+                Knowledge grows when it is shared.
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ============================================================
+         RIGHT SIDE — LOGIN PANEL
+    ============================================================ -->
+
+    <section class="auth-form-area">
+
+
+        <div class="login-card">
+
+
+            <!-- ====================================================
+                 FORM HEADER
+            ==================================================== -->
+
+            <div class="form-header">
+
+
+                <div class="form-icon">
+
+                    🔐
+
+                </div>
+
+
+                <span class="form-label">
+
+                    WELCOME BACK
+
+                </span>
+
+
+                <h2>
+
+                    Sign in to
+
+                    <span>
+                        RentBook
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Access your rentals, orders,
+                    saved books and account dashboard.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- ====================================================
+                 FRONTEND MESSAGE AREA
+
+                 JavaScript can place validation messages here.
+
+                 Example:
+
+                     Invalid email
+                     Incorrect password
+                     Login successful
+
+            ===================================================== -->
+
+            <div
+                id="formMessage"
+                class="form-message"
+                role="alert"
+                aria-live="polite"
+            ></div>
+
+
+
+            <!-- ====================================================
+                 LOGIN FORM
+            ===================================================== -->
+
+            <form
+                id="loginForm"
+                class="auth-form"
+                novalidate
+            >
+
+
+                <!-- ==================================================
+                     EMAIL / MOBILE FIELD
                 ================================================== -->
 
-                <form class="auth-form"
-                      action="#"
-                      method="POST">
+                <div class="form-group">
 
 
-                    <!-- Email -->
+                    <label for="loginIdentifier">
 
-                    <div class="input-group">
+                        Email or Mobile Number
 
-                        <label for="login-email">
-                            Email Address
-                        </label>
+                    </label>
 
-                        <div class="input-wrapper">
 
-                            <span class="input-icon">
-                                ✉
-                            </span>
+                    <div class="input-wrapper">
 
-                            <input
-                                type="email"
-                                id="login-email"
-                                name="email"
-                                placeholder="Enter your email"
-                                autocomplete="email"
-                                required
-                            >
 
-                        </div>
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+
+                        <input
+                            type="text"
+                            id="loginIdentifier"
+                            name="loginIdentifier"
+                            placeholder="Enter email or mobile number"
+                            autocomplete="username"
+                            required
+                        >
+
 
                     </div>
 
 
-                    <!-- Password -->
+                    <small
+                        class="field-error"
+                        id="identifierError"
+                    ></small>
 
-                    <div class="input-group">
 
-                        <label for="login-password">
+                </div>
+
+
+
+                <!-- ==================================================
+                     PASSWORD FIELD
+                ================================================== -->
+
+                <div class="form-group">
+
+
+                    <div class="label-row">
+
+
+                        <label for="loginPassword">
+
                             Password
-                        </label>
-
-                        <div class="input-wrapper">
-
-                            <span class="input-icon">
-                                🔐
-                            </span>
-
-                            <input
-                                type="password"
-                                id="login-password"
-                                name="password"
-                                placeholder="Enter your password"
-                                autocomplete="current-password"
-                                required
-                            >
-
-                            <button
-                                type="button"
-                                class="password-toggle"
-                                aria-label="Show password">
-                                👁
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Remember + Forgot -->
-
-                    <div class="form-options">
-
-                        <label class="remember-option">
-
-                            <input
-                                type="checkbox"
-                                name="remember">
-
-                            <span>
-                                Remember me
-                            </span>
 
                         </label>
 
 
-                        <a href="forgot-password.html"
-                           class="forgot-link">
+                        <a
+                            href="#forgot-password"
+                            class="forgot-link"
+                            id="forgotPasswordLink"
+                        >
 
                             Forgot Password?
 
                         </a>
 
+
                     </div>
 
 
-                    <!-- Login Button -->
+                    <div class="input-wrapper">
 
-                    <button
-                        type="submit"
-                        class="auth-button">
 
-                        <span>Login</span>
-
-                        <span class="button-arrow">
-                            →
+                        <span class="input-icon">
+                            🔑
                         </span>
 
-                    </button>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            minlength="6"
+                            required
+                        >
 
 
-                </form>
+                        <!-- Show/hide password button -->
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+
+                            👁
+
+                        </button>
 
 
-                <!-- =================================================
+                    </div>
+
+
+                    <small
+                        class="field-error"
+                        id="passwordError"
+                    ></small>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     REMEMBER ME
+                ================================================== -->
+
+                <div class="form-options">
+
+
+                    <label class="remember-option">
+
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+
+                        <span class="custom-checkbox"></span>
+
+
+                        <span>
+                            Remember me
+                        </span>
+
+
+                    </label>
+
+
+                    <span class="security-note">
+
+                        🔒 Secure Login
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     LOGIN BUTTON
+                ================================================== -->
+
+                <button
+                    type="submit"
+                    class="auth-submit"
+                    id="loginButton"
+                >
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+
+
+                <!-- ==================================================
                      DIVIDER
                 ================================================== -->
 
-                <div class="divider">
+                <div class="auth-divider">
 
-                    <span></span>
-
-                    <p>
+                    <span>
                         OR
-                    </p>
-
-                    <span></span>
+                    </span>
 
                 </div>
 
 
-                <!-- =================================================
-                     SIGNUP
+
+                <!-- ==================================================
+                     GOOGLE LOGIN PLACEHOLDER
+
+                     IMPORTANT:
+                     ----------------
+                     This is only a frontend button right now.
+
+                     It will NOT actually authenticate a Google
+                     account until Google OAuth is integrated.
                 ================================================== -->
 
-                <p class="switch-auth">
+                <button
+                    type="button"
+                    class="social-login"
+                    id="googleLogin"
+                >
 
-                    New to Rent Book India?
+                    <span class="google-icon">
+                        G
+                    </span>
+
+                    Continue with Google
+
+                </button>
+
+
+
+                <!-- ==================================================
+                     SIGNUP CONNECTION
+                ================================================== -->
+
+                <div class="signup-prompt">
+
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
 
                     <a href="signup.html">
-                        Create an Account
+
+                        Create an account
+
                     </a>
 
-                </p>
-
-
-                <!-- HOME -->
-
-                <a href="../index.html"
-                   class="home-link">
-
-                    ← Back to Home
-
-                </a>
-
-
-                <!-- Card bottom decorative line -->
-
-                <div class="card-bottom-decoration">
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
 
                 </div>
+
+
+            </form>
+
+
+
+            <!-- ====================================================
+                 ACCOUNT BENEFITS
+            ==================================================== -->
+
+            <div class="login-benefits">
+
+
+                <div class="benefit">
+
+
+                    <span>
+                        📖
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Manage Rentals
+                        </strong>
+
+                        <small>
+                            Track active and previous rentals.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="benefit">
+
+
+                    <span>
+                        ❤️
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Save Books
+                        </strong>
+
+                        <small>
+                            Keep interesting books in your list.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="benefit">
+
+
+                    <span>
+                        🚚
+                    </span>
+
+
+                    <div>
+
+                        <strong>
+                            Track Delivery
+                        </strong>
+
+                        <small>
+                            Follow your book's rental journey.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
 
             </div>
 
-        </section>
-
-    </main>
 
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
+            <!-- ====================================================
+                 TERMS / PRIVACY NOTICE
+            ==================================================== -->
 
-    <footer class="auth-footer">
+            <p class="terms-text">
+
+                By continuing, you agree to RentBook India's
+                <a href="#">
+                    Terms of Service
+                </a>
+                and
+                <a href="#">
+                    Privacy Policy
+                </a>.
+
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================================================================
+     FORGOT PASSWORD MODAL
+     ----------------------------------------------------------------
+     This is a frontend prototype of the forgot-password interface.
+
+     Later it can be connected to a backend email OTP/password reset
+     system.
+================================================================ -->
+
+<div
+    class="modal-overlay"
+    id="forgotModal"
+    aria-hidden="true"
+>
+
+
+    <div class="forgot-modal">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeForgotModal"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+
+        <div class="form-icon">
+            🔑
+        </div>
+
+
+        <span class="form-label">
+            ACCOUNT RECOVERY
+        </span>
+
+
+        <h2>
+            Forgot your password?
+        </h2>
+
 
         <p>
-            © 2026 Rent Book India.
-            All Rights Reserved.
+
+            Enter your registered email address
+            and we can later connect this form
+            to a password-reset system.
+
         </p>
 
-        <p>
-            Founded by <strong>Anuj Rao</strong>
-        </p>
 
-    </footer>
+        <form id="forgotForm">
+
+
+            <div class="form-group">
+
+
+                <label for="forgotEmail">
+
+                    Email Address
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+
+                    <span class="input-icon">
+                        ✉
+                    </span>
+
+
+                    <input
+                        type="email"
+                        id="forgotEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="auth-submit"
+            >
+
+                Send Reset Link
+
+                <strong>
+                    →
+                </strong>
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ================================================================
+     FOOTER
+================================================================ -->
+
+<footer class="auth-footer">
+
+
+    <p>
+
+        © 2026 RentBook India
+
+    </p>
+
+
+    <span>
+        Founded by Anuj Rao
+    </span>
+
+
+    <span>
+        Gorakhpur, Uttar Pradesh, India
+    </span>
+
+
+    <span>
+        +91 95800 03422
+    </span>
+
+
+</footer>
+
+
+
+<!-- ================================================================
+     FRONTEND JAVASCRIPT
+     ----------------------------------------------------------------
+     IMPORTANT:
+
+     This JavaScript does NOT perform real authentication.
+
+     It currently provides:
+
+         • Input validation
+         • Password visibility toggle
+         • Loading animation
+         • Forgot-password modal
+         • Basic frontend login demonstration
+
+     REAL AUTHENTICATION WILL COME LATER.
+
+     Backend requirements:
+
+         1. Node.js / Express
+         2. MongoDB
+         3. Password hashing
+         4. Authentication API
+         5. JWT/session
+         6. Email/mobile verification
+================================================================ -->
+
+<script>
+
+
+/* ================================================================
+   PASSWORD SHOW / HIDE
+================================================================ */
+
+const passwordInput =
+    document.getElementById("loginPassword");
+
+const passwordToggle =
+    document.getElementById("passwordToggle");
+
+
+passwordToggle.addEventListener(
+    "click",
+    function () {
+
+
+        const isPassword =
+            passwordInput.type === "password";
+
+
+        if (isPassword) {
+
+            passwordInput.type = "text";
+
+            passwordToggle.textContent = "🙈";
+
+            passwordToggle.setAttribute(
+                "aria-label",
+                "Hide password"
+            );
+
+        } else {
+
+            passwordInput.type = "password";
+
+            passwordToggle.textContent = "👁";
+
+            passwordToggle.setAttribute(
+                "aria-label",
+                "Show password"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* ================================================================
+   LOGIN FORM VALIDATION
+================================================================ */
+
+const loginForm =
+    document.getElementById("loginForm");
+
+const loginButton =
+    document.getElementById("loginButton");
+
+const formMessage =
+    document.getElementById("formMessage");
+
+const identifierError =
+    document.getElementById("identifierError");
+
+const passwordError =
+    document.getElementById("passwordError");
+
+
+loginForm.addEventListener(
+    "submit",
+    function (event) {
+
+
+        event.preventDefault();
+
+
+        /* Clear previous messages */
+
+        formMessage.textContent = "";
+
+        formMessage.className =
+            "form-message";
+
+
+        identifierError.textContent = "";
+
+        passwordError.textContent = "";
+
+
+        const identifier =
+            document
+                .getElementById("loginIdentifier")
+                .value
+                .trim();
+
+
+        const password =
+            passwordInput
+                .value
+                .trim();
+
+
+        let valid = true;
+
+
+
+        /* ========================================================
+           CHECK USERNAME / EMAIL / MOBILE
+        ======================================================== */
+
+        if (!identifier) {
+
+            identifierError.textContent =
+                "Please enter your email or mobile number.";
+
+            valid = false;
+
+        }
+
+
+
+        /* ========================================================
+           CHECK PASSWORD
+        ======================================================== */
+
+        if (!password) {
+
+            passwordError.textContent =
+                "Please enter your password.";
+
+            valid = false;
+
+        } else if (password.length < 6) {
+
+            passwordError.textContent =
+                "Password must contain at least 6 characters.";
+
+            valid = false;
+
+        }
+
+
+
+        /* Stop if validation failed */
+
+        if (!valid) {
+
+            formMessage.textContent =
+                "Please correct the highlighted fields.";
+
+            formMessage.classList.add(
+                "error-message"
+            );
+
+            return;
+
+        }
+
+
+
+        /* ========================================================
+           DEMONSTRATION LOGIN
+
+           This does NOT connect to a database yet.
+
+           The loading state makes the frontend prototype behave
+           more like a real application.
+        ======================================================== */
+
+        loginButton.disabled = true;
+
+        loginButton.classList.add(
+            "loading"
+        );
+
+        loginButton.innerHTML =
+            "<span>Signing in...</span>";
+
+
+
+        setTimeout(
+            function () {
+
+
+                loginButton.disabled = false;
+
+                loginButton.classList.remove(
+                    "loading"
+                );
+
+                loginButton.innerHTML =
+                    "<span>Sign In</span><strong>→</strong>";
+
+
+                formMessage.textContent =
+                    "Frontend demo successful. Backend authentication will be connected next.";
+
+                formMessage.classList.add(
+                    "success-message"
+                );
+
+
+            },
+            1200
+        );
+
+
+    }
+);
+
+
+
+/* ================================================================
+   FORGOT PASSWORD MODAL
+================================================================ */
+
+const forgotLink =
+    document.getElementById(
+        "forgotPasswordLink"
+    );
+
+const forgotModal =
+    document.getElementById(
+        "forgotModal"
+    );
+
+const closeForgotModal =
+    document.getElementById(
+        "closeForgotModal"
+    );
+
+
+/* Open modal */
+
+forgotLink.addEventListener(
+    "click",
+    function (event) {
+
+        event.preventDefault();
+
+        forgotModal.classList.add(
+            "active"
+        );
+
+        forgotModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    }
+);
+
+
+/* Close modal */
+
+closeForgotModal.addEventListener(
+    "click",
+    function () {
+
+        forgotModal.classList.remove(
+            "active"
+        );
+
+        forgotModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+);
+
+
+/* Close modal by clicking outside */
+
+forgotModal.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            event.target ===
+            forgotModal
+        ) {
+
+            forgotModal.classList.remove(
+                "active"
+            );
+
+            forgotModal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
+    }
+);
+
+
+
+/* ================================================================
+   FORGOT PASSWORD DEMO
+================================================================ */
+
+const forgotForm =
+    document.getElementById(
+        "forgotForm"
+    );
+
+
+forgotForm.addEventListener(
+    "submit",
+    function (event) {
+
+
+        event.preventDefault();
+
+
+        const email =
+            document
+                .getElementById("forgotEmail")
+                .value
+                .trim();
+
+
+        if (!email) {
+
+            return;
+
+        }
+
+
+        alert(
+            "Password reset functionality will be connected to the backend."
+        );
+
+
+        forgotModal.classList.remove(
+            "active"
+        );
+
+
+    }
+);
+
+
+
+/* ================================================================
+   GOOGLE LOGIN PLACEHOLDER
+================================================================ */
+
+const googleLogin =
+    document.getElementById(
+        "googleLogin"
+    );
+
+
+googleLogin.addEventListener(
+    "click",
+    function () {
+
+
+        alert(
+            "Google authentication will be connected after the backend/OAuth setup."
+        );
+
+
+    }
+);
+
+
+</script>
 
 
 </body>
+
 </html>
