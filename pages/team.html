@@ -3,27 +3,6 @@
 
 <head>
 
-    <!-- ============================================================
-         RENTBOOK INDIA — TEAM PAGE
-         ------------------------------------------------------------
-         This page introduces the people working behind RentBook India.
-
-         The page intentionally follows the same visual language as
-         the login/signup pages:
-
-         • Scientific theme
-         • Navy blue background
-         • Gold and orange highlights
-         • 3D visual elements
-         • Glassmorphism cards
-         • Animated stars
-         • Modern responsive layout
-
-         Team photos are currently NOT required.
-         Placeholder profile circles are used so photos can be added
-         later without changing the overall structure.
-    ============================================================ -->
-
     <meta charset="UTF-8">
 
     <meta
@@ -50,12 +29,16 @@
          GOOGLE FONTS
     ============================================================ -->
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
@@ -64,10 +47,7 @@
 
 
     <!-- ============================================================
-         TEAM PAGE STYLESHEET
-         ------------------------------------------------------------
-         Since team.html is inside the pages folder, we go one level
-         up using ../ and then enter the css folder.
+         TEAM CSS
     ============================================================ -->
 
     <link
@@ -83,16 +63,6 @@
 
 <!-- ================================================================
      BACKGROUND
-     ----------------------------------------------------------------
-     Scientific/cosmic background replacing religious symbols.
-
-     The background gives the website a connection with:
-
-         Physics
-         Mathematics
-         Chemistry
-         Technology
-         Knowledge
 ================================================================ -->
 
 <div class="team-background">
@@ -134,11 +104,10 @@
 
 
 <!-- ================================================================
-     MAIN NAVIGATION
+     NAVIGATION
 ================================================================ -->
 
 <header class="team-header">
-
 
     <a
         href="../index.html"
@@ -150,6 +119,7 @@
             <img
                 src="../assets/logo.png"
                 alt="RentBook India Logo"
+                loading="eager"
             >
 
         </div>
@@ -172,21 +142,17 @@
 
     <nav class="team-navigation">
 
-
         <a href="../index.html">
             Home
         </a>
-
 
         <a href="explore.html">
             Explore
         </a>
 
-
         <a href="books.html">
             Books
         </a>
-
 
         <a
             href="team.html"
@@ -195,11 +161,9 @@
             Team
         </a>
 
-
         <a href="login.html">
             Login
         </a>
-
 
         <a
             href="signup.html"
@@ -208,25 +172,26 @@
             Sign Up
         </a>
 
-
     </nav>
 
-
 </header>
+
+
+<!-- ================================================================
+     MAIN CONTENT
+================================================================ -->
+
+<main>
 
 
 <!-- ================================================================
      HERO SECTION
 ================================================================ -->
 
-<main>
-
-
 <section class="team-hero">
 
 
     <div class="hero-content">
-
 
         <span class="hero-label">
             ✦ THE PEOPLE BEHIND THE PLATFORM ✦
@@ -247,15 +212,12 @@
 
 
         <p>
-
             A student-driven team building a smarter way to
             discover, rent, share and circulate books.
-
         </p>
 
 
         <div class="hero-actions">
-
 
             <a
                 href="../index.html"
@@ -272,19 +234,16 @@
                 Join RentBook
             </a>
 
-
         </div>
-
 
     </div>
 
 
     <!-- ============================================================
          3D SCIENTIFIC CORE
-    ============================================================ -->
+    ============================================================= -->
 
     <div class="hero-visual">
-
 
         <div class="orbit orbit-one"></div>
 
@@ -294,7 +253,6 @@
 
 
         <div class="team-core">
-
 
             <div class="core-ring ring-one"></div>
 
@@ -308,7 +266,6 @@
                 </span>
 
             </div>
-
 
         </div>
 
@@ -353,26 +310,19 @@
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
 <!-- ================================================================
      FOUNDER SECTION
-     ----------------------------------------------------------------
-     Founder is intentionally separated from the rest of the team
-     because the founder has a different responsibility level.
 ================================================================ -->
 
 <section class="founder-section">
 
 
     <div class="section-heading">
-
 
         <span>
             01 / LEADERSHIP
@@ -388,7 +338,6 @@
             Vision, direction and product development.
         </p>
 
-
     </div>
 
 
@@ -396,25 +345,31 @@
 
 
         <!-- ========================================================
-             FOUNDER PHOTO PLACEHOLDER
+             FOUNDER IMAGE
 
-             Later replace this placeholder with:
+             IMPORTANT:
+             Because team.html is inside /pages/,
+             the correct path is:
 
-             <img src="../assets/anuj-rao.jpg" alt="Anuj Rao">
+                 ../assets/anuj-rao.jpg
 
-             No photo is required right now.
-        ======================================================== -->
+             NOT:
 
-        <div
-        
-         class="profile-photo founder-photo">
+                 /assets/anuj-rao.jpg
+        ========================================================= -->
 
+        <div class="profile-photo founder-photo">
 
             <div class="photo-placeholder">
 
                 <span>
-                    <img src="/assets/anuj-rao.jpg" 
-                    alt="Anuj Rao">
+
+                    <img
+                        src="../assets/anuj-rao.jpg"
+                        alt="Anuj Rao - Founder of RentBook India"
+                        loading="eager"
+                        decoding="async"
+                    >
 
                 </span>
 
@@ -423,12 +378,10 @@
 
             <div class="photo-orbit"></div>
 
-
         </div>
 
 
         <div class="founder-information">
-
 
             <span class="role-label">
                 FOUNDER & PROJECT LEAD
@@ -452,32 +405,26 @@
 
             <div class="founder-tags">
 
-
                 <span>
                     Product
                 </span>
-
 
                 <span>
                     Frontend
                 </span>
 
-
                 <span>
                     Strategy
                 </span>
-
 
                 <span>
                     Innovation
                 </span>
 
-
             </div>
 
 
             <div class="founder-contact">
-
 
                 <div>
 
@@ -504,29 +451,23 @@
 
                 </div>
 
-
             </div>
-
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
 <!-- ================================================================
-     TEAM MEMBERS SECTION
+     CORE TEAM
 ================================================================ -->
 
 <section class="members-section">
 
 
     <div class="section-heading">
-
 
         <span>
             02 / CORE TEAM
@@ -539,15 +480,11 @@
 
 
         <p>
-
             Different technical responsibilities,
             one common mission.
-
         </p>
 
-
     </div>
-
 
 
     <div class="team-grid">
@@ -555,25 +492,29 @@
 
         <!-- ========================================================
              MEMBER 01 — PUNEET SHARMA
-        ======================================================== -->
+        ========================================================= -->
 
         <article class="member-card">
-
 
             <div class="card-top">
 
 
                 <div class="profile-photo">
 
-
                     <div class="photo-placeholder">
 
                         <span>
-                            <img src="/assets/Punit-Sharma.jpeg"
+
+                            <img
+                                src="../assets/Punit-Sharma.jpeg"
+                                alt="Puneet Sharma"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
                         </span>
 
                     </div>
-
 
                 </div>
 
@@ -582,12 +523,10 @@
                     01
                 </span>
 
-
             </div>
 
 
             <div class="member-content">
-
 
                 <span class="member-role">
                     BACKEND DEVELOPMENT
@@ -600,10 +539,8 @@
 
 
                 <p>
-
                     Works on the backend architecture and
                     server-side functionality of RentBook India.
-
                 </p>
 
 
@@ -619,35 +556,35 @@
 
                 </div>
 
-
             </div>
-
 
         </article>
 
 
-
         <!-- ========================================================
              MEMBER 02 — KRITI SINGH
-        ======================================================== -->
+        ========================================================= -->
 
         <article class="member-card">
 
-
             <div class="card-top">
 
-
                 <div class="profile-photo">
-
 
                     <div class="photo-placeholder">
 
                         <span>
-                           <img src="/assets/kriti-singh.jpeg"
+
+                            <img
+                                src="../assets/kriti-singh.jpeg"
+                                alt="Kriti Singh"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
                         </span>
 
                     </div>
-
 
                 </div>
 
@@ -656,12 +593,10 @@
                     02
                 </span>
 
-
             </div>
 
 
             <div class="member-content">
-
 
                 <span class="member-role">
                     BACKEND DEVELOPMENT
@@ -674,10 +609,8 @@
 
 
                 <p>
-
                     Contributes to backend development,
                     application logic and server-side systems.
-
                 </p>
 
 
@@ -693,35 +626,35 @@
 
                 </div>
 
-
             </div>
-
 
         </article>
 
 
-
         <!-- ========================================================
              MEMBER 03 — SHREYA CHAUDHARY
-        ======================================================== -->
+        ========================================================= -->
 
         <article class="member-card">
 
-
             <div class="card-top">
 
-
                 <div class="profile-photo">
-
 
                     <div class="photo-placeholder">
 
                         <span>
-                            <img src="/assets/Shreya-Chaudhary.jpeg"
+
+                            <img
+                                src="../assets/Shreya-Chaudhary.jpeg"
+                                alt="Shreya Chaudhary"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
                         </span>
 
                     </div>
-
 
                 </div>
 
@@ -730,12 +663,10 @@
                     03
                 </span>
 
-
             </div>
 
 
             <div class="member-content">
-
 
                 <span class="member-role">
                     DATABASE
@@ -748,10 +679,8 @@
 
 
                 <p>
-
                     Works on database organisation,
                     data management and information structure.
-
                 </p>
 
 
@@ -767,35 +696,35 @@
 
                 </div>
 
-
             </div>
-
 
         </article>
 
 
-
         <!-- ========================================================
              MEMBER 04 — ARADHNA PANDEY
-        ======================================================== -->
+        ========================================================= -->
 
         <article class="member-card">
 
-
             <div class="card-top">
 
-
                 <div class="profile-photo">
-
 
                     <div class="photo-placeholder">
 
                         <span>
-                            <img src="/assets/Aradhna-Pandey.jpeg"
+
+                            <img
+                                src="../assets/Aradhna-Pandey.jpeg"
+                                alt="Aradhna Pandey"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
                         </span>
 
                     </div>
-
 
                 </div>
 
@@ -804,12 +733,10 @@
                     04
                 </span>
 
-
             </div>
 
 
             <div class="member-content">
-
 
                 <span class="member-role">
                     DATABASE
@@ -822,10 +749,8 @@
 
 
                 <p>
-
                     Contributes to database design,
                     organisation and management of platform data.
-
                 </p>
 
 
@@ -841,35 +766,35 @@
 
                 </div>
 
-
             </div>
-
 
         </article>
 
 
-
         <!-- ========================================================
-             MEMBER 05 — ASIF SHAH
-        ======================================================== -->
+             MEMBER 05 — ASHISH SHAH
+        ========================================================= -->
 
         <article class="member-card">
 
-
             <div class="card-top">
 
-
                 <div class="profile-photo">
-
 
                     <div class="photo-placeholder">
 
                         <span>
-                            <img src="/assets/Ashish-Shah.jpeg"
+
+                            <img
+                                src="../assets/Ashish-Shah.jpeg"
+                                alt="Ashish Shah"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
                         </span>
 
                     </div>
-
 
                 </div>
 
@@ -878,12 +803,10 @@
                     05
                 </span>
 
-
             </div>
 
 
             <div class="member-content">
-
 
                 <span class="member-role">
                     DATABASE
@@ -896,10 +819,8 @@
 
 
                 <p>
-
                     Works with the database structure,
                     data organisation and platform records.
-
                 </p>
 
 
@@ -915,29 +836,24 @@
 
                 </div>
 
-
             </div>
-
 
         </article>
 
 
+    </div>
 
-        
-
+</section>
 
 
 <!-- ================================================================
      TEAM WORKFLOW
-     ----------------------------------------------------------------
-     This section visually explains how different team roles connect.
 ================================================================ -->
 
 <section class="workflow-section">
 
 
     <div class="section-heading">
-
 
         <span>
             03 / HOW WE WORK
@@ -953,7 +869,6 @@
             Each technical area contributes to one connected system.
         </p>
 
-
     </div>
 
 
@@ -962,21 +877,17 @@
 
         <div class="workflow-step">
 
-
             <span class="workflow-icon">
                 🎨
             </span>
-
 
             <strong>
                 Product & Frontend
             </strong>
 
-
             <small>
                 Founder
             </small>
-
 
         </div>
 
@@ -985,23 +896,19 @@
 
 
         <div class="workflow-step">
-
 
             <span class="workflow-icon">
                 ⚙
             </span>
 
-
             <strong>
                 Backend
             </strong>
-
 
             <small>
                 Puneet & Kriti
             </small>
 
-
         </div>
 
 
@@ -1009,22 +916,18 @@
 
 
         <div class="workflow-step">
-
 
             <span class="workflow-icon">
                 🗄
             </span>
 
-
             <strong>
                 Database
             </strong>
 
-
             <small>
                 Shreya, Aradhna & Asif
             </small>
-
 
         </div>
 
@@ -1034,34 +937,27 @@
 
         <div class="workflow-step">
 
-
             <span class="workflow-icon">
                 🚀
             </span>
-
 
             <strong>
                 Deployment
             </strong>
 
-
             <small>
                 Surya
             </small>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
 <!-- ================================================================
-     MISSION SECTION
+     MISSION
 ================================================================ -->
 
 <section class="mission-section">
@@ -1069,14 +965,12 @@
 
     <div class="mission-card">
 
-
         <div class="mission-symbol">
             ∑
         </div>
 
 
         <div>
-
 
             <span>
                 OUR MISSION
@@ -1089,25 +983,19 @@
 
 
             <p>
-
                 RentBook India aims to create a platform where
                 books can circulate between people instead of
                 remaining unused on shelves.
-
             </p>
-
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
 </main>
-
 
 
 <!-- ================================================================
@@ -1119,46 +1007,43 @@
 
     <div class="footer-brand">
 
-
         <strong>
             RentBook India
         </strong>
 
-
         <span>
             Knowledge • Access • Community
         </span>
-
 
     </div>
 
 
     <div class="footer-info">
 
-
         <span>
             © 2026 RentBook India
         </span>
-
 
         <span>
             Founded by Anuj Rao
         </span>
 
-
         <span>
             Gorakhpur, Uttar Pradesh, India
         </span>
 
-
     </div>
-
 
 </footer>
 
 
+<!-- ================================================================
+     OPTIONAL COMMON JAVASCRIPT
+================================================================ -->
+
 <script src="../js/common.js"></script>
-<script src="../js/team.js"></script>
+
+
 </body>
 
 </html>
