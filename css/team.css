@@ -1,923 +1,620 @@
-/* ================================================================
-   RENTBOOK INDIA — TEAM PAGE STYLESHEET
-   =================================================================
-
-   FILE:
-       css/team.css
-
-   CONNECTED HTML:
-       pages/team.html
-
-   DESIGN SYSTEM:
-       • Deep Navy
-       • Gold / Orange accents
-       • Scientific visual language
-       • 3D effects
-       • Glassmorphism
-       • Animated stars
-       • Floating elements
-       • Responsive cards
-
-   IMPORTANT:
-       This stylesheet is independent from style.css and
-       authentication.css.
-
-================================================================ */
+/* =========================================================
+   RENTBOOK INDIA
+   TEAM PAGE
+   OCEAN + SKY DESIGN
+   ========================================================= */
 
 
-/* ================================================================
-   01. ROOT VARIABLES
-================================================================ */
+/* =========================================================
+   VARIABLES
+   ========================================================= */
 
 :root {
 
-    --team-navy-deep: #020817;
-    --team-navy: #06142b;
-    --team-navy-light: #0b1f3a;
-    --team-navy-soft: #102b4d;
+    --navy: #062743;
+    --deep-blue: #0a4675;
+    --royal-blue: #1769d2;
+    --ocean-blue: #087fc4;
+    --sky-blue: #4aa9e8;
 
-    --team-orange: #ed6b25;
-    --team-orange-light: #ff9a4d;
-    --team-orange-dark: #b94c13;
+    --light-blue: #eaf7fd;
+    --very-light-blue: #f5fbfe;
 
-    --team-gold: #d5a83c;
-    --team-gold-light: #f4d77c;
-    --team-gold-dark: #927020;
+    --white: #ffffff;
 
-    --team-white: #ffffff;
-    --team-cream: #fff8e8;
+    --text: #18364c;
+    --muted: #64788a;
+    --light-text: #91a4b3;
 
-    --team-text: #d5dce7;
-    --team-muted: #8b98aa;
+    --border: #d8e8f1;
 
-    --team-border:
-        rgba(244, 215, 124, 0.17);
+    --shadow:
+        0 12px 35px rgba(8, 63, 96, 0.08);
 
-    --team-glass:
-        rgba(255, 255, 255, 0.055);
-
-    --team-glass-light:
-        rgba(255, 255, 255, 0.085);
-
-    --team-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.50);
-
-    --team-transition:
-        all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --radius: 16px;
 
 }
 
 
-/* ================================================================
-   02. GLOBAL RESET
-================================================================ */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
-
     margin: 0;
 
     padding: 0;
 
     box-sizing: border-box;
-
 }
 
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 
 body {
 
-    min-height: 100vh;
-
-    overflow-x: hidden;
-
     font-family:
         "Inter",
+        Arial,
         sans-serif;
 
-    color:
-        var(--team-white);
+    color: var(--text);
 
-    background:
+    background: var(--white);
 
-        radial-gradient(
-            circle at 10% 10%,
-            rgba(237, 107, 37, 0.07),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(213, 168, 60, 0.08),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #020817,
-            #06142b 50%,
-            #020817
-        );
-
-}
-
-
-a {
-
-    text-decoration: none;
-
-    color: inherit;
-
+    line-height: 1.5;
 }
 
 
 img {
-
-    max-width: 100%;
-
     display: block;
 
+    max-width: 100%;
+}
+
+
+a {
+    color: inherit;
+
+    text-decoration: none;
 }
 
 
 button {
-
-    font: inherit;
-
+    font-family: inherit;
 }
 
 
-/* ================================================================
-   03. COSMIC BACKGROUND
-================================================================ */
+/* =========================================================
+   COMMON CONTAINER
+   ========================================================= */
 
-.team-background {
+.team-container {
 
-    position: fixed;
-
-    inset: 0;
-
-    z-index: -10;
-
-    overflow: hidden;
-
-    pointer-events: none;
-
-}
-
-
-/* ================================================================
-   04. STARS
-================================================================ */
-
-.team-stars {
-
-    position: absolute;
-
-    inset: 0;
-
-    background-repeat: repeat;
-
-}
-
-
-.stars-one {
-
-    background-image:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.90) 0 1px,
-            transparent 1.5px
+    width:
+        min(
+            calc(100% - 40px),
+            1150px
         );
 
-    background-size:
-        91px 117px;
+    margin-left: auto;
 
-    opacity:
-        0.50;
-
-    animation:
-        starsMoveOne 25s linear infinite;
+    margin-right: auto;
 
 }
 
 
-.stars-two {
-
-    background-image:
-
-        radial-gradient(
-            circle,
-            rgba(244,215,124,0.80) 0 1px,
-            transparent 1.7px
-        );
-
-    background-size:
-        157px 183px;
-
-    opacity:
-        0.32;
-
-    animation:
-        starsMoveTwo 30s linear infinite;
-
-}
-
-
-.stars-three {
-
-    background-image:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.80) 0 1px,
-            transparent 2px
-        );
-
-    background-size:
-        211px 207px;
-
-    opacity:
-        0.22;
-
-    animation:
-        starsTwinkle 5s ease-in-out infinite;
-
-}
-
-
-@keyframes starsMoveOne {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-120px);
-    }
-
-}
-
-
-@keyframes starsMoveTwo {
-
-    from {
-        transform: translateY(-70px);
-    }
-
-    to {
-        transform: translateY(90px);
-    }
-
-}
-
-
-@keyframes starsTwinkle {
-
-    0%,
-    100% {
-        opacity: 0.15;
-    }
-
-    50% {
-        opacity: 0.60;
-    }
-
-}
-
-
-/* ================================================================
-   05. BACKGROUND GLOWS
-================================================================ */
-
-.team-glow {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    filter: blur(120px);
-
-    pointer-events: none;
-
-}
-
-
-.glow-one {
-
-    width: 450px;
-
-    height: 450px;
-
-    top: -180px;
-
-    left: -130px;
-
-    background:
-        rgba(237, 107, 37, 0.10);
-
-}
-
-
-.glow-two {
-
-    width: 520px;
-
-    height: 520px;
-
-    right: -240px;
-
-    top: 35%;
-
-    background:
-        rgba(213, 168, 60, 0.09);
-
-}
-
-
-.glow-three {
-
-    width: 600px;
-
-    height: 600px;
-
-    left: 35%;
-
-    bottom: -300px;
-
-    background:
-        rgba(16, 66, 125, 0.15);
-
-}
-
-
-/* ================================================================
-   06. SCIENTIFIC SYMBOLS
-================================================================ */
-
-.science-symbol {
-
-    position: fixed;
-
-    z-index: -2;
-
-    pointer-events: none;
-
-    color:
-        rgba(244, 215, 124, 0.28);
-
-    text-shadow:
-        0 0 25px rgba(244, 215, 124, 0.35);
-
-    user-select: none;
-
-}
-
-
-.symbol-atom {
-
-    top: 18%;
-
-    left: 3%;
-
-    font-size: 28px;
-
-    animation:
-        symbolFloat 6s ease-in-out infinite;
-
-}
-
-
-.symbol-pi {
-
-    right: 4%;
-
-    top: 60%;
-
-    font-size: 40px;
-
-    animation:
-        symbolFloatReverse 7s ease-in-out infinite;
-
-}
-
-
-.symbol-sigma {
-
-    right: 2%;
-
-    top: 25%;
-
-    font-size: 70px;
-
-    opacity: 0.04;
-
-    animation:
-        symbolRotate 35s linear infinite;
-
-}
-
-
-.symbol-lambda {
-
-    bottom: 15%;
-
-    left: 6%;
-
-    font-size: 35px;
-
-    animation:
-        symbolFloat 8s ease-in-out infinite;
-
-}
-
-
-@keyframes symbolFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-25px)
-            rotate(10deg);
-    }
-
-}
-
-
-@keyframes symbolFloatReverse {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(25px);
-    }
-
-}
-
-
-@keyframes symbolRotate {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-
-}
-
-
-/* ================================================================
-   07. HEADER
-================================================================ */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 .team-header {
 
-    width:
-        min(1400px, 92%);
+    position: sticky;
 
-    height:
-        82px;
+    top: 0;
 
-    margin:
-        20px auto 0;
-
-    padding:
-        0 25px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    border:
-        1px solid var(--team-border);
-
-    border-radius:
-        22px;
+    z-index: 1000;
 
     background:
-        rgba(4, 15, 33, 0.65);
+        rgba(
+            255,
+            255,
+            255,
+            0.97
+        );
 
-    backdrop-filter:
-        blur(22px);
-
-    -webkit-backdrop-filter:
-        blur(22px);
+    border-bottom:
+        1px solid var(--border);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.25);
+        0 3px 15px rgba(
+            7,
+            55,
+            90,
+            0.04
+        );
 
 }
 
 
-/* ================================================================
-   08. LOGO
-================================================================ */
+.team-header-inner {
+
+    width:
+        min(
+            calc(100% - 40px),
+            1240px
+        );
+
+    min-height: 76px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .team-logo {
 
-    display:
-        flex;
+    width: 150px;
 
-    align-items:
-        center;
+    display: flex;
 
-    gap:
-        10px;
+    align-items: center;
 
-}
-
-
-.logo-box {
-
-    width:
-        48px;
-
-    height:
-        48px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        14px;
-
-    border:
-        1px solid rgba(244,215,124,0.25);
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(244,215,124,0.12),
-            rgba(237,107,37,0.08)
-        );
+    flex-shrink: 0;
 
 }
 
 
-.logo-box img {
+.team-logo img {
 
-    width:
-        38px;
+    width: 100%;
 
-    height:
-        38px;
+    height: auto;
 
-    object-fit:
-        contain;
+    object-fit: contain;
 
 }
 
 
-.logo-text {
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
-    display:
-        flex;
+.team-nav {
 
-    flex-direction:
-        column;
+    margin-left: auto;
 
-    line-height:
-        1;
+    display: flex;
 
-}
+    align-items: center;
 
-
-.logo-text strong {
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        18px;
-
-    color:
-        var(--team-cream);
+    gap: 23px;
 
 }
 
 
-.logo-text span {
+.team-nav a {
 
-    margin-top:
-        5px;
+    position: relative;
 
-    color:
-        var(--team-gold-light);
+    color: #536b7d;
 
-    font-size:
-        7px;
+    font-size: 10px;
 
-    font-weight:
-        800;
-
-    letter-spacing:
-        3px;
-
-}
-
-
-/* ================================================================
-   09. NAVIGATION
-================================================================ */
-
-.team-navigation {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-}
-
-
-.team-navigation a {
-
-    padding:
-        10px 13px;
-
-    border-radius:
-        10px;
-
-    color:
-        var(--team-muted);
-
-    font-size:
-        9px;
-
-    font-weight:
-        700;
+    font-weight: 600;
 
     transition:
-        var(--team-transition);
+        color 0.2s ease;
 
 }
 
 
-.team-navigation a:hover {
+.team-nav a:hover {
 
-    color:
-        var(--team-gold-light);
-
-    background:
-        rgba(255,255,255,0.04);
+    color: var(--royal-blue);
 
 }
 
 
-.team-navigation a.active {
+.team-nav a.active {
 
-    color:
-        var(--team-gold-light);
-
-    background:
-        rgba(213,168,60,0.08);
-
-    border:
-        1px solid rgba(213,168,60,0.14);
+    color: var(--royal-blue);
 
 }
 
 
-.team-navigation .nav-signup {
+.team-nav a.active::after {
 
-    color:
-        white;
+    content: "";
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--team-orange),
-            var(--team-orange-dark)
-        );
+    position: absolute;
 
-}
+    left: 0;
 
+    right: 0;
 
-.team-navigation .nav-signup:hover {
+    bottom: -28px;
 
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 10px 30px rgba(237,107,37,0.20);
-
-}
-
-
-/* ================================================================
-   10. MAIN
-================================================================ */
-
-main {
-
-    width:
-        min(1400px, 92%);
-
-    margin:
-        auto;
-
-}
-
-
-/* ================================================================
-   11. HERO
-================================================================ */
-
-.team-hero {
-
-    min-height:
-        690px;
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    align-items:
-        center;
-
-    gap:
-        40px;
-
-    padding:
-        70px 50px;
-
-}
-
-
-/* ================================================================
-   12. HERO CONTENT
-================================================================ */
-
-.hero-content {
-
-    position:
-        relative;
-
-    z-index:
-        5;
-
-}
-
-
-.hero-label {
-
-    color:
-        var(--team-orange-light);
-
-    font-size:
-        8px;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        2.5px;
-
-}
-
-
-.hero-content h1 {
-
-    margin-top:
-        20px;
-
-    max-width:
-        700px;
-
-    color:
-        var(--team-cream);
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        clamp(48px, 5.5vw, 78px);
-
-    line-height:
-        1.03;
-
-    letter-spacing:
-        -2px;
-
-}
-
-
-.hero-content h1 span {
-
-    display:
-        block;
+    height: 2px;
 
     background:
         linear-gradient(
             90deg,
-            var(--team-gold-light),
-            var(--team-orange-light),
-            var(--team-gold-light)
+            var(--royal-blue),
+            var(--sky-blue)
         );
 
-    background-size:
-        200% auto;
-
-    color:
-        transparent;
-
-    -webkit-background-clip:
-        text;
-
-    background-clip:
-        text;
-
-    animation:
-        goldFlow 5s linear infinite;
+    border-radius: 5px;
 
 }
 
 
-@keyframes goldFlow {
+/* =========================================================
+   HEADER BUTTONS
+   ========================================================= */
 
-    to {
-        background-position:
-            200% center;
-    }
+.team-header-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
 
 }
 
 
-.hero-content p {
+.team-login {
 
-    max-width:
-        540px;
+    padding:
+        10px 14px;
 
-    margin-top:
-        25px;
+    color: var(--royal-blue);
 
-    color:
-        var(--team-text);
+    font-size: 10px;
+
+    font-weight: 700;
+
+}
+
+
+.team-signup {
+
+    padding:
+        10px 16px;
+
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--royal-blue),
+            var(--ocean-blue)
+        );
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 16px rgba(
+            23,
+            105,
+            210,
+            0.17
+        );
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.team-menu {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    margin-left: auto;
+
+    background:
+        var(--very-light-blue);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 9px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+}
+
+
+.team-menu span {
+
+    width: 18px;
+
+    height: 2px;
+
+    background: var(--navy);
+
+    border-radius: 5px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.team-menu.open span:nth-child(1) {
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+
+.team-menu.open span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.team-menu.open span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.team-hero {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eefaff 0%,
+            #f8fcff 50%,
+            #ffffff 100%
+        );
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.team-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+
+    height: 480px;
+
+    right: -170px;
+
+    top: -250px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                74,
+                169,
+                232,
+                0.18
+            ),
+            transparent 70%
+        );
+
+}
+
+
+.team-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    left: -120px;
+
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                8,
+                127,
+                196,
+                0.09
+            ),
+            transparent 70%
+        );
+
+}
+
+
+.team-hero .team-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 510px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        400px;
+
+    align-items: center;
+
+    gap: 70px;
+
+}
+
+
+.team-hero-content {
+
+    max-width: 650px;
+
+}
+
+
+.section-tag {
+
+    display: inline-block;
+
+    color: var(--ocean-blue);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.team-hero .section-tag {
+
+    padding:
+        7px 12px;
+
+    background:
+        #e4f6fd;
+
+    border:
+        1px solid #c9e8f5;
+
+    border-radius: 50px;
+
+}
+
+
+.team-hero h1 {
+
+    margin-top: 18px;
+
+    color: var(--navy);
 
     font-size:
-        13px;
+        clamp(
+            43px,
+            5vw,
+            64px
+        );
 
-    line-height:
-        1.9;
+    line-height: 1.04;
+
+    letter-spacing: -3px;
 
 }
 
 
-/* ================================================================
-   13. HERO BUTTONS
-================================================================ */
+.team-hero h1 span {
 
-.hero-actions {
+    display: block;
 
-    display:
-        flex;
+    background:
+        linear-gradient(
+            90deg,
+            var(--royal-blue),
+            var(--ocean-blue),
+            var(--sky-blue)
+        );
 
-    align-items:
-        center;
+    -webkit-background-clip: text;
 
-    gap:
-        12px;
+    background-clip: text;
 
-    margin-top:
-        30px;
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+.team-hero-content > p {
+
+    max-width: 600px;
+
+    margin-top: 22px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 28px;
 
 }
 
@@ -925,1191 +622,257 @@ main {
 .primary-button,
 .secondary-button {
 
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    min-height:
-        45px;
+    min-height: 44px;
 
     padding:
-        0 19px;
+        0 17px;
 
-    border-radius:
-        12px;
+    display: inline-flex;
 
-    font-size:
-        9px;
+    align-items: center;
 
-    font-weight:
-        800;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+
+    font-weight: 700;
 
     transition:
-        var(--team-transition);
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 
 }
 
 
 .primary-button {
 
-    color:
-        white;
+    color: var(--white);
 
     background:
         linear-gradient(
             135deg,
-            var(--team-orange),
-            var(--team-orange-dark)
+            var(--royal-blue),
+            var(--ocean-blue)
         );
 
     box-shadow:
-        0 15px 35px rgba(237,107,37,0.18);
+        0 8px 18px rgba(
+            23,
+            105,
+            210,
+            0.18
+        );
 
 }
 
 
-.primary-button:hover {
+.primary-button span {
 
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 20px 45px rgba(237,107,37,0.28);
+    font-size: 15px;
 
 }
 
 
 .secondary-button {
 
-    color:
-        var(--team-gold-light);
+    color: var(--royal-blue);
 
     background:
-        rgba(255,255,255,0.04);
+        var(--white);
 
     border:
-        1px solid rgba(244,215,124,0.18);
+        1px solid #cbdfe9;
 
 }
 
 
+.primary-button:hover,
 .secondary-button:hover {
 
     transform:
-        translateY(-3px);
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   HERO LOGO
+   ========================================================= */
+
+.team-hero-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.hero-logo-circle {
+
+    width: 330px;
+
+    height: 330px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
 
     background:
-        rgba(244,215,124,0.08);
-
-}
-
-
-/* ================================================================
-   14. HERO 3D VISUAL
-================================================================ */
-
-.hero-visual {
-
-    position:
-        relative;
-
-    height:
-        500px;
-
-    perspective:
-        1000px;
-
-}
-
-
-/* ================================================================
-   15. ORBITS
-================================================================ */
-
-.orbit {
-
-    position:
-        absolute;
-
-    top:
-        50%;
-
-    left:
-        50%;
-
-    border-radius:
-        50%;
-
-    transform:
-        translate(-50%, -50%)
-        rotateX(70deg);
-
-}
-
-
-.orbit-one {
-
-    width:
-        430px;
-
-    height:
-        430px;
-
-    border:
-        1px solid rgba(244,215,124,0.15);
-
-    animation:
-        orbitRotation 22s linear infinite;
-
-}
-
-
-.orbit-two {
-
-    width:
-        320px;
-
-    height:
-        320px;
-
-    border:
-        1px solid rgba(237,107,37,0.17);
-
-    animation:
-        orbitRotationReverse 16s linear infinite;
-
-}
-
-
-.orbit-three {
-
-    width:
-        220px;
-
-    height:
-        220px;
-
-    border:
-        1px dashed rgba(244,215,124,0.12);
-
-    animation:
-        orbitRotation 12s linear infinite;
-
-}
-
-
-@keyframes orbitRotation {
-
-    from {
-
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(0deg);
-
-    }
-
-    to {
-
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(360deg);
-
-    }
-
-}
-
-
-@keyframes orbitRotationReverse {
-
-    from {
-
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(360deg);
-
-    }
-
-    to {
-
-        transform:
-            translate(-50%, -50%)
-            rotateX(70deg)
-            rotateZ(0deg);
-
-    }
-
-}
-
-
-/* ================================================================
-   16. CORE
-================================================================ */
-
-.team-core {
-
-    position:
-        absolute;
-
-    top:
-        50%;
-
-    left:
-        50%;
-
-    width:
-        150px;
-
-    height:
-        150px;
-
-    transform:
-        translate(-50%, -50%);
-
-}
-
-
-.core-ring {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    border:
-        1px solid rgba(244,215,124,0.22);
-
-    border-radius:
-        50%;
-
-}
-
-
-.ring-one {
-
-    transform:
-        rotateX(70deg)
-        rotateY(20deg);
-
-    animation:
-        coreSpinOne 8s linear infinite;
-
-}
-
-
-.ring-two {
-
-    transform:
-        rotateY(70deg)
-        rotateZ(20deg);
-
-    border-color:
-        rgba(237,107,37,0.20);
-
-    animation:
-        coreSpinTwo 10s linear infinite;
-
-}
-
-
-.core-center {
-
-    position:
-        absolute;
-
-    top:
-        50%;
-
-    left:
-        50%;
-
-    width:
-        85px;
-
-    height:
-        85px;
-
-    transform:
-        translate(-50%, -50%);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(244,215,124,0.14),
-            rgba(4,15,33,0.92)
+        linear-gradient(
+            145deg,
+            #dff4fc,
+            #f6fcff
         );
 
     border:
-        1px solid rgba(244,215,124,0.28);
+        1px solid #c9e6f2;
 
     box-shadow:
-        0 0 60px rgba(213,168,60,0.14);
+        0 25px 50px rgba(
+            8,
+            63,
+            96,
+            0.09
+        );
 
 }
 
 
-.core-center span {
+.hero-logo-circle img {
 
-    color:
-        var(--team-gold-light);
+    width: 230px;
 
-    font-size:
-        36px;
+    height: 230px;
 
-    text-shadow:
-        0 0 30px rgba(244,215,124,0.45);
+    object-fit: contain;
 
 }
 
 
-@keyframes coreSpinOne {
+/* =========================================================
+   ABOUT
+   ========================================================= */
 
-    from {
-        transform:
-            rotateX(70deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateX(70deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-@keyframes coreSpinTwo {
-
-    from {
-        transform:
-            rotateY(70deg)
-            rotateZ(360deg);
-    }
-
-    to {
-        transform:
-            rotateY(70deg)
-            rotateZ(0deg);
-    }
-
-}
-
-
-/* ================================================================
-   17. FLOATING MINI CARDS
-================================================================ */
-
-.floating-mini-card {
-
-    position:
-        absolute;
-
-    z-index:
-        10;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        9px;
+.team-about {
 
     padding:
-        11px 14px;
-
-    border-radius:
-        12px;
-
-    background:
-        rgba(6,20,43,0.78);
-
-    border:
-        1px solid rgba(244,215,124,0.15);
-
-    backdrop-filter:
-        blur(15px);
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,0.35);
+        80px 0 45px;
 
 }
 
-
-.floating-mini-card span {
-
-    font-size:
-        17px;
-
-}
-
-
-.floating-mini-card strong {
-
-    color:
-        var(--team-text);
-
-    font-size:
-        8px;
-
-}
-
-
-.mini-one {
-
-    top:
-        18%;
-
-    right:
-        0;
-
-    animation:
-        miniFloat 5s ease-in-out infinite;
-
-}
-
-
-.mini-two {
-
-    bottom:
-        18%;
-
-    left:
-        0;
-
-    animation:
-        miniFloatReverse 6s ease-in-out infinite;
-
-}
-
-
-.mini-three {
-
-    bottom:
-        4%;
-
-    right:
-        12%;
-
-    animation:
-        miniFloat 7s ease-in-out infinite;
-
-}
-
-
-@keyframes miniFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(-15px);
-    }
-
-}
-
-
-@keyframes miniFloatReverse {
-
-    0%,
-    100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(18px);
-    }
-
-}
-
-
-/* ================================================================
-   18. SECTION HEADING
-================================================================ */
 
 .section-heading {
 
-    margin-bottom:
-        45px;
-
-    text-align:
-        center;
+    max-width: 650px;
 
 }
 
 
-.section-heading > span {
+.section-heading.center {
 
-    color:
-        var(--team-orange-light);
+    margin-left: auto;
 
-    font-size:
-        8px;
+    margin-right: auto;
 
-    font-weight:
-        800;
-
-    letter-spacing:
-        2.5px;
+    text-align: center;
 
 }
 
 
 .section-heading h2 {
 
-    margin-top:
-        12px;
+    margin-top: 10px;
 
-    color:
-        var(--team-cream);
-
-    font-family:
-        "Playfair Display",
-        serif;
+    color: var(--navy);
 
     font-size:
-        clamp(32px, 4vw, 52px);
+        clamp(
+            28px,
+            3vw,
+            39px
+        );
+
+    line-height: 1.15;
+
+    letter-spacing: -1.5px;
 
 }
 
 
 .section-heading p {
 
-    margin-top:
-        10px;
+    margin-top: 12px;
 
-    color:
-        var(--team-muted);
+    color: var(--muted);
 
-    font-size:
-        10px;
+    font-size: 12px;
+
+    line-height: 1.8;
 
 }
 
 
-/* ================================================================
-   19. FOUNDER SECTION
-================================================================ */
+/* =========================================================
+   TEAM MEMBERS
+   ========================================================= */
 
-.founder-section {
+.team-members {
 
     padding:
-        90px 50px;
+        40px 0 90px;
 
 }
 
 
-/* ================================================================
-   20. FOUNDER CARD
-================================================================ */
+.members-grid {
 
-.founder-card {
-
-    position:
-        relative;
-
-    display:
-        grid;
+    display: grid;
 
     grid-template-columns:
-        320px 1fr;
-
-    align-items:
-        center;
-
-    gap:
-        60px;
-
-    max-width:
-        1050px;
-
-    margin:
-        auto;
-
-    padding:
-        45px;
-
-    overflow:
-        hidden;
-
-    border:
-        1px solid rgba(244,215,124,0.18);
-
-    border-radius:
-        30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.07),
-            rgba(255,255,255,0.025)
+        repeat(
+            3,
+            1fr
         );
 
-    backdrop-filter:
-        blur(22px);
-
-    box-shadow:
-        var(--team-shadow);
+    gap: 20px;
 
 }
 
 
-.founder-card::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        300px;
-
-    height:
-        300px;
-
-    top:
-        -180px;
-
-    left:
-        -150px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(237,107,37,0.08);
-
-    filter:
-        blur(60px);
-
-}
-
-
-/* ================================================================
-   21. PROFILE PHOTO
-================================================================ */
-
-.profile-photo {
-
-    position:
-        relative;
-
-    width:
-        180px;
-
-    height:
-        180px;
-
-    margin:
-        auto;
-
-}
-
-
-.founder-photo {
-
-    width:
-        240px;
-
-    height:
-        240px;
-
-}
-
-
-.photo-placeholder {
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #15365b,
-            #061325
-        );
-
-    border:
-        1px solid rgba(244,215,124,0.30);
-
-    box-shadow:
-
-        0 25px 60px rgba(0,0,0,0.45),
-
-        inset
-        0
-        0
-        40px
-        rgba(244,215,124,0.05);
-
-    overflow:
-        hidden;
-
-}
-
-
-.photo-placeholder::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        10px;
-
-    border:
-        1px dashed rgba(244,215,124,0.25);
-
-    border-radius:
-        50%;
-
-}
-
-
-.photo-placeholder span {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    color:
-        var(--team-gold-light);
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        40px;
-
-    font-weight:
-        700;
-
-    text-shadow:
-        0 0 25px rgba(244,215,124,0.25);
-
-}
-
-
-.founder-photo
-.photo-placeholder span {
-
-    font-size:
-        55px;
-
-}
-
-
-/* ================================================================
-   22. PHOTO ORBIT
-================================================================ */
-
-.photo-orbit {
-
-    position:
-        absolute;
-
-    inset:
-        -12px;
-
-    border:
-        1px solid rgba(244,215,124,0.20);
-
-    border-radius:
-        50%;
-
-    transform:
-        rotateX(65deg);
-
-    animation:
-        photoOrbit 10s linear infinite;
-
-}
-
-
-.photo-orbit::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        50%;
-
-    left:
-        -4px;
-
-    width:
-        8px;
-
-    height:
-        8px;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--team-orange-light);
-
-    box-shadow:
-        0 0 20px rgba(255,154,77,0.70);
-
-}
-
-
-@keyframes photoOrbit {
-
-    from {
-
-        transform:
-            rotateX(65deg)
-            rotateZ(0deg);
-
-    }
-
-    to {
-
-        transform:
-            rotateX(65deg)
-            rotateZ(360deg);
-
-    }
-
-}
-
-
-/* ================================================================
-   23. FOUNDER INFORMATION
-================================================================ */
-
-.role-label,
-.member-role {
-
-    color:
-        var(--team-orange-light);
-
-    font-size:
-        8px;
-
-    font-weight:
-        800;
-
-    letter-spacing:
-        2px;
-
-}
-
-
-.founder-information h3 {
-
-    margin-top:
-        10px;
-
-    color:
-        var(--team-cream);
-
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        38px;
-
-}
-
-
-.founder-description {
-
-    max-width:
-        650px;
-
-    margin-top:
-        15px;
-
-    color:
-        var(--team-text);
-
-    font-size:
-        11px;
-
-    line-height:
-        1.9;
-
-}
-
-
-/* ================================================================
-   24. FOUNDER TAGS
-================================================================ */
-
-.founder-tags,
-.member-tags {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        7px;
-
-    margin-top:
-        18px;
-
-}
-
-
-.founder-tags span,
-.member-tags span {
-
-    padding:
-        6px 9px;
-
-    border-radius:
-        7px;
-
-    color:
-        var(--team-gold-light);
-
-    background:
-        rgba(213,168,60,0.07);
-
-    border:
-        1px solid rgba(213,168,60,0.12);
-
-    font-size:
-        7px;
-
-    font-weight:
-        700;
-
-}
-
-
-/* ================================================================
-   25. FOUNDER CONTACT
-================================================================ */
-
-.founder-contact {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        35px;
-
-    margin-top:
-        25px;
-
-    padding-top:
-        20px;
-
-    border-top:
-        1px solid rgba(255,255,255,0.06);
-
-}
-
-
-.founder-contact div {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        5px;
-
-}
-
-
-.founder-contact small {
-
-    color:
-        var(--team-muted);
-
-    font-size:
-        7px;
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        1px;
-
-}
-
-
-.founder-contact strong {
-
-    color:
-        var(--team-text);
-
-    font-size:
-        9px;
-
-}
-
-
-/* ================================================================
-   26. MEMBERS SECTION
-================================================================ */
-
-.members-section {
-
-    padding:
-        90px 50px;
-
-}
-
-
-/* ================================================================
-   27. TEAM GRID
-================================================================ */
-
-.team-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        20px;
-
-}
-
-
-/* ================================================================
-   28. MEMBER CARD
-================================================================ */
+/* =========================================================
+   MEMBER CARD
+   ========================================================= */
 
 .member-card {
 
-    position:
-        relative;
+    overflow: hidden;
 
-    min-height:
-        360px;
-
-    padding:
-        25px;
-
-    overflow:
-        hidden;
+    background:
+        var(--white);
 
     border:
-        1px solid rgba(244,215,124,0.13);
+        1px solid var(--border);
 
     border-radius:
-        24px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.065),
-            rgba(255,255,255,0.025)
-        );
-
-    backdrop-filter:
-        blur(20px);
+        var(--radius);
 
     box-shadow:
-        0 20px 55px rgba(0,0,0,0.30);
+        var(--shadow);
 
     transition:
-        var(--team-transition);
-
-}
-
-
-.member-card::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        180px;
-
-    height:
-        180px;
-
-    top:
-        -100px;
-
-    right:
-        -80px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(213,168,60,0.06);
-
-    filter:
-        blur(30px);
-
-    transition:
-        var(--team-transition);
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 
 }
 
@@ -2117,878 +880,886 @@ main {
 .member-card:hover {
 
     transform:
-        translateY(-9px);
-
-    border-color:
-        rgba(244,215,124,0.28);
+        translateY(-5px);
 
     box-shadow:
-        0 30px 70px rgba(0,0,0,0.45);
+        0 20px 42px rgba(
+            8,
+            63,
+            96,
+            0.12
+        );
 
 }
 
 
-.member-card:hover::before {
+.member-image {
 
-    transform:
-        scale(1.5);
+    position: relative;
+
+    height: 285px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
 
     background:
-        rgba(237,107,37,0.08);
+        #eef8fc;
 
 }
 
 
-/* ================================================================
-   29. CARD TOP
-================================================================ */
+.member-image img {
 
-.card-top {
+    width: 100%;
 
-    position:
-        relative;
+    height: 100%;
 
-    display:
-        flex;
+    object-fit: cover;
 
-    align-items:
-        flex-start;
+    object-position: center top;
 
-    justify-content:
-        space-between;
+    transition:
+        transform 0.3s ease;
 
 }
 
 
-.member-card
-.profile-photo {
+.member-card:hover
+.member-image img {
 
-    width:
-        105px;
-
-    height:
-        105px;
+    transform:
+        scale(1.025);
 
 }
 
 
-.member-card
-.photo-placeholder span {
+/* =========================================================
+   IMAGE BADGE
+   ========================================================= */
 
-    font-size:
-        25px;
+.member-badge {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    padding:
+        6px 9px;
+
+    color: var(--royal-blue);
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    border:
+        1px solid #d1e5ef;
+
+    border-radius: 50px;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
 
 }
 
 
-.member-number {
-
-    color:
-        rgba(244,215,124,0.30);
-
-    font-family:
-        "Cinzel",
-        serif;
-
-    font-size:
-        22px;
-
-}
-
-
-/* ================================================================
-   30. MEMBER CONTENT
-================================================================ */
+/* =========================================================
+   MEMBER CONTENT
+   ========================================================= */
 
 .member-content {
 
-    margin-top:
-        25px;
+    padding:
+        23px;
 
 }
 
 
 .member-content h3 {
 
-    margin-top:
-        9px;
+    color: var(--navy);
 
-    color:
-        var(--team-cream);
+    font-size: 18px;
 
-    font-family:
-        "Playfair Display",
-        serif;
+    letter-spacing: -0.5px;
 
-    font-size:
-        24px;
+}
+
+
+.member-role {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: var(--royal-blue);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    line-height: 1.5;
 
 }
 
 
 .member-content p {
 
-    min-height:
-        70px;
+    margin-top: 12px;
 
-    margin-top:
-        11px;
+    color: var(--muted);
 
-    color:
-        var(--team-muted);
+    font-size: 10px;
 
-    font-size:
-        9px;
-
-    line-height:
-        1.8;
+    line-height: 1.7;
 
 }
 
 
-/* ================================================================
-   31. WORKFLOW SECTION
-================================================================ */
+/* =========================================================
+   WORK TAGS
+   ========================================================= */
 
-.workflow-section {
+.work-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 17px;
+
+}
+
+
+.work-tags span {
 
     padding:
-        90px 50px;
+        5px 8px;
+
+    color: #416d83;
+
+    background:
+        #eef8fc;
+
+    border:
+        1px solid #d8edf5;
+
+    border-radius: 5px;
+
+    font-size: 7px;
+
+    font-weight: 700;
 
 }
 
 
-/* ================================================================
-   32. WORKFLOW CONTAINER
-================================================================ */
+/* =========================================================
+   RESPONSIBILITY
+   ========================================================= */
 
-.workflow-container {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    max-width:
-        1100px;
-
-    margin:
-        auto;
+.responsibility-section {
 
     padding:
-        30px;
+        90px 0;
+
+    background:
+        var(--very-light-blue);
+
+    border-top:
+        1px solid var(--border);
+
+    border-bottom:
+        1px solid var(--border);
+
+}
+
+
+.responsibility-grid {
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 16px;
+
+}
+
+
+.responsibility-card {
+
+    padding:
+        25px 21px;
+
+    background:
+        var(--white);
 
     border:
-        1px solid rgba(244,215,124,0.13);
+        1px solid var(--border);
 
     border-radius:
-        25px;
+        14px;
 
-    background:
-        rgba(255,255,255,0.035);
-
-    backdrop-filter:
-        blur(15px);
-
-}
-
-
-/* ================================================================
-   33. WORKFLOW STEP
-================================================================ */
-
-.workflow-step {
-
-    min-width:
-        160px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-    text-align:
-        center;
-
-}
-
-
-.workflow-icon {
-
-    width:
-        50px;
-
-    height:
-        50px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border-radius:
-        15px;
-
-    background:
-        rgba(237,107,37,0.08);
-
-    border:
-        1px solid rgba(237,107,37,0.15);
-
-    font-size:
-        20px;
-
-}
-
-
-.workflow-step strong {
-
-    color:
-        var(--team-text);
-
-    font-size:
-        8px;
-
-}
-
-
-.workflow-step small {
-
-    color:
-        var(--team-muted);
-
-    font-size:
-        7px;
-
-}
-
-
-/* ================================================================
-   34. WORKFLOW LINE
-================================================================ */
-
-.workflow-line {
-
-    flex:
-        1;
-
-    max-width:
-        100px;
-
-    height:
-        1px;
-
-    margin:
-        0 10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(244,215,124,0.30),
-            transparent
+    box-shadow:
+        0 7px 25px rgba(
+            8,
+            63,
+            96,
+            0.05
         );
 
 }
 
 
-/* ================================================================
-   35. MISSION
-================================================================ */
+.responsibility-number {
 
-.mission-section {
+    width: 38px;
 
-    padding:
-        80px 50px 110px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    color: var(--royal-blue);
+
+    background:
+        var(--light-blue);
+
+    border:
+        1px solid #cfe8f4;
+
+    border-radius: 9px;
+
+    font-size: 8px;
+
+    font-weight: 800;
 
 }
 
 
-.mission-card {
+.responsibility-card h3 {
 
-    position:
-        relative;
+    margin-top: 19px;
 
-    display:
-        flex;
+    color: var(--navy);
 
-    align-items:
-        center;
+    font-size: 16px;
 
-    gap:
-        25px;
+}
 
-    max-width:
-        950px;
 
-    margin:
-        auto;
+.responsibility-card p {
+
+    min-height: 75px;
+
+    margin-top: 8px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+}
+
+
+.responsibility-card strong {
+
+    display: block;
+
+    margin-top: 13px;
+
+    padding-top: 13px;
+
+    color: var(--royal-blue);
+
+    border-top:
+        1px solid var(--border);
+
+    font-size: 8px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.team-cta {
 
     padding:
-        40px;
+        90px 0;
 
-    border:
-        1px solid rgba(244,215,124,0.16);
+}
 
-    border-radius:
-        25px;
+
+.cta-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        65px 35px;
+
+    text-align: center;
 
     background:
         linear-gradient(
             135deg,
-            rgba(237,107,37,0.06),
-            rgba(213,168,60,0.04),
-            rgba(255,255,255,0.025)
+            #072b49,
+            #0a4d7b
         );
-
-    backdrop-filter:
-        blur(20px);
-
-    box-shadow:
-        var(--team-shadow);
-
-}
-
-
-.mission-symbol {
-
-    width:
-        70px;
-
-    height:
-        70px;
-
-    flex-shrink:
-        0;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
 
     border-radius:
         20px;
 
-    color:
-        var(--team-gold-light);
+}
 
-    background:
-        rgba(244,215,124,0.08);
+
+.cta-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+
+    height: 300px;
+
+    right: -120px;
+
+    top: -170px;
+
+    border-radius: 50%;
 
     border:
-        1px solid rgba(244,215,124,0.20);
-
-    font-family:
-        "Cinzel",
-        serif;
-
-    font-size:
-        30px;
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
 
 }
 
 
-.mission-card span {
+.cta-box .section-tag {
+
+    color: #74c9ef;
+
+}
+
+
+.cta-box h2 {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin:
+        10px auto 0;
 
     color:
-        var(--team-orange-light);
+        var(--white);
 
     font-size:
-        8px;
+        clamp(
+            28px,
+            4vw,
+            43px
+        );
 
-    font-weight:
-        800;
+    line-height: 1.15;
 
-    letter-spacing:
-        2px;
+    letter-spacing: -1.5px;
 
 }
 
 
-.mission-card h2 {
+.cta-box p {
 
-    margin-top:
-        7px;
+    position: relative;
 
-    color:
-        var(--team-cream);
+    z-index: 2;
 
-    font-family:
-        "Playfair Display",
-        serif;
+    max-width: 600px;
 
-    font-size:
-        29px;
+    margin:
+        14px auto 0;
 
-}
+    color: #bad2e0;
 
+    font-size: 11px;
 
-.mission-card p {
-
-    max-width:
-        700px;
-
-    margin-top:
-        8px;
-
-    color:
-        var(--team-muted);
-
-    font-size:
-        10px;
-
-    line-height:
-        1.8;
+    line-height: 1.8;
 
 }
 
 
-/* ================================================================
-   36. FOOTER
-================================================================ */
+.cta-box .hero-buttons {
+
+    position: relative;
+
+    z-index: 2;
+
+    justify-content: center;
+
+}
+
+
+.cta-box .secondary-button {
+
+    color: var(--white);
+
+    background:
+        transparent;
+
+    border-color:
+        rgba(
+            255,
+            255,
+            255,
+            0.3
+        );
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 .team-footer {
 
-    width:
-        min(1400px, 92%);
+    padding-top: 55px;
 
-    margin:
-        auto auto 25px;
+    background:
+        #061d32;
 
-    padding:
-        25px 30px;
+    color: var(--white);
 
-    display:
-        flex;
+}
 
-    align-items:
-        center;
 
-    justify-content:
-        space-between;
+.footer-grid {
 
-    gap:
-        20px;
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 45px;
+
+    padding-bottom: 45px;
+
+}
+
+
+.footer-brand img {
+
+    width: 145px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+.footer-brand p {
+
+    max-width: 240px;
+
+    margin-top: 14px;
+
+    color: #8caabc;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+}
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+}
+
+
+.footer-column h4 {
+
+    margin-bottom: 5px;
+
+    color: var(--white);
+
+    font-size: 10px;
+
+}
+
+
+.footer-column a {
+
+    color: #8caabc;
+
+    font-size: 8px;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+.footer-column a:hover {
+
+    color: #68c4ee;
+
+}
+
+
+.footer-bottom {
 
     border-top:
-        1px solid rgba(255,255,255,0.07);
+        1px solid rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
 
 }
 
 
-.footer-brand {
+.footer-bottom .team-container {
 
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        5px;
+    padding:
+        18px 0;
 
 }
 
 
-.footer-brand strong {
+.footer-bottom p {
 
-    color:
-        var(--team-cream);
+    color: #6f91a4;
 
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        14px;
+    font-size: 7px;
 
 }
 
 
-.footer-brand span {
-
-    color:
-        var(--team-muted);
-
-    font-size:
-        7px;
-
-}
-
-
-.footer-info {
-
-    display:
-        flex;
-
-    flex-wrap:
-        wrap;
-
-    justify-content:
-        flex-end;
-
-    gap:
-        18px;
-
-}
-
-
-.footer-info span {
-
-    color:
-        #68778b;
-
-    font-size:
-        7px;
-
-}
-
-
-/* ================================================================
-   37. TABLET RESPONSIVE
-================================================================ */
+/* =========================================================
+   RESPONSIVE — 1100px
+   ========================================================= */
 
 @media (max-width: 1100px) {
 
+    .team-nav {
 
-    .team-navigation {
-
-        gap:
-            2px;
+        gap: 15px;
 
     }
 
 
-    .team-navigation a {
+    .team-nav a {
+
+        font-size: 9px;
+
+    }
+
+
+    .team-hero .team-container {
+
+        gap: 40px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — 950px
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .team-nav {
+
+        display: none;
+
+        position: absolute;
+
+        top: 76px;
+
+        left: 20px;
+
+        right: 20px;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        background:
+            var(--white);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 12px;
+
+        box-shadow:
+            0 15px 35px rgba(
+                8,
+                63,
+                96,
+                0.12
+            );
+
+    }
+
+
+    .team-nav.show {
+
+        display: flex;
+
+    }
+
+
+    .team-nav a {
 
         padding:
-            9px 8px;
+            12px;
+
+        font-size: 10px;
+
+        border-radius: 7px;
 
     }
 
 
-    .team-hero {
+    .team-nav a:hover,
+    .team-nav a.active {
+
+        background:
+            #eef8fc;
+
+    }
+
+
+    .team-nav a.active::after {
+
+        display: none;
+
+    }
+
+
+    .team-menu {
+
+        display: flex;
+
+    }
+
+
+    .team-hero .team-container {
 
         grid-template-columns:
             1fr;
 
-        text-align:
-            center;
+        text-align: center;
+
+        padding:
+            65px 0;
 
     }
 
 
-    .hero-content p {
-
-        margin-left:
-            auto;
-
-        margin-right:
-            auto;
-
-    }
-
-
-    .hero-actions {
-
-        justify-content:
-            center;
-
-    }
-
-
-    .hero-visual {
-
-        max-width:
-            600px;
-
-        width:
-            100%;
+    .team-hero-content {
 
         margin:
-            auto;
+            0 auto;
 
     }
 
 
-    .team-grid {
+    .team-hero-content > p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    .members-grid {
 
         grid-template-columns:
-            repeat(2, 1fr);
+            repeat(
+                2,
+                1fr
+            );
 
     }
 
+
+    .responsibility-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1.5fr
+            1fr
+            1fr;
+
+    }
 
 }
 
 
-/* ================================================================
-   38. MOBILE NAVIGATION
-================================================================ */
+/* =========================================================
+   RESPONSIVE — 650px
+   ========================================================= */
 
-@media (max-width: 750px) {
+@media (max-width: 650px) {
 
+    .team-container {
 
-    .team-header {
-
-        height:
-            auto;
-
-        min-height:
-            70px;
-
-        padding:
-            12px 16px;
+        width:
+            calc(100% - 28px);
 
     }
 
 
-    .team-navigation {
+    .team-header-inner {
 
-        display:
-            none;
+        width:
+            calc(100% - 28px);
+
+        min-height: 68px;
 
     }
 
 
     .team-logo {
 
-        margin:
-            auto;
+        width: 125px;
 
     }
 
 
-    .team-hero {
+    .team-header-buttons {
 
-        min-height:
-            760px;
+        display: none;
+
+    }
+
+
+    .team-nav {
+
+        top: 68px;
+
+        left: 14px;
+
+        right: 14px;
+
+    }
+
+
+    .team-hero .team-container {
+
+        min-height: auto;
 
         padding:
-            60px 20px;
+            55px 0;
 
     }
 
 
-    .hero-content h1 {
+    .team-hero h1 {
 
-        font-size:
-            clamp(43px, 13vw, 65px);
+        font-size: 41px;
 
-    }
-
-
-    .hero-visual {
-
-        height:
-            400px;
-
-        transform:
-            scale(0.85);
+        letter-spacing:
+            -2.2px;
 
     }
 
 
-    .founder-section,
-    .members-section,
-    .workflow-section,
-    .mission-section {
+    .team-hero-content > p {
 
-        padding-left:
-            20px;
-
-        padding-right:
-            20px;
+        font-size: 11px;
 
     }
 
 
-    .founder-card {
+    .hero-buttons {
 
-        grid-template-columns:
-            1fr;
-
-        text-align:
-            center;
-
-        padding:
-            30px 22px;
-
-        gap:
-            35px;
-
-    }
-
-
-    .founder-tags {
-
-        justify-content:
-            center;
-
-    }
-
-
-    .founder-contact {
-
-        justify-content:
-            center;
-
-    }
-
-
-    .team-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .workflow-container {
-
-        flex-direction:
-            column;
-
-        gap:
-            15px;
-
-    }
-
-
-    .workflow-line {
+        flex-direction: column;
 
         width:
-            1px;
-
-        height:
-            40px;
-
-        max-width:
-            none;
-
-        margin:
-            0;
-
-        background:
-            linear-gradient(
-                180deg,
-                transparent,
-                rgba(244,215,124,0.30),
-                transparent
+            min(
+                100%,
+                280px
             );
 
-    }
+        margin-left: auto;
 
-
-    .mission-card {
-
-        flex-direction:
-            column;
-
-        text-align:
-            center;
-
-    }
-
-
-    .mission-card p {
-
-        margin-left:
-            auto;
-
-        margin-right:
-            auto;
-
-    }
-
-
-    .team-footer {
-
-        flex-direction:
-            column;
-
-        text-align:
-            center;
-
-    }
-
-
-    .footer-info {
-
-        justify-content:
-            center;
-
-    }
-
-
-}
-
-
-/* ================================================================
-   39. SMALL MOBILE
-================================================================ */
-
-@media (max-width: 450px) {
-
-
-    main {
-
-        width:
-            100%;
-
-    }
-
-
-    .team-header {
-
-        width:
-            calc(100% - 20px);
-
-        margin-top:
-            10px;
-
-    }
-
-
-    .hero-visual {
-
-        transform:
-            scale(0.68);
-
-    }
-
-
-    .team-hero {
-
-        min-height:
-            680px;
-
-    }
-
-
-    .hero-actions {
-
-        flex-direction:
-            column;
+        margin-right: auto;
 
     }
 
@@ -2996,111 +1767,217 @@ main {
     .primary-button,
     .secondary-button {
 
-        width:
-            100%;
+        width: 100%;
 
     }
 
 
-    .founder-photo {
+    .hero-logo-circle {
 
-        width:
-            190px;
+        width: 270px;
 
-        height:
-            190px;
+        height: 270px;
 
     }
 
 
-    .founder-information h3 {
+    .hero-logo-circle img {
 
-        font-size:
-            31px;
+        width: 190px;
 
-    }
-
-
-    .member-card {
-
-        min-height:
-            auto;
+        height: 190px;
 
     }
 
 
-    .mission-card {
+    .team-about {
+
+        padding-top: 65px;
+
+    }
+
+
+    .team-members {
+
+        padding-bottom: 65px;
+
+    }
+
+
+    .members-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .member-image {
+
+        height: 310px;
+
+    }
+
+
+    .responsibility-section {
 
         padding:
-            30px 20px;
+            65px 0;
 
     }
 
 
-    .mission-card h2 {
+    .responsibility-grid {
 
-        font-size:
-            24px;
+        grid-template-columns: 1fr;
 
     }
 
+
+    .responsibility-card p {
+
+        min-height: auto;
+
+    }
+
+
+    .team-cta {
+
+        padding:
+            65px 0;
+
+    }
+
+
+    .cta-box {
+
+        padding:
+            50px 22px;
+
+    }
+
+
+    .cta-box .hero-buttons {
+
+        width: 100%;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 35px;
+
+    }
+
+
+    .footer-brand {
+
+        grid-column:
+            1 / -1;
+
+    }
 
 }
 
 
-/* ================================================================
-   40. ACCESSIBILITY
-================================================================ */
+/* =========================================================
+   RESPONSIVE — 400px
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .team-hero h1 {
+
+        font-size: 36px;
+
+    }
+
+
+    .hero-logo-circle {
+
+        width: 235px;
+
+        height: 235px;
+
+    }
+
+
+    .hero-logo-circle img {
+
+        width: 165px;
+
+        height: 165px;
+
+    }
+
+
+    .member-image {
+
+        height: 285px;
+
+    }
+
+
+    .member-content {
+
+        padding:
+            20px;
+
+    }
+
+
+    .footer-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .footer-brand {
+
+        grid-column: auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
 :focus-visible {
 
     outline:
-        2px solid var(--team-gold-light);
+        3px solid rgba(
+            74,
+            169,
+            232,
+            0.45
+        );
 
-    outline-offset:
-        3px;
-
-}
-
-
-::selection {
-
-    color:
-        var(--team-navy-deep);
-
-    background:
-        var(--team-gold-light);
+    outline-offset: 3px;
 
 }
 
-
-/* ================================================================
-   41. REDUCED MOTION
-================================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
-    *,
-    *::before,
-    *::after {
+    html {
 
-        animation-duration:
-            0.01ms !important;
+        scroll-behavior: auto;
 
-        animation-iteration-count:
-            1 !important;
+    }
 
-        transition-duration:
-            0.01ms !important;
 
-        scroll-behavior:
-            auto !important;
+    * {
+
+        transition: none !important;
 
     }
 
 }
-
-
-/* ================================================================
-   END OF TEAM.CSS
-================================================================ */

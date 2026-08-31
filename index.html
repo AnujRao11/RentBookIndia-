@@ -1,2835 +1,2064 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!--
-    ================================================================
-    RENTBOOK INDIA — MAIN HOME PAGE
-    ================================================================
-
-    PURPOSE OF THIS FILE:
-    ----------------------------------------------------------------
-    This is the primary landing page of RentBook India.
-
-    The homepage introduces the platform to students, readers,
-    book owners, and sellers. It provides navigation to the major
-    parts of the application such as:
-
-        1. Explore Books
-        2. Book Marketplace
-        3. Login
-        4. Sign Up
-        5. Seller Dashboard
-        6. Add Book
-        7. Team
-        8. About / Founder
-        9. Rental Process
-
-    DESIGN DIRECTION:
-    ----------------------------------------------------------------
-    The design follows a modern academic/scientific visual identity.
-
-    Main visual characteristics:
-
-        • Deep navy background
-        • Orange and golden highlights
-        • Glassmorphism cards
-        • 3D book elements
-        • Animated stars
-        • Scientific symbols
-        • Mathematical expressions
-        • Physics and chemistry references
-        • Floating academic elements
-        • Responsive mobile layout
-
-    IMPORTANT:
-    ----------------------------------------------------------------
-    This file contains the STRUCTURE of the homepage.
-
-    The visual styling is handled separately inside:
-
-        css/style.css
-
-    Images are stored inside:
-
-        assets/
-
-    Other pages are stored inside:
-
-        pages/
-
-    ================================================================
-    -->
-
-
-    <!-- ============================================================
-         BASIC HTML DOCUMENT CONFIGURATION
-         ------------------------------------------------------------
-         These tags define the character encoding, responsive
-         behaviour, page description and browser title.
-    ============================================================= -->
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="RentBook India - A student-focused platform to rent, share and discover academic, professional and rare books.">
+    <meta
+        name="description"
+        content="RentBook India - Find academic, competitive-exam, reference and rare books for the exact time you need them."
+    >
 
-    <meta name="keywords"
-          content="RentBook India, book rental, rent books, academic books, student books, textbook rental">
+    <meta
+        name="keywords"
+        content="book rental, rent books, academic books, student books, textbook rental, RentBook India"
+    >
 
-    <meta name="author"
-          content="Anuj Rao">
+    <meta name="author" content="RentBook India">
 
+    <meta name="theme-color" content="#0b2d4d">
 
-    <!-- Browser tab title -->
+    <title>RentBook India | Need a Book? Rent It.</title>
 
-    <title>
-        RentBook India | Read More. Spend Less.
-    </title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    <!-- ============================================================
-         GOOGLE FONTS
-         ------------------------------------------------------------
-         Three font families are used:
-
-         1. Inter
-            Used for normal interface text.
-
-         2. Playfair Display
-            Used for major headings and premium editorial sections.
-
-         3. Cinzel
-            Used selectively for labels and academic/scientific
-            presentation elements.
-    ============================================================= -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-    <!-- ============================================================
-         MAIN STYLESHEET
-         ------------------------------------------------------------
-         All major homepage styling is controlled by style.css.
-
-         Do NOT put the complete CSS code inside this HTML file.
-         Keeping CSS separate makes the project easier to maintain.
-    ============================================================= -->
-
-    <link rel="stylesheet"
-          href="css/style.css">
-
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 
 <body>
 
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-<!-- =================================================================
-     BACKGROUND SYSTEM
-     -----------------------------------------------------------------
-     This section creates the visual environment behind the website.
+    <header class="site-header">
 
-     Instead of using religious symbols, the background represents
-     the scientific and academic nature of RentBook India.
+        <div class="container navbar">
 
-     The animated background contains:
+            <!-- Logo -->
+            <a href="index.html" class="brand" aria-label="RentBook India Home">
 
-        • Tiny stars
-        • Scientific particles
-        • Soft blue glows
-        • Orange energy glows
-        • Golden highlights
-
-     These elements create the feeling of a "knowledge universe".
-
-     They are decorative only and do not contain application logic.
-================================================================== -->
-
-<div class="cosmic-background">
-
-    <!-- Small background stars -->
-    <div class="stars stars-one"></div>
-
-    <!-- Medium background particles -->
-    <div class="stars stars-two"></div>
-
-    <!-- Soft blinking distant particles -->
-    <div class="stars stars-three"></div>
-
-
-    <!-- Warm orange scientific energy glow -->
-    <div class="cosmic-glow glow-orange"></div>
-
-    <!-- Golden academic glow -->
-    <div class="cosmic-glow glow-gold"></div>
-
-    <!-- Deep blue atmospheric glow -->
-    <div class="cosmic-glow glow-blue"></div>
-
-</div>
-
-
-
-<!-- =================================================================
-     FLOATING SCIENTIFIC SYMBOLS
-     -----------------------------------------------------------------
-     These symbols replace the previous religious/Vedic decorative
-     elements.
-
-     They represent different areas of knowledge:
-
-        ⚛   Physics / Atomic Science
-        π   Mathematics
-        ∑   Mathematics / Statistics
-        λ   Physics / Wavelength
-        ⚗   Chemistry
-
-     They are purely decorative and can later be replaced with
-     custom SVG icons if required.
-================================================================== -->
-
-<div class="floating-symbol symbol-one">
-    ⚛
-</div>
-
-<div class="floating-symbol symbol-two">
-    π
-</div>
-
-<div class="floating-symbol symbol-three">
-    ∑
-</div>
-
-<div class="floating-symbol symbol-four">
-    λ
-</div>
-
-<div class="floating-symbol symbol-five">
-    ⚗
-</div>
-
-
-
-<!-- =================================================================
-     NAVIGATION BAR
-     -----------------------------------------------------------------
-     The navigation bar is the main navigation system of the website.
-
-     It contains:
-
-        • RentBook India logo
-        • Home
-        • About
-        • Explore
-        • How It Works
-        • Team
-        • Login
-        • Sign Up
-
-     The links point toward the other HTML pages that will be created
-     inside the "pages" folder.
-================================================================== -->
-
-<header class="navbar">
-
-    <div class="nav-container">
-
-
-        <!-- =========================================================
-             BRAND / LOGO
-             ---------------------------------------------------------
-             Clicking this section always returns the visitor to the
-             homepage.
-        ========================================================== -->
-
-        <a href="index.html"
-           class="brand">
-
-
-            <!-- Logo image container -->
-
-            <div class="brand-logo-wrap">
-
-                <img src="assets/logo.png"
-                     alt="RentBook India Logo"
-                     class="brand-logo">
-
-            </div>
-
-
-            <!-- Website name -->
-
-            <div class="brand-text">
-
-                <strong>
-                    RentBook
-                </strong>
-
-                <span>
-                    INDIA
+                <span class="brand-icon" aria-hidden="true">
+                    <img src="assets/logo.png" alt="logo">
                 </span>
 
+                <span class="brand-text">
+                    <span class="brand-name">RentBook</span>
+                    <span class="brand-country">INDIA</span>
+                </span>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav" aria-label="Primary navigation">
+
+                <a href="index.html" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="pages/explore.html" class="nav-link">
+                    Explore Books
+                </a>
+
+                <a href="#categories" class="nav-link">
+                    Categories
+                </a>
+
+                <a href="pages/seller.html" class="nav-link">
+                    Sell / Rent Books
+                </a>
+
+                <a href="pages/delivery.html" class="nav-link">
+                    Delivery Partner
+                </a>
+
+                <a href="pages/team.html" class="nav-link">
+                    Team
+                </a>
+
+                <a href="pages/careers.html" class="nav-link">
+                    Careers
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+
+                <a
+                    href="pages/orders.html"
+                    class="header-action cart-action"
+                    aria-label="My rentals and cart"
+                >
+                    <span class="action-icon" aria-hidden="true">
+                        🛒
+                    </span>
+
+                    <span class="action-label">
+                        My Rentals
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="pages/login.html"
+                    class="btn btn-outline btn-small"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="pages/signup.html"
+                    class="btn btn-primary btn-small"
+                >
+                    Sign Up
+                </a>
+
             </div>
 
 
-        </a>
+            <!-- Mobile Menu Button -->
+            <button
+                class="mobile-menu-btn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mobile-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
 
 
+        <!-- Mobile Navigation -->
+        <nav
+            id="mobile-navigation"
+            class="mobile-nav"
+            aria-label="Mobile navigation"
+        >
 
-        <!-- =========================================================
-             MAIN WEBSITE NAVIGATION
-        ========================================================== -->
-
-        <nav class="nav-links">
-
-            <a href="index.html"
-               class="active">
+            <a href="index.html" class="mobile-nav-link active">
                 Home
             </a>
 
-            <a href="#about">
-                About
-            </a>
-
-            <a href="pages/explore.html">
-                Explore
-            </a>
-
-            <a href="#how-it-works">
-                How It Works
-            </a>
-
-            <a href="pages/team.html">
-                Team
-            </a>
-
-        </nav>
-
-
-
-        <!-- =========================================================
-             USER AUTHENTICATION ACTIONS
-             ---------------------------------------------------------
-             Login and Sign Up are separated into their own pages.
-
-             Later, JavaScript and backend authentication can be
-             connected to these pages.
-        ========================================================== -->
-
-        <div class="nav-actions">
-
-            <a href="pages/login.html"
-               class="login-link">
-
-                Login
-
-            </a>
-
-
-            <a href="pages/signup.html"
-               class="nav-signup">
-
-                Sign Up
-
-            </a>
-
-        </div>
-
-
-    </div>
-
-</header>
-
-
-
-<!-- =================================================================
-     MAIN PAGE CONTENT
-================================================================== -->
-
-<main>
-
-
-
-<!-- =================================================================
-     HERO SECTION
-     -----------------------------------------------------------------
-     The hero section is the first major section visitors see.
-
-     Its job is to immediately explain:
-
-        • What RentBook India does
-        • Why it is useful
-        • Who it is for
-        • What action the visitor should take
-
-     The left side contains the main message and buttons.
-
-     The right side contains a 3D representation of a book combined
-     with scientific/academic visual elements.
-================================================================== -->
-
-<section class="hero-section"
-         id="home">
-
-
-    <!-- =============================================================
-         HERO TEXT AREA
-    ========================================================== -->
-
-    <div class="hero-content">
-
-
-        <!-- Academic identity badge -->
-
-        <div class="vedic-badge">
-
-            <span>
-                ⚛
-            </span>
-
-            <p>
-                KNOWLEDGE • SCIENCE • ACCESS
-            </p>
-
-        </div>
-
-
-
-        <!-- Small category label -->
-
-        <p class="hero-eyebrow">
-
-            ✦ THE BOOK RENTAL ECOSYSTEM ✦
-
-        </p>
-
-
-
-        <!-- Main website headline -->
-
-        <h1 class="hero-title">
-
-            Read More.
-
-            <span>
-                Spend Less.
-            </span>
-
-        </h1>
-
-
-
-        <!-- Main explanation -->
-
-        <p class="hero-description">
-
-            Rent the books you need for the time
-            you need them. Discover academic,
-            competitive examination, professional
-            and rare books without buying them forever.
-
-        </p>
-
-
-
-        <!-- =========================================================
-             PRIMARY ACTION BUTTONS
-
-             Explore Books:
-             Takes students to the marketplace.
-
-             List Your Book:
-             Takes sellers to the book-upload page.
-        ========================================================== -->
-
-        <div class="hero-buttons">
-
-
-            <a href="pages/explore.html"
-               class="primary-button">
-
-                <span>
-                    Explore Books
-                </span>
-
-                <strong>
-                    →
-                </strong>
-
-            </a>
-
-
-            <a href="pages/add-book.html"
-               class="glass-button">
-
-                <span>
-                    List Your Book
-                </span>
-
-                <strong>
-                    +
-                </strong>
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- =========================================================
-             QUICK VALUE PROPOSITIONS
-
-             These three cards communicate the main advantages
-             of the platform without requiring the visitor to read
-             a long paragraph.
-        ========================================================== -->
-
-        <div class="hero-stats">
-
-
-            <!-- Affordable rental -->
-
-            <div class="hero-stat">
-
-                <strong>
-                    📚
-                </strong>
-
-                <div>
-
-                    <b>
-                        Rent
-                    </b>
-
-                    <span>
-                        Don't Buy
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Reuse model -->
-
-            <div class="hero-stat">
-
-                <strong>
-                    ♻
-                </strong>
-
-                <div>
-
-                    <b>
-                        Reuse
-                    </b>
-
-                    <span>
-                        Share Knowledge
-                    </span>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Delivery -->
-
-            <div class="hero-stat">
-
-                <strong>
-                    🚚
-                </strong>
-
-                <div>
-
-                    <b>
-                        Delivery
-                    </b>
-
-                    <span>
-                        At Your Door
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- =============================================================
-         HERO 3D VISUAL AREA
-         -------------------------------------------------------------
-         This section creates the visual centerpiece of the homepage.
-
-         The book is intentionally presented as a 3D object.
-
-         Behind it are:
-
-             • Scientific orbit rings
-             • Atomic-style circular structures
-             • Mathematical particles
-             • Floating information cards
-
-         This is what gives the website its futuristic academic
-         identity.
-    ========================================================== -->
-
-    <div class="hero-visual">
-
-
-        <!-- Scientific orbit -->
-
-        <div class="hero-orbit orbit-one"></div>
-
-        <!-- Secondary orbit -->
-
-        <div class="hero-orbit orbit-two"></div>
-
-
-
-        <!-- =========================================================
-             SCIENTIFIC ORBIT / ATOMIC CORE
-
-             This replaces the previous mandala-style element.
-
-             The center represents the idea:
-
-                 Knowledge → Connection → Discovery
-        ========================================================== -->
-
-        <div class="mandala-container">
-
-            <div class="mandala-outer">
-
-                ⚛
-
-            </div>
-
-            <div class="mandala-middle">
-
-                ∑
-
-            </div>
-
-            <div class="mandala-inner">
-
-                λ
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =========================================================
-             3D BOOK OBJECT
-
-             This is the primary visual representation of the
-             RentBook India product.
-
-             It is constructed using HTML elements and CSS rather
-             than requiring a 3D image.
-        ========================================================== -->
-
-        <div class="book-3d">
-
-
-            <!-- Front cover -->
-
-            <div class="book-cover">
-
-
-                <!-- Science symbol -->
-
-                <div class="book-top-symbol">
-                    ⚛
-                </div>
-
-
-                <div class="book-cover-line"></div>
-
-
-                <p class="book-small-title">
-                    THE
-                </p>
-
-
-                <h2>
-                    KNOWLEDGE
-                </h2>
-
-
-                <h3>
-                    LIBRARY
-                </h3>
-
-
-                <div class="book-cover-line"></div>
-
-
-                <span>
-                    RENTBOOK INDIA
-                </span>
-
-
-            </div>
-
-
-            <!-- Simulated pages -->
-
-            <div class="book-pages">
-
-                <div></div>
-                <div></div>
-                <div></div>
-
-            </div>
-
-
-            <!-- Book spine -->
-
-            <div class="book-spine">
-
-                RENTBOOK INDIA
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =========================================================
-             FLOATING INFORMATION CARD — BOOKS
-        ========================================================== -->
-
-        <div class="floating-glass-card card-books">
-
-
-            <div class="mini-icon">
-                📚
-            </div>
-
-
-            <div>
-
-                <strong>
-                    Books
-                </strong>
-
-                <span>
-                    Waiting for you
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =========================================================
-             FLOATING INFORMATION CARD — AFFORDABILITY
-        ========================================================== -->
-
-        <div class="floating-glass-card card-price">
-
-
-            <div class="mini-icon">
-                ₹
-            </div>
-
-
-            <div>
-
-                <strong>
-                    Student Friendly
-                </strong>
-
-                <span>
-                    Pay only for your time
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =========================================================
-             FLOATING INFORMATION CARD — REUSE
-        ========================================================== -->
-
-        <div class="floating-glass-card card-reuse">
-
-
-            <div class="mini-icon">
-                ♻
-            </div>
-
-
-            <div>
-
-                <strong>
-                    Read & Return
-                </strong>
-
-                <span>
-                    Keep books circulating
-                </span>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     SEARCH SECTION
-     -----------------------------------------------------------------
-     This is the first marketplace-oriented interaction.
-
-     A user can search for:
-
-        • Book title
-        • Author
-        • Subject
-        • ISBN
-
-     At the current frontend stage, the search button takes the user
-     to books.html.
-
-     Later JavaScript/backend functionality can perform real-time
-     database searching.
-================================================================== -->
-
-<section class="hero-search-section">
-
-
-    <div class="glass-search-box">
-
-
-        <div class="search-icon">
-            🔎
-        </div>
-
-
-        <input
-            type="search"
-            placeholder="Search books, authors, subjects or ISBN...">
-
-
-        <a href="pages/books.html"
-           class="search-button">
-
-            Search
-
-        </a>
-
-
-    </div>
-
-
-    <!-- Suggested search categories -->
-
-    <p>
-
-        Try:
-        Computer Science • Physics • Chemistry • Mathematics •
-        UPSC • Rare Books
-
-    </p>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     SCIENTIFIC KNOWLEDGE DIVIDER
-     -----------------------------------------------------------------
-     This section visually separates the hero area from the main
-     marketplace information.
-
-     It uses scientific notation instead of religious symbols.
-
-     Examples:
-
-        E = mc²
-        H₂O
-        π
-        λ
-        Δ
-
-     This reinforces that RentBook India is primarily an educational
-     and knowledge-focused platform.
-================================================================== -->
-
-<section class="vedic-section">
-
-
-    <div class="vedic-line"></div>
-
-
-    <div class="vedic-content">
-
-
-        <span class="vedic-symbol">
-
-            E = mc²
-
-        </span>
-
-
-        <p class="sanskrit">
-
-            SCIENCE • MATHEMATICS • KNOWLEDGE
-
-        </p>
-
-
-        <p class="translation">
-
-            Discover. Learn. Share. Return.
-
-        </p>
-
-
-    </div>
-
-
-    <div class="vedic-line"></div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     ABOUT / VISION SECTION
-     -----------------------------------------------------------------
-     This section explains WHY RentBook India exists.
-
-     The three cards communicate the platform's core values:
-
-        01 — Affordable Learning
-        02 — Book Reuse
-        03 — Sustainable Access
-
-     These are important for presenting the startup concept to
-     teachers, mentors, judges and potential users.
-================================================================== -->
-
-<section class="about-section"
-         id="about">
-
-
-    <div class="section-heading">
-
-
-        <span class="section-label">
-            ✦ OUR VISION ✦
-        </span>
-
-
-        <h2>
-
-            Knowledge should be
-
-            <span>
-                accessible.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            RentBook India is building a book-rental
-            ecosystem where students, readers,
-            individuals and shopkeepers can share
-            books instead of letting them remain unused.
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="vision-grid">
-
-
-        <!-- =========================================================
-             VISION CARD 01 — AFFORDABILITY
-        ========================================================== -->
-
-        <article class="glass-card vision-card">
-
-
-            <div class="card-symbol">
-                📚
-            </div>
-
-
-            <div class="card-number">
-                01
-            </div>
-
-
-            <h3>
-                Affordable Learning
-            </h3>
-
-
-            <p>
-
-                Access expensive academic and
-                professional books without paying
-                the complete purchase price.
-
-            </p>
-
-
-            <span class="card-decoration">
-                ∑
-            </span>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             VISION CARD 02 — REUSE
-        ========================================================== -->
-
-        <article class="glass-card vision-card">
-
-
-            <div class="card-symbol">
-                ♻
-            </div>
-
-
-            <div class="card-number">
-                02
-            </div>
-
-
-            <h3>
-                Books That Circulate
-            </h3>
-
-
-            <p>
-
-                One book can serve multiple learners
-                instead of remaining unused on a shelf.
-
-            </p>
-
-
-            <span class="card-decoration">
-                λ
-            </span>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             VISION CARD 03 — ACCESS
-        ========================================================== -->
-
-        <article class="glass-card vision-card">
-
-
-            <div class="card-symbol">
-                🔬
-            </div>
-
-
-            <div class="card-number">
-                03
-            </div>
-
-
-            <h3>
-                Sustainable Reading
-            </h3>
-
-
-            <p>
-
-                Encourage reuse and responsible
-                consumption of educational resources.
-
-            </p>
-
-
-            <span class="card-decoration">
-                ⚛
-            </span>
-
-
-        </article>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     MARKETPLACE PREVIEW
-     -----------------------------------------------------------------
-     This section gives visitors a visual preview of actual books
-     available on the platform.
-
-     In the real application these books will eventually come from
-     the backend/database.
-
-     For now they are static demonstration cards so that your
-     department presentation has a realistic marketplace interface.
-================================================================== -->
-
-<section class="marketplace-preview">
-
-
-    <div class="section-heading">
-
-
-        <span class="section-label">
-            ✦ RENTAL MARKETPLACE ✦
-        </span>
-
-
-        <h2>
-
-            Find your next
-
-            <span>
-                book.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            Browse books listed by students,
-            individuals and book sellers.
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="preview-grid">
-
-
-        <!-- =========================================================
-             SAMPLE BOOK 01
-             Computer Science / Programming
-        ========================================================== -->
-
-        <article class="book-preview-card">
-
-
-            <div class="book-preview-image">
-
-
-                <div class="mini-3d-book orange-book">
-
-                    📘
-
-                </div>
-
-
-                <span class="availability-tag">
-                    AVAILABLE
-                </span>
-
-            </div>
-
-
-            <div class="book-preview-content">
-
-
-                <span>
-                    COMPUTER SCIENCE
-                </span>
-
-
-                <h3>
-                    Clean Code
-                </h3>
-
-
-                <p>
-                    Robert C. Martin
-                </p>
-
-
-                <div class="book-meta">
-
-                    <strong>
-                        ₹80
-                    </strong>
-
-                    <span>
-                        / week
-                    </span>
-
-                    <small>
-                        Deposit ₹500
-                    </small>
-
-                </div>
-
-
-                <a href="pages/book-details.html"
-                   class="card-button">
-
-                    View Book →
-
-                </a>
-
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             SAMPLE BOOK 02
-             Operating Systems
-        ========================================================== -->
-
-        <article class="book-preview-card">
-
-
-            <div class="book-preview-image">
-
-
-                <div class="mini-3d-book gold-book">
-
-                    📕
-
-                </div>
-
-
-                <span class="availability-tag">
-                    AVAILABLE
-                </span>
-
-            </div>
-
-
-            <div class="book-preview-content">
-
-
-                <span>
-                    COMPUTER SCIENCE
-                </span>
-
-
-                <h3>
-                    Operating System Concepts
-                </h3>
-
-
-                <p>
-                    Silberschatz
-                </p>
-
-
-                <div class="book-meta">
-
-                    <strong>
-                        ₹70
-                    </strong>
-
-                    <span>
-                        / week
-                    </span>
-
-                    <small>
-                        Deposit ₹600
-                    </small>
-
-                </div>
-
-
-                <a href="pages/book-details.html"
-                   class="card-button">
-
-                    View Book →
-
-                </a>
-
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             SAMPLE BOOK 03
-             Python / Programming
-        ========================================================== -->
-
-        <article class="book-preview-card">
-
-
-            <div class="book-preview-image">
-
-
-                <div class="mini-3d-book blue-book">
-
-                    📗
-
-                </div>
-
-
-                <span class="availability-tag">
-                    AVAILABLE
-                </span>
-
-            </div>
-
-
-            <div class="book-preview-content">
-
-
-                <span>
-                    PROGRAMMING
-                </span>
-
-
-                <h3>
-                    Python Programming
-                </h3>
-
-
-                <p>
-                    E. Balagurusamy
-                </p>
-
-
-                <div class="book-meta">
-
-                    <strong>
-                        ₹60
-                    </strong>
-
-                    <span>
-                        / week
-                    </span>
-
-                    <small>
-                        Deposit ₹450
-                    </small>
-
-                </div>
-
-
-                <a href="pages/book-details.html"
-                   class="card-button">
-
-                    View Book →
-
-                </a>
-
-
-            </div>
-
-
-        </article>
-
-
-    </div>
-
-
-
-    <!-- Link to complete marketplace -->
-
-    <div class="center-button">
-
-
-        <a href="pages/books.html"
-           class="primary-button">
-
-            Explore All Books →
-
-        </a>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     HOW RENTBOOK INDIA WORKS
-     -----------------------------------------------------------------
-     This section explains the complete basic rental journey.
-
-     Student/User:
-
-        Search
-          ↓
-        Choose Book
-          ↓
-        Select Rental Period
-          ↓
-        Pay
-          ↓
-        Receive
-          ↓
-        Return
-
-     Later the delivery and payment systems can be connected to
-     backend services.
-================================================================== -->
-
-<section class="how-section"
-         id="how-it-works">
-
-
-    <div class="section-heading">
-
-
-        <span class="section-label">
-            ✦ SIMPLE PROCESS ✦
-        </span>
-
-
-        <h2>
-
-            From search to
-
-            <span>
-                return.
-            </span>
-
-        </h2>
-
-
-    </div>
-
-
-
-    <div class="process-container">
-
-
-        <div class="process-line"></div>
-
-
-
-        <!-- STEP 01 -->
-
-        <article class="process-step">
-
-            <div class="step-circle">
-                01
-            </div>
-
-            <div class="step-icon">
-                🔎
-            </div>
-
-            <h3>
-                Search
-            </h3>
-
-            <p>
-                Find the book you need.
-            </p>
-
-        </article>
-
-
-
-        <!-- STEP 02 -->
-
-        <article class="process-step">
-
-            <div class="step-circle">
-                02
-            </div>
-
-            <div class="step-icon">
-                📖
-            </div>
-
-            <h3>
-                Choose
-            </h3>
-
-            <p>
-                Select your rental duration.
-            </p>
-
-        </article>
-
-
-
-        <!-- STEP 03 -->
-
-        <article class="process-step">
-
-            <div class="step-circle">
-                03
-            </div>
-
-            <div class="step-icon">
-                💳
-            </div>
-
-            <h3>
-                Pay
-            </h3>
-
-            <p>
-                Rent + delivery + security deposit.
-            </p>
-
-        </article>
-
-
-
-        <!-- STEP 04 -->
-
-        <article class="process-step">
-
-            <div class="step-circle">
-                04
-            </div>
-
-            <div class="step-icon">
-                🚚
-            </div>
-
-            <h3>
-                Receive
-            </h3>
-
-            <p>
-                Get your book at your doorstep.
-            </p>
-
-        </article>
-
-
-
-        <!-- STEP 05 -->
-
-        <article class="process-step">
-
-            <div class="step-circle">
-                05
-            </div>
-
-            <div class="step-icon">
-                ♻
-            </div>
-
-            <h3>
-                Return
-            </h3>
-
-            <p>
-                Return the book after reading.
-            </p>
-
-        </article>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     SELLER SECTION
-     -----------------------------------------------------------------
-     This section introduces the second major side of the platform:
-
-                            SELLERS
-
-     Sellers can eventually:
-
-        • Take/upload a book photograph
-        • Enter title and author
-        • Enter ISBN
-        • Enter MRP
-        • Enter their estimated book value
-        • Select book condition
-        • Set weekly/monthly rental price
-        • View suggested security deposit
-        • Publish the book
-
-     This creates the marketplace supply side.
-================================================================== -->
-
-<section class="seller-section">
-
-
-    <!-- =============================================================
-         SELLER VISUAL
-         -------------------------------------------------------------
-         The stacked books visually represent books sitting unused
-         with students, individuals or shopkeepers.
-    ========================================================== -->
-
-    <div class="seller-visual">
-
-
-        <div class="seller-orbit"></div>
-
-
-        <div class="seller-book-stack">
-
-
-            <div class="stack-book book-one">
-                📕
-            </div>
-
-            <div class="stack-book book-two">
-                📗
-            </div>
-
-            <div class="stack-book book-three">
-                📘
-            </div>
-
-
-        </div>
-
-
-        <div class="seller-floating-symbol">
-            ₹
-        </div>
-
-
-    </div>
-
-
-
-    <!-- =============================================================
-         SELLER INFORMATION
-    ========================================================== -->
-
-    <div class="seller-content">
-
-
-        <span class="section-label">
-            ✦ FOR BOOK OWNERS ✦
-        </span>
-
-
-        <h2>
-
-            Have books sitting
-
-            <span>
-                unused?
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            Turn your books into an earning
-            opportunity. Students, individuals
-            and shopkeepers can list books for rent.
-
-        </p>
-
-
-
-        <!-- Seller features -->
-
-        <div class="seller-features">
-
-
-            <!-- Photo upload -->
-
-            <div>
-
-                <span>
-                    📷
-                </span>
-
-                <div>
-
-                    <strong>
-                        Upload Book Photo
-                    </strong>
-
-                    <small>
-                        Take a picture or upload one.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Rental price -->
-
-            <div>
-
-                <span>
-                    ₹
-                </span>
-
-                <div>
-
-                    <strong>
-                        Set Your Rental Price
-                    </strong>
-
-                    <small>
-                        Decide how much you charge.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Security calculation -->
-
-            <div>
-
-                <span>
-                    🔐
-                </span>
-
-                <div>
-
-                    <strong>
-                        Security Deposit
-                    </strong>
-
-                    <small>
-                        Platform suggests a deposit based
-                        on book value and condition.
-                    </small>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- Seller registration/listing action -->
-
-        <a href="pages/add-book.html"
-           class="primary-button">
-
-            List Your Book →
-
-        </a>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     SECURITY DEPOSIT SECTION
-     -----------------------------------------------------------------
-     This section explains the basic prototype logic for protecting
-     the seller's book.
-
-     Example:
-
-         MRP = ₹1000
-         Seller Value = ₹800
-
-         Book Value = minimum(MRP, Seller Value)
-                    = ₹800
-
-         Condition Factor = 80%
-
-         Adjusted Value = ₹800 × 80%
-                        = ₹640
-
-         Suggested Deposit = ₹640 × 60%
-                           = ₹384
-
-     The final production formula can later be changed after business,
-     legal and operational decisions are finalized.
-================================================================== -->
-
-<section class="deposit-section">
-
-
-    <div class="section-heading">
-
-
-        <span class="section-label">
-            ✦ TRUST & SECURITY ✦
-        </span>
-
-
-        <h2>
-
-            A smarter
-
-            <span>
-                security system.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            The platform can suggest a security
-            deposit using the book's value and condition.
-
-        </p>
-
-
-    </div>
-
-
-
-    <!-- Calculator-style visual explanation -->
-
-    <div class="deposit-calculator glass-card">
-
-
-        <!-- =========================================================
-             FORMULA SIDE
-        ========================================================== -->
-
-        <div class="formula-side">
-
-
-            <span>
-                SUGGESTED FORMULA
-            </span>
-
-
-            <h3>
-                Security Deposit
-            </h3>
-
-
-            <div class="formula">
-
-                <span>
-                    Book Value
-                </span>
-
-                <strong>
-                    ×
-                </strong>
-
-                <span>
-                    Condition Factor
-                </span>
-
-                <strong>
-                    ×
-                </strong>
-
-                <span>
-                    60%
-                </span>
-
-            </div>
-
-
-            <p>
-
-                Book Value = minimum of MRP and
-                seller valuation.
-
-            </p>
-
-
-        </div>
-
-
-
-        <!-- =========================================================
-             EXAMPLE SIDE
-        ========================================================== -->
-
-        <div class="example-side">
-
-
-            <span>
-                EXAMPLE
-            </span>
-
-
-            <div class="calculation">
-
-
-                <div>
-
-                    <span>
-                        MRP
-                    </span>
-
-                    <strong>
-                        ₹1,000
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Seller Value
-                    </span>
-
-                    <strong>
-                        ₹800
-                    </strong>
-
-                </div>
-
-
-                <div>
-
-                    <span>
-                        Condition
-                    </span>
-
-                    <strong>
-                        Good · 80%
-                    </strong>
-
-                </div>
-
-
-                <div class="calculation-result">
-
-                    <span>
-                        Suggested Deposit
-                    </span>
-
-                    <strong>
-                        ₹384
-                    </strong>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     FOUNDER SECTION
-     -----------------------------------------------------------------
-     This section introduces the founder of RentBook India.
-
-     Founder image:
-
-         assets/anuj-rao.jpg
-
-     If you later replace the image, keep the same filename or update
-     the src path.
-
-     The image is intentionally displayed inside a controlled frame
-     so the original aspect ratio does not break the layout.
-================================================================== -->
-
-<section class="founder-section">
-
-
-    <!-- =============================================================
-         FOUNDER PHOTO AREA
-    ========================================================== -->
-
-    <div class="founder-image-area">
-
-
-        <div class="founder-orbit"></div>
-
-
-        <div class="founder-image-frame">
-
-
-            <img src="assets/anuj-rao.jpg"
-                 alt="Anuj Rao - Founder of RentBook India">
-
-
-        </div>
-
-
-        <div class="founder-badge">
-
-            <span>
-                FOUNDER
-            </span>
-
-            <strong>
-                Anuj Rao
-            </strong>
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- =============================================================
-         FOUNDER INFORMATION
-    ========================================================== -->
-
-    <div class="founder-content">
-
-
-        <span class="section-label">
-            ✦ THE FOUNDER ✦
-        </span>
-
-
-        <h2>
-
-            Building a future where
-
-            <span>
-                knowledge circulates.
-            </span>
-
-        </h2>
-
-
-        <p>
-
-            RentBook India is being developed
-            with the vision of making educational
-            resources more affordable and accessible
-            through a technology-driven rental ecosystem.
-
-        </p>
-
-
-        <p>
-
-            The platform aims to connect students,
-            readers, book owners, shopkeepers and
-            delivery partners through one unified
-            marketplace.
-
-        </p>
-
-
-
-        <!-- Founder information -->
-
-        <div class="founder-contact">
-
-
-            <div>
-
-                <span>
-                    Founder
-                </span>
-
-                <strong>
-                    Anuj Rao
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    Location
-                </span>
-
-                <strong>
-                    Gorakhpur, Uttar Pradesh
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    Contact
-                </span>
-
-                <strong>
-                    +91 95800 03422
-                </strong>
-
-            </div>
-
-
-        </div>
-
-
-        <a href="pages/team.html"
-           class="glass-button">
-
-            Meet the Team →
-
-        </a>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     TEAM PREVIEW
-     -----------------------------------------------------------------
-     The homepage only shows a compact preview of the team.
-
-     Full team information will be available in:
-
-         pages/team.html
-
-     Current team:
-
-        • Anuj Rao — Founder / Project Lead
-        • Puneet Sharma — Backend
-        • Kriti Singh — Backend
-        • Aradhna Pandey — Database
-        • Asif Shah — Database
-        • Shreya Chaudhary — Deployment & Infrastructure
-
-     Team photos are intentionally NOT used for the other members
-     yet, because their photographs have not been provided.
-================================================================== -->
-
-<section class="team-section">
-
-
-    <div class="section-heading">
-
-
-        <span class="section-label">
-            ✦ OUR TEAM ✦
-        </span>
-
-
-        <h2>
-
-            Building it
-
-            <span>
-                together.
-            </span>
-
-        </h2>
-
-
-    </div>
-
-
-
-    <div class="team-grid">
-
-
-        <!-- =========================================================
-             FOUNDER — ANUJ RAO
-        ========================================================== -->
-
-        <article class="team-card">
-
-
-            <div class="team-avatar founder-avatar">
-
-
-                <img src="assets/anuj-rao.jpg"
-                     alt="Anuj Rao">
-
-
-            </div>
-
-
-            <span>
-                FOUNDER
-            </span>
-
-
-            <h3>
-                Anuj Rao
-            </h3>
-
-
-            <p>
-                Founder & Project Lead
-            </p>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             TEAM MEMBER — PUNEET SHARMA
-             Responsibility: Backend Development
-        ========================================================== -->
-
-        <article class="team-card">
-        
-
-
-            <div class="team-avatar member-avatar">
-                
-                <img src="assets/Punit-Sharma.jpeg"
-                     alt="punit sharma">
-            </div>
-
-
-            <span>
-                BACkend 
-            </span>
-
-
-            <h3>
-                Puneet Sharma
-            </h3>
-
-
-            <p>
-                Backend Development
-            </p>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             TEAM MEMBER — KRITI SINGH
-             Responsibility: Backend Development
-        ========================================================== -->
-
-        <article class="team-card">
-
-
-            <div class="team-avatar">
-                <img src="assets/kriti-singh.jpeg"
-                     alt="kriti singh">
-            </div>
-
-
-            <span>
-                BACKEND
-                
-            </span>
-
-
-            <h3>
-                Kriti Singh
-            </h3>
-
-
-            <p>
-                Backend Development
-            </p>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             TEAM MEMBER — ARADHNA PANDEY
-             Responsibility: Database
-        ========================================================== -->
-
-        <article class="team-card">
-
-
-            <div class="team-avatar">
-                <img src="assets/Aradhna-Pandey.jpeg"
-                     alt="aradhna pandey">
-            </div>
-
-
-            <span>
-                DATABASE
-            </span>
-
-
-            <h3>
-                Aradhna Pandey
-            </h3>
-
-
-            <p>
-                Database Management
-            </p>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             TEAM MEMBER — ASIF SHAH
-             Responsibility: Database
-        ========================================================== -->
-
-        <article class="team-card">
-
-
-            <div class="team-avatar">
-                <img src="assets/Ashish-Shah.jpeg"
-                     alt="Ashish-Shah">
-            </div>
-
-
-            <span>
-                DATABASE
-            </span>
-
-
-            <h3>
-                Asif Shah
-            </h3>
-
-
-            <p>
-                Database Management
-            </p>
-
-
-        </article>
-
-
-
-        <!-- =========================================================
-             TEAM MEMBER — SHREYA CHAUDHARY
-             Responsibility: Deployment & Infrastructure
-        ========================================================== -->
-
-        <article class="team-card">
-
-
-            <div class="team-avatar">
-                <img src="assets/Shreya-Chaudhary.jpeg"
-                     alt="Shreya-Chaudhary">
-            </div>
-
-
-            <span>
-                DEPLOYMENT
-            </span>
-
-
-            <h3>
-                Shreya Chaudhary
-            </h3>
-
-
-            <p>
-                Deployment & Infrastructure
-            </p>
-
-
-        </article>
-
-
-    </div>
-
-
-
-    <!-- Link to complete team page -->
-
-    <div class="center-button">
-
-
-        <a href="pages/team.html"
-           class="glass-button">
-
-            View Full Team →
-
-        </a>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =================================================================
-     FINAL CALL-TO-ACTION
-     -----------------------------------------------------------------
-     The final CTA encourages visitors to actually use the platform.
-
-     Two possible actions:
-
-        1. Explore existing books
-        2. Create an account
-
-     The background uses scientific equations instead of religious
-     imagery to maintain the academic/scientific identity.
-================================================================== -->
-
-<section class="final-cta">
-
-
-    <!-- Decorative scientific orbit -->
-
-    <div class="cta-mandala">
-
-        E = mc²
-
-    </div>
-
-
-    <span class="section-label">
-        ✦ YOUR NEXT BOOK IS WAITING ✦
-    </span>
-
-
-    <h2>
-
-        Don't buy forever
-
-        <span>
-            when you only need it for a while.
-        </span>
-
-    </h2>
-
-
-    <p>
-
-        Discover affordable books and start
-        your rental journey today.
-
-    </p>
-
-
-    <div class="cta-buttons">
-
-
-        <a href="pages/explore.html"
-           class="primary-button">
-
-            Explore Books →
-
-        </a>
-
-
-        <a href="pages/signup.html"
-           class="glass-button">
-
-            Create Account
-
-        </a>
-
-
-    </div>
-
-
-</section>
-
-
-
-</main>
-
-
-
-<!-- =================================================================
-     FOOTER
-     -----------------------------------------------------------------
-     The footer contains important navigation and contact information.
-
-     It also provides another route to:
-
-        • Explore
-        • Seller dashboard
-        • Add Book
-        • Login
-        • Signup
-        • Team
-
-     Contact information is displayed for the current prototype.
-================================================================== -->
-
-<footer class="footer">
-
-
-    <div class="footer-glow"></div>
-
-
-    <div class="footer-grid">
-
-
-        <!-- =========================================================
-             FOOTER BRAND
-        ========================================================== -->
-
-        <div class="footer-brand">
-
-
-            <a href="index.html"
-               class="brand">
-
-
-                <div class="brand-logo-wrap">
-
-                    <img src="assets/logo.png"
-                         alt="RentBook India Logo">
-
-                </div>
-
-
-                <div class="brand-text">
-
-                    <strong>
-                        RentBook
-                    </strong>
-
-                    <span>
-                        INDIA
-                    </span>
-
-                </div>
-
-
-            </a>
-
-
-            <p>
-
-                Read More. Spend Less.
-
-                <br>
-
-                A smarter way to access books.
-
-            </p>
-
-
-            <!-- Scientific decorative symbol -->
-
-            <div class="footer-symbol">
-                ⚛
-            </div>
-
-
-        </div>
-
-
-
-        <!-- =========================================================
-             EXPLORE LINKS
-        ========================================================== -->
-
-        <div class="footer-column">
-
-
-            <h3>
-                Explore
-            </h3>
-
-
-            <a href="pages/explore.html">
+            <a href="pages/explore.html" class="mobile-nav-link">
                 Explore Books
             </a>
 
-
-            <a href="pages/books.html">
-                Marketplace
+            <a href="#categories" class="mobile-nav-link">
+                Categories
             </a>
 
-
-            <a href="pages/team.html">
-                Our Team
+            <a href="pages/seller.html" class="mobile-nav-link">
+                Sell / Rent Books
             </a>
 
+            <a href="pages/delivery.html" class="mobile-nav-link">
+                Delivery Partner
+            </a>
+
+            <a href="pages/team.html" class="mobile-nav-link">
+                Team
+            </a>
+
+            <a href="pages/careers.html" class="mobile-nav-link">
+                Careers
+            </a>
+
+            <a href="pages/orders.html" class="mobile-nav-link">
+                My Rentals
+            </a>
+
+            <div class="mobile-nav-actions">
+
+                <a
+                    href="pages/login.html"
+                    class="btn btn-outline"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="pages/signup.html"
+                    class="btn btn-primary"
+                >
+                    Sign Up
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO SECTION
+        ====================================================== -->
+
+        <section class="hero-section">
+
+            <div class="container hero-container">
+
+                <!-- Hero Content -->
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        📚 India's Book Rental Marketplace
+                    </span>
+
+                    <h1>
+                        Need a Book?
+                        <span>Rent It.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Find academic, competitive-exam, reference and
+                        rare books for the exact time you need them.
+                    </p>
+
+
+                    <!-- Hero Search -->
+                    <form
+                        class="hero-search"
+                        action="pages/explore.html"
+                        method="get"
+                    >
+
+                        <label
+                            for="hero-search-input"
+                            class="sr-only"
+                        >
+                            Search for books
+                        </label>
+
+                        <span
+                            class="search-icon"
+                            aria-hidden="true"
+                        >
+                            🔍
+                        </span>
+
+                        <input
+                            id="hero-search-input"
+                            name="q"
+                            type="search"
+                            placeholder="Search by book name, author, ISBN or subject"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="submit"
+                            class="search-btn"
+                        >
+                            Search
+                        </button>
+
+                    </form>
+
+
+                    <!-- Popular Searches -->
+                    <div class="popular-searches">
+
+                        <span>
+                            Popular:
+                        </span>
+
+                        <a href="pages/explore.html?category=engineering">
+                            Engineering
+                        </a>
+
+                        <a href="pages/explore.html?category=jee">
+                            JEE
+                        </a>
+
+                        <a href="pages/explore.html?category=neet">
+                            NEET
+                        </a>
+
+                        <a href="pages/explore.html?category=programming">
+                            Programming
+                        </a>
+
+                    </div>
+
+
+                    <!-- Hero Buttons -->
+                    <div class="hero-actions">
+
+                        <a
+                            href="pages/explore.html"
+                            class="btn btn-primary btn-large"
+                        >
+                            Explore Books
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a
+                            href="pages/add-book.html"
+                            class="btn btn-secondary btn-large"
+                        >
+                            Rent Your Book
+                        </a>
+
+                    </div>
+
+
+                    <!-- Trust Indicators -->
+                    <div class="hero-trust">
+
+                        <div class="trust-item">
+
+                            <strong>
+                                Flexible
+                            </strong>
+
+                            <span>
+                                Rental periods
+                            </span>
+
+                        </div>
+
+                        <div class="trust-divider"></div>
+
+                        <div class="trust-item">
+
+                            <strong>
+                                Verified
+                            </strong>
+
+                            <span>
+                                Sellers & partners
+                            </span>
+
+                        </div>
+
+                        <div class="trust-divider"></div>
+
+                        <div class="trust-item">
+
+                            <strong>
+                                Secure
+                            </strong>
+
+                            <span>
+                                Payments
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero Visual -->
+                <div class="hero-visual">
+
+                    <div class="hero-card hero-card-main">
+
+                        <div class="book-cover-placeholder">
+                            <span class="book-cover-label">
+                                RENT
+                            </span>
+
+                            <span class="book-cover-title">
+                                Learn.
+                                <br>
+                                Grow.
+                                <br>
+                                Return.
+                            </span>
+
+                            <span class="book-cover-small">
+                                RENTBOOK INDIA
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-card-top">
+
+                        <span class="floating-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Easy Rental
+                            </strong>
+
+                            <small>
+                                Choose your duration
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-card floating-card-bottom">
+
+                        <div class="mini-avatar">
+                            RB
+                        </div>
+
+                        <div>
+                            <strong>
+                                Books near you
+                            </strong>
+
+                            <small>
+                                Discover local listings
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="hero-decoration hero-decoration-one"
+                        aria-hidden="true"
+                    ></div>
+
+                    <div
+                        class="hero-decoration hero-decoration-two"
+                        aria-hidden="true"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             QUICK BENEFITS
+        ====================================================== -->
+
+        <section class="benefits-section">
+
+            <div class="container benefits-grid">
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        📖
+                    </div>
+
+                    <div>
+                        <h3>
+                            Rent for the time you need
+                        </h3>
+
+                        <p>
+                            Choose from short-term and longer
+                            rental durations.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        💰
+                    </div>
+
+                    <div>
+                        <h3>
+                            Save money
+                        </h3>
+
+                        <p>
+                            Access useful books without buying
+                            every book permanently.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        🚚
+                    </div>
+
+                    <div>
+                        <h3>
+                            Doorstep delivery
+                        </h3>
+
+                        <p>
+                            Get your rented books delivered and
+                            return them through our logistics flow.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="benefit-card">
+
+                    <div class="benefit-icon">
+                        🔒
+                    </div>
+
+                    <div>
+                        <h3>
+                            Secure transactions
+                        </h3>
+
+                        <p>
+                            Payments, deposits and refunds are
+                            tracked securely.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CATEGORIES
+        ====================================================== -->
+
+        <section
+            id="categories"
+            class="section categories-section"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            Explore
+                        </span>
+
+                        <h2>
+                            Find books for every need
+                        </h2>
+
+                        <p>
+                            Explore popular categories and discover
+                            books that match your studies and interests.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="pages/explore.html"
+                        class="text-link"
+                    >
+                        View all categories
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="categories-grid">
+
+                    <a
+                        href="pages/explore.html?category=engineering"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            ⚙️
+                        </span>
+
+                        <span class="category-name">
+                            Engineering
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=medical"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            🩺
+                        </span>
+
+                        <span class="category-name">
+                            Medical
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=computer-science"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            💻
+                        </span>
+
+                        <span class="category-name">
+                            Computer Science
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=mathematics"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            ∑
+                        </span>
+
+                        <span class="category-name">
+                            Mathematics
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=physics"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            ⚛️
+                        </span>
+
+                        <span class="category-name">
+                            Physics
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=chemistry"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            🧪
+                        </span>
+
+                        <span class="category-name">
+                            Chemistry
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=competitive-exams"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            🎯
+                        </span>
+
+                        <span class="category-name">
+                            Competitive Exams
+                        </span>
+
+                        <span class="category-count">
+                            JEE, NEET, UPSC & more
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=reference"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            📚
+                        </span>
+
+                        <span class="category-name">
+                            Reference Books
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=literature"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            ✍️
+                        </span>
+
+                        <span class="category-name">
+                            Literature
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=fiction"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            📘
+                        </span>
+
+                        <span class="category-name">
+                            Fiction
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=school"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            🎒
+                        </span>
+
+                        <span class="category-name">
+                            School Books
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+
+                    <a
+                        href="pages/explore.html?category=rare"
+                        class="category-card"
+                    >
+                        <span class="category-icon">
+                            🔎
+                        </span>
+
+                        <span class="category-name">
+                            Rare Books
+                        </span>
+
+                        <span class="category-count">
+                            Explore books
+                        </span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FEATURED BOOKS
+        ====================================================== -->
+
+        <section class="section featured-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-eyebrow">
+                            Popular rentals
+                        </span>
+
+                        <h2>
+                            Books students are looking for
+                        </h2>
+
+                        <p>
+                            Discover books available for short-term
+                            rental from marketplace sellers.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="pages/explore.html"
+                        class="text-link"
+                    >
+                        Explore all books
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="books-grid">
+
+
+                    <!-- Book Card 1 -->
+                    <article class="book-card">
+
+                        <button
+                            class="wishlist-btn"
+                            type="button"
+                            aria-label="Add Engineering Mathematics to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a
+                            href="pages/book-details.html"
+                            class="book-image"
+                        >
+
+                            <div class="book-placeholder book-blue">
+                                <span>
+                                    ENGINEERING
+                                </span>
+
+                                <strong>
+                                    MATHEMATICS
+                                </strong>
+                            </div>
+
+                        </a>
+
+                        <div class="book-card-content">
+
+                            <span class="book-category">
+                                Engineering
+                            </span>
+
+                            <h3 class="book-title">
+                                Engineering Mathematics
+                            </h3>
+
+                            <p class="book-author">
+                                Academic Reference
+                            </p>
+
+                            <div class="book-rating">
+
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    4.8
+                                </span>
+
+                                <span class="review-count">
+                                    (124)
+                                </span>
+
+                            </div>
+
+                            <div class="book-meta">
+
+                                <span>
+                                    Good Condition
+                                </span>
+
+                                <span>
+                                    Available
+                                </span>
+
+                            </div>
+
+                            <div class="book-price-row">
+
+                                <div>
+
+                                    <span class="price-label">
+                                        Rent from
+                                    </span>
+
+                                    <strong class="book-price">
+                                        ₹10/day
+                                    </strong>
+
+                                </div>
+
+                                <a
+                                    href="pages/book-details.html"
+                                    class="small-arrow-btn"
+                                    aria-label="View Engineering Mathematics"
+                                >
+                                    →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Book Card 2 -->
+                    <article class="book-card">
+
+                        <button
+                            class="wishlist-btn"
+                            type="button"
+                            aria-label="Add Programming Fundamentals to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a
+                            href="pages/book-details.html"
+                            class="book-image"
+                        >
+
+                            <div class="book-placeholder book-navy">
+                                <span>
+                                    COMPUTER
+                                </span>
+
+                                <strong>
+                                    PROGRAMMING
+                                </strong>
+                            </div>
+
+                        </a>
+
+                        <div class="book-card-content">
+
+                            <span class="book-category">
+                                Computer Science
+                            </span>
+
+                            <h3 class="book-title">
+                                Programming Fundamentals
+                            </h3>
+
+                            <p class="book-author">
+                                Programming Reference
+                            </p>
+
+                            <div class="book-rating">
+
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    4.7
+                                </span>
+
+                                <span class="review-count">
+                                    (96)
+                                </span>
+
+                            </div>
+
+                            <div class="book-meta">
+
+                                <span>
+                                    Like New
+                                </span>
+
+                                <span>
+                                    Available
+                                </span>
+
+                            </div>
+
+                            <div class="book-price-row">
+
+                                <div>
+
+                                    <span class="price-label">
+                                        Rent from
+                                    </span>
+
+                                    <strong class="book-price">
+                                        ₹15/day
+                                    </strong>
+
+                                </div>
+
+                                <a
+                                    href="pages/book-details.html"
+                                    class="small-arrow-btn"
+                                    aria-label="View Programming Fundamentals"
+                                >
+                                    →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Book Card 3 -->
+                    <article class="book-card">
+
+                        <button
+                            class="wishlist-btn"
+                            type="button"
+                            aria-label="Add JEE Advanced Preparation to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a
+                            href="pages/book-details.html"
+                            class="book-image"
+                        >
+
+                            <div class="book-placeholder book-sky">
+                                <span>
+                                    JEE
+                                </span>
+
+                                <strong>
+                                    ADVANCED
+                                </strong>
+                            </div>
+
+                        </a>
+
+                        <div class="book-card-content">
+
+                            <span class="book-category">
+                                Competitive Exams
+                            </span>
+
+                            <h3 class="book-title">
+                                JEE Advanced Preparation
+                            </h3>
+
+                            <p class="book-author">
+                                Exam Preparation
+                            </p>
+
+                            <div class="book-rating">
+
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    4.9
+                                </span>
+
+                                <span class="review-count">
+                                    (211)
+                                </span>
+
+                            </div>
+
+                            <div class="book-meta">
+
+                                <span>
+                                    Good Condition
+                                </span>
+
+                                <span>
+                                    Available
+                                </span>
+
+                            </div>
+
+                            <div class="book-price-row">
+
+                                <div>
+
+                                    <span class="price-label">
+                                        Rent from
+                                    </span>
+
+                                    <strong class="book-price">
+                                        ₹12/day
+                                    </strong>
+
+                                </div>
+
+                                <a
+                                    href="pages/book-details.html"
+                                    class="small-arrow-btn"
+                                    aria-label="View JEE Advanced Preparation"
+                                >
+                                    →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Book Card 4 -->
+                    <article class="book-card">
+
+                        <button
+                            class="wishlist-btn"
+                            type="button"
+                            aria-label="Add Physics Reference Book to wishlist"
+                        >
+                            ♡
+                        </button>
+
+                        <a
+                            href="pages/book-details.html"
+                            class="book-image"
+                        >
+
+                            <div class="book-placeholder book-blue-light">
+                                <span>
+                                    PHYSICS
+                                </span>
+
+                                <strong>
+                                    REFERENCE
+                                </strong>
+                            </div>
+
+                        </a>
+
+                        <div class="book-card-content">
+
+                            <span class="book-category">
+                                Physics
+                            </span>
+
+                            <h3 class="book-title">
+                                Physics Reference Book
+                            </h3>
+
+                            <p class="book-author">
+                                Academic Reference
+                            </p>
+
+                            <div class="book-rating">
+
+                                <span class="stars">
+                                    ★★★★★
+                                </span>
+
+                                <span>
+                                    4.6
+                                </span>
+
+                                <span class="review-count">
+                                    (78)
+                                </span>
+
+                            </div>
+
+                            <div class="book-meta">
+
+                                <span>
+                                    Used
+                                </span>
+
+                                <span>
+                                    Available
+                                </span>
+
+                            </div>
+
+                            <div class="book-price-row">
+
+                                <div>
+
+                                    <span class="price-label">
+                                        Rent from
+                                    </span>
+
+                                    <strong class="book-price">
+                                        ₹8/day
+                                    </strong>
+
+                                </div>
+
+                                <a
+                                    href="pages/book-details.html"
+                                    class="small-arrow-btn"
+                                    aria-label="View Physics Reference Book"
+                                >
+                                    →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             HOW IT WORKS
+        ====================================================== -->
+
+        <section class="section how-section">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-eyebrow">
+                        Simple process
+                    </span>
+
+                    <h2>
+                        Rent a book in four easy steps
+                    </h2>
+
+                    <p>
+                        From discovery to return, RentBook India
+                        keeps the experience simple.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            01
+                        </div>
+
+                        <div class="step-icon">
+                            🔍
+                        </div>
+
+                        <h3>
+                            Search
+                        </h3>
+
+                        <p>
+                            Find a book by title, author, ISBN,
+                            subject or category.
+                        </p>
+
+                    </article>
+
+
+                    <div
+                        class="step-connector"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            02
+                        </div>
+
+                        <div class="step-icon">
+                            📅
+                        </div>
+
+                        <h3>
+                            Select duration
+                        </h3>
+
+                        <p>
+                            Choose the rental period that fits
+                            your needs.
+                        </p>
+
+                    </article>
+
+
+                    <div
+                        class="step-connector"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            03
+                        </div>
+
+                        <div class="step-icon">
+                            🚚
+                        </div>
+
+                        <h3>
+                            Receive
+                        </h3>
+
+                        <p>
+                            A delivery partner picks up the book
+                            and brings it to you.
+                        </p>
+
+                    </article>
+
+
+                    <div
+                        class="step-connector"
+                        aria-hidden="true"
+                    >
+                        →
+                    </div>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">
+                            04
+                        </div>
+
+                        <div class="step-icon">
+                            ↩️
+                        </div>
+
+                        <h3>
+                            Return
+                        </h3>
+
+                        <p>
+                            Request a return and send the book
+                            back after your rental ends.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RENT YOUR BOOK / SELLER CTA
+        ====================================================== -->
+
+        <section class="section seller-cta-section">
+
+            <div class="container">
+
+                <div class="seller-cta">
+
+                    <div class="seller-cta-content">
+
+                        <span class="section-eyebrow">
+                            Have books sitting unused?
+                        </span>
+
+                        <h2>
+                            Turn your books into rental income.
+                        </h2>
+
+                        <p>
+                            Students, teachers, bookstores and
+                            libraries can list eligible books and
+                            earn from books they already own.
+                        </p>
+
+                        <div class="seller-cta-actions">
+
+                            <a
+                                href="pages/add-book.html"
+                                class="btn btn-white btn-large"
+                            >
+                                List a Book
+                                <span aria-hidden="true">→</span>
+                            </a>
+
+                            <a
+                                href="pages/seller.html"
+                                class="btn btn-ghost-white btn-large"
+                            >
+                                Learn About Selling
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="seller-cta-visual">
+
+                        <div class="income-card">
+
+                            <span class="income-label">
+                                Your book
+                            </span>
+
+                            <strong>
+                                Can earn again.
+                            </strong>
+
+                            <div class="income-line"></div>
+
+                            <span>
+                                List • Rent • Earn
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             DELIVERY PARTNER CTA
+        ====================================================== -->
+
+        <section class="section delivery-section">
+
+            <div class="container delivery-grid">
+
+                <div class="delivery-content">
+
+                    <span class="section-eyebrow">
+                        Join our logistics network
+                    </span>
+
+                    <h2>
+                        Deliver books.
+                        <span>Earn on the move.</span>
+                    </h2>
+
+                    <p>
+                        Become a delivery partner and help move
+                        books between sellers and readers.
+                    </p>
+
+                    <ul class="check-list">
+
+                        <li>
+                            <span>✓</span>
+                            Flexible availability
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            Local delivery opportunities
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            Transparent delivery earnings
+                        </li>
+
+                        <li>
+                            <span>✓</span>
+                            Track your delivery history
+                        </li>
+
+                    </ul>
+
+                    <a
+                        href="pages/delivery.html"
+                        class="btn btn-primary btn-large"
+                    >
+                        Become a Delivery Partner
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+
+                <div class="delivery-visual">
+
+                    <div class="delivery-route">
+
+                        <div class="route-point">
+
+                            <span class="route-icon">
+                                📚
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Seller
+                                </strong>
+
+                                <small>
+                                    Pickup
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="route-line">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="route-point">
+
+                            <span class="route-icon">
+                                🛵
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Delivery Partner
+                                </strong>
+
+                                <small>
+                                    In transit
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="route-line">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="route-point">
+
+                            <span class="route-icon">
+                                🎓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Reader
+                                </strong>
+
+                                <small>
+                                    Delivered
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             TRUST / PLATFORM FEATURES
+        ====================================================== -->
+
+        <section class="section trust-section">
+
+            <div class="container">
+
+                <div class="trust-panel">
+
+                    <div class="trust-panel-heading">
+
+                        <span class="section-eyebrow">
+                            Built for a better rental experience
+                        </span>
+
+                        <h2>
+                            Everything you need to rent with confidence.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="trust-features">
+
+                        <div class="trust-feature">
+
+                            <span class="trust-feature-icon">
+                                🛡️
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Verified marketplace
+                                </h3>
+
+                                <p>
+                                    Seller and delivery-partner
+                                    verification workflows.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-feature">
+
+                            <span class="trust-feature-icon">
+                                💳
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Secure payments
+                                </h3>
+
+                                <p>
+                                    Payment, deposit and refund
+                                    records are tracked.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-feature">
+
+                            <span class="trust-feature-icon">
+                                📍
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Delivery tracking
+                                </h3>
+
+                                <p>
+                                    Follow the movement of your
+                                    rental through its lifecycle.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-feature">
+
+                            <span class="trust-feature-icon">
+                                💬
+                            </span>
+
+                            <div>
+
+                                <h3>
+                                    Reviews & support
+                                </h3>
+
+                                <p>
+                                    Share feedback and get help
+                                    when something goes wrong.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-cta-section">
+
+            <div class="container">
+
+                <div class="final-cta">
+
+                    <span class="final-cta-badge">
+                        Start your next chapter
+                    </span>
+
+                    <h2>
+                        The book you need
+                        might be closer than you think.
+                    </h2>
+
+                    <p>
+                        Search thousands of potential rental listings
+                        and find the right book for the right amount of time.
+                    </p>
+
+                    <div class="final-cta-actions">
+
+                        <a
+                            href="pages/explore.html"
+                            class="btn btn-white btn-large"
+                        >
+                            Explore Books
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                        <a
+                            href="pages/signup.html"
+                            class="btn btn-ghost-white btn-large"
+                        >
+                            Create Account
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+
+                    <a
+                        href="index.html"
+                        class="brand footer-logo"
+                    >
+
+                        <span class="brand-icon" aria-hidden="true">
+                            <img src="assets/logo.png" alt="logo">
+                        </span>
+
+                        <span class="brand-text">
+                            <span class="brand-name">
+                                RentBook
+                            </span>
+
+                            <span class="brand-country">
+                                INDIA
+                            </span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        A modern book-rental marketplace connecting
+                        readers, book owners and delivery partners.
+                    </p>
+
+                    <div class="social-links">
+
+                        <a
+                            href="#"
+                            aria-label="RentBook India Instagram"
+                        >
+                            Instagram
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="RentBook India LinkedIn"
+                        >
+                            LinkedIn
+                        </a>
+
+                        <a
+                            href="#"
+                            aria-label="RentBook India Facebook"
+                        >
+                            Facebook
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Marketplace -->
+                <div class="footer-column">
+
+                    <h3>
+                        Marketplace
+                    </h3>
+
+                    <a href="pages/explore.html">
+                        Explore Books
+                    </a>
+
+                    <a href="pages/books.html">
+                        All Books
+                    </a>
+
+                    <a href="#categories">
+                        Categories
+                    </a>
+
+                    <a href="pages/orders.html">
+                        My Rentals
+                    </a>
+
+                </div>
+
+
+                <!-- For Partners -->
+                <div class="footer-column">
+
+                    <h3>
+                        For Partners
+                    </h3>
+
+                    <a href="pages/seller.html">
+                        Sell / Rent Books
+                    </a>
+
+                    <a href="pages/add-book.html">
+                        List a Book
+                    </a>
+
+                    <a href="pages/delivery.html">
+                        Delivery Partner
+                    </a>
+
+                    <a href="pages/careers.html">
+                        Careers
+                    </a>
+
+                </div>
+
+
+                <!-- Company -->
+                <div class="footer-column">
+
+                    <h3>
+                        Company
+                    </h3>
+
+                    <a href="pages/team.html">
+                        Our Team
+                    </a>
+
+                    <a href="#">
+                        About Us
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Support
+                    </a>
+
+                </div>
+
+
+                <!-- Legal -->
+                <div class="footer-column">
+
+                    <h3>
+                        Legal
+                    </h3>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms & Conditions
+                    </a>
+
+                    <a href="#">
+                        Rental Policy
+                    </a>
+
+                    <a href="#">
+                        Refund Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 RentBook India. All rights reserved.
+                </p>
+
+                <p>
+                    Built for readers. Powered by books.
+                </p>
+
+            </div>
 
         </div>
 
+    </footer>
 
 
-        <!-- =========================================================
-             SELLER LINKS
-        ========================================================== -->
+    <!-- =====================================================
+         ACCESSIBILITY / MOBILE SCRIPT
+         
+         This small script only handles the mobile menu.
+         Full JavaScript functionality will be moved to
+         js/main.js when the frontend JS layer is created.
+    ====================================================== -->
 
-        <div class="footer-column">
+    <script>
 
+        const mobileMenuButton =
+            document.querySelector(".mobile-menu-btn");
 
-            <h3>
-                For Sellers
-            </h3>
+        const mobileNavigation =
+            document.querySelector(".mobile-nav");
 
 
-            <a href="pages/seller.html">
-                Seller Dashboard
-            </a>
+        if (mobileMenuButton && mobileNavigation) {
 
+            mobileMenuButton.addEventListener("click", function () {
 
-            <a href="pages/add-book.html">
-                List Your Book
-            </a>
+                const isOpen =
+                    mobileNavigation.classList.toggle("is-open");
 
+                mobileMenuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
 
-            <a href="#">
-                Seller Guidelines
-            </a>
+                mobileMenuButton.setAttribute(
+                    "aria-label",
+                    isOpen
+                        ? "Close navigation menu"
+                        : "Open navigation menu"
+                );
 
+                mobileMenuButton.classList.toggle(
+                    "is-active",
+                    isOpen
+                );
 
-        </div>
+            });
 
 
+            const mobileLinks =
+                mobileNavigation.querySelectorAll("a");
 
-        <!-- =========================================================
-             ACCOUNT LINKS
-        ========================================================== -->
+            mobileLinks.forEach(function (link) {
 
-        <div class="footer-column">
+                link.addEventListener("click", function () {
 
+                    mobileNavigation.classList.remove("is-open");
 
-            <h3>
-                Account
-            </h3>
+                    mobileMenuButton.classList.remove("is-active");
 
+                    mobileMenuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-            <a href="pages/login.html">
-                Login
-            </a>
+                    mobileMenuButton.setAttribute(
+                        "aria-label",
+                        "Open navigation menu"
+                    );
 
+                });
 
-            <a href="pages/signup.html">
-                Create Account
-            </a>
+            });
 
+        }
 
-            <a href="#">
-                My Dashboard
-            </a>
+    </script>
 
-
-        </div>
-
-
-
-        <!-- =========================================================
-             CONTACT INFORMATION
-        ========================================================== -->
-
-        <div class="footer-column contact-column">
-
-
-            <h3>
-                Contact
-            </h3>
-
-
-            <p>
-                📍 Gorakhpur, Uttar Pradesh, India
-            </p>
-
-
-            <p>
-                📞 +91 95800 03422
-            </p>
-
-
-            <p>
-                ✉ raoa12044@gmail.com
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- =============================================================
-         COPYRIGHT AREA
-    ========================================================== -->
-
-    <div class="footer-bottom">
-
-
-        <p>
-
-            © 2026 RentBook India.
-            All Rights Reserved.
-
-        </p>
-
-
-        <p>
-
-            Founded by
-            <strong>
-                Anuj Rao
-            </strong>
-
-        </p>
-
-
-    </div>
-
-
-</footer>
-
-
-
-<!-- =================================================================
-     BASIC JAVASCRIPT
-     -----------------------------------------------------------------
-     This JavaScript currently provides only smooth scrolling for
-     internal homepage links.
-
-     IMPORTANT:
-     -----------------------------------------------------------------
-     Authentication, database operations, real search, book upload,
-     payment gateway, rental management and seller operations will
-     NOT be implemented in this small script.
-
-     Those features will be connected later using JavaScript,
-     backend APIs and the database.
-
-     Keeping this separation now makes the frontend easier to
-     understand and demonstrate during your department meeting.
-================================================================== -->
-
-<script>
-
-
-    /* =============================================================
-       SMOOTH INTERNAL NAVIGATION
-
-       When a navigation link points to something like:
-
-           #about
-
-       this code smoothly scrolls the browser to that section instead
-       of jumping immediately.
-    ============================================================= */
-
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(link => {
-
-
-            link.addEventListener(
-                'click',
-                function(event) {
-
-
-                    const target =
-                        document.querySelector(
-                            this.getAttribute('href')
-                        );
-
-
-                    if (target) {
-
-
-                        event.preventDefault();
-
-
-                        target.scrollIntoView({
-
-                            behavior: 'smooth',
-
-                            block: 'start'
-
-                        });
-
-
-                    }
-
-                }
-            );
-
-
-        });
-
-
-</script>
-
-<script src="js/common.js"></script>
-<script src="js/home.js"></script>
 </body>
-
 </html>
+```

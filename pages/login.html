@@ -2,54 +2,6 @@
 <html lang="en">
 
 <head>
-
-    <!-- ============================================================
-         RENTBOOK INDIA — LOGIN PAGE
-         ============================================================
-
-         PURPOSE:
-         This page provides the frontend login interface for
-         RentBook India users.
-
-         A user should eventually be able to log in using:
-
-             • Registered email
-             • Registered mobile number
-             • Password
-
-         AFTER BACKEND INTEGRATION:
-         --------------------------------
-         This form can be connected to:
-
-             • Node.js / Express
-             • MongoDB
-             • JWT authentication
-             • Session management
-             • Password hashing
-             • Email/mobile verification
-
-         CURRENT STAGE:
-         --------------------------------
-         This is the frontend prototype for your project presentation.
-
-         DESIGN:
-         --------------------------------
-         • Scientific academic theme
-         • Navy background
-         • Gold/orange highlights
-         • Glassmorphism
-         • 3D book
-         • Scientific symbols
-         • Animated stars
-         • Responsive layout
-
-    ============================================================ -->
-
-
-    <!-- ============================================================
-         BASIC PAGE CONFIGURATION
-    ============================================================ -->
-
     <meta charset="UTF-8">
 
     <meta
@@ -59,1450 +11,1061 @@
 
     <meta
         name="description"
-        content="Login to your RentBook India account and manage your rented books."
+        content="Login to RentBook India and rent academic, competitive exam, reference and rare books."
     >
 
-    <meta
-        name="author"
-        content="Anuj Rao"
+    <title>Login | RentBook India</title>
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="../css/authentication.css">
+
+    <!-- Google Font -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
     >
-
-    <title>
-        Login | RentBook India
-    </title>
-
-
-    <!-- ============================================================
-         GOOGLE FONTS
-    ============================================================ -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
     >
-
-
-    <!-- ============================================================
-         AUTHENTICATION CSS
-         ------------------------------------------------------------
-         Login and signup pages use a separate stylesheet because
-         their layout is different from the homepage.
-
-         File:
-
-             css/authentication.css
-    ============================================================ -->
 
     <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
-        href="../css/authentication.css"
     >
-
 </head>
 
 
-<body>
+<body class="auth-page">
 
 
-<!-- ================================================================
-     BACKGROUND SYSTEM
-     ----------------------------------------------------------------
-     The login page uses the same scientific/cosmic environment
-     as the homepage.
+    <!-- =====================================================
+         AUTHENTICATION HEADER
+    ====================================================== -->
 
-     Religious symbols have intentionally NOT been used.
+    <header class="auth-header">
 
-     Instead we use:
+        <div class="auth-header-container">
 
-         ⚛  Physics
-         π  Mathematics
-         ∑  Mathematics
-         λ  Physics
-         ⚗  Chemistry
-================================================================ -->
-
-<div class="auth-background">
-
-
-    <!-- Animated star layers -->
-
-    <div class="auth-stars stars-one"></div>
-
-    <div class="auth-stars stars-two"></div>
-
-    <div class="auth-stars stars-three"></div>
-
-
-    <!-- Atmospheric glowing areas -->
-
-    <div class="auth-glow glow-orange"></div>
-
-    <div class="auth-glow glow-gold"></div>
-
-    <div class="auth-glow glow-blue"></div>
-
-
-</div>
-
-
-
-<!-- ================================================================
-     FLOATING SCIENTIFIC SYMBOLS
-================================================================ -->
-
-<div class="auth-science-symbol symbol-atom">
-    ⚛
-</div>
-
-<div class="auth-science-symbol symbol-pi">
-    π
-</div>
-
-<div class="auth-science-symbol symbol-sigma">
-    ∑
-</div>
-
-<div class="auth-science-symbol symbol-lambda">
-    λ
-</div>
-
-<div class="auth-science-symbol symbol-chemistry">
-    ⚗
-</div>
-
-
-
-<!-- ================================================================
-     MAIN AUTHENTICATION WRAPPER
-
-     The entire login interface is divided into two visual areas:
-
-         LEFT:
-             Brand + scientific 3D presentation
-
-         RIGHT:
-             Actual login form
-================================================================ -->
-
-<main class="auth-container">
-
-
-    <!-- ============================================================
-         LEFT SIDE — BRAND / 3D VISUAL
-    ============================================================ -->
-
-    <section class="auth-showcase">
-
-
-        <!-- ========================================================
-             BACK TO HOME
-        ========================================================= -->
-
-        <a
-            href="../index.html"
-            class="auth-home-link"
-        >
-
-            <span>
-                ←
-            </span>
-
-            Back to Home
-
-        </a>
-
-
-
-        <!-- ========================================================
-             BRAND
-        ========================================================= -->
-
-        <a
-            href="../index.html"
-            class="auth-brand"
-        >
-
-
-            <div class="auth-logo-container">
-
-                <img
-                    src="../assets/logo.png"
-                    alt="RentBook India Logo"
-                    class="auth-logo"
-                >
-
-            </div>
-
-
-            <div class="auth-brand-name">
-
-                <strong>
-                    RentBook
-                </strong>
-
-                <span>
-                    INDIA
-                </span>
-
-            </div>
-
-
-        </a>
-
-
-
-        <!-- ========================================================
-             SHOWCASE CONTENT
-        ========================================================= -->
-
-        <div class="showcase-content">
-
-
-            <span class="showcase-label">
-
-                ✦ KNOWLEDGE • ACCESS • COMMUNITY ✦
-
-            </span>
-
-
-            <h1>
-
-                Your books.
-
-                <span>
-                    Your journey.
-                </span>
-
-            </h1>
-
-
-            <p>
-
-                Sign in to discover books,
-                manage your rentals, track returns,
-                and continue your learning journey
-                with RentBook India.
-
-            </p>
-
-
-        </div>
-
-
-
-        <!-- ========================================================
-             3D SCIENTIFIC BOOK VISUAL
-
-             This is decorative and designed entirely with HTML/CSS.
-
-             It gives the login page the same 3D visual identity
-             as the homepage.
-        ========================================================= -->
-
-        <div class="auth-visual">
-
-
-            <!-- Scientific orbit -->
-
-            <div class="auth-orbit orbit-large"></div>
-
-            <div class="auth-orbit orbit-small"></div>
-
-
-
-            <!-- Atomic/scientific centre -->
-
-            <div class="scientific-core">
-
-                <div class="core-ring ring-one"></div>
-
-                <div class="core-ring ring-two"></div>
-
-                <div class="core-symbol">
-
-                    ⚛
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ====================================================
-                 3D BOOK
-            ==================================================== -->
-
-            <div class="auth-book">
-
-
-                <!-- Front cover -->
-
-                <div class="auth-book-cover">
-
-
-                    <div class="auth-book-symbol">
-                        π
-                    </div>
-
-
-                    <div class="auth-book-line"></div>
-
-
-                    <small>
-                        THE
-                    </small>
-
-
-                    <h2>
-                        KNOWLEDGE
-                    </h2>
-
-
-                    <h3>
-                        LIBRARY
-                    </h3>
-
-
-                    <div class="auth-book-line"></div>
-
-
-                    <span>
-                        RENTBOOK INDIA
-                    </span>
-
-
-                </div>
-
-
-                <!-- Book pages -->
-
-                <div class="auth-book-pages"></div>
-
-
-                <!-- Book spine -->
-
-                <div class="auth-book-spine">
-                    RENTBOOK
-                </div>
-
-
-            </div>
-
-
-
-            <!-- ====================================================
-                 FLOATING INFORMATION CARDS
-            ==================================================== -->
-
-            <div class="auth-floating-card card-one">
-
-
-                <div class="floating-icon">
-                    📚
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Rent Books
-                    </strong>
-
-                    <span>
-                        Read without buying
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="auth-floating-card card-two">
-
-
-                <div class="floating-icon">
-                    🔐
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Secure Access
-                    </strong>
-
-                    <span>
-                        Your account matters
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="auth-floating-card card-three">
-
-
-                <div class="floating-icon">
-                    ♻
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Read & Return
-                    </strong>
-
-                    <span>
-                        Keep books circulating
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-
-        <!-- ========================================================
-             SCIENTIFIC QUOTE / BRAND STATEMENT
-        ========================================================= -->
-
-        <div class="scientific-statement">
-
-
-            <span>
-                E = mc²
-            </span>
-
-
-            <p>
-                Knowledge grows when it is shared.
-            </p>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- ============================================================
-         RIGHT SIDE — LOGIN PANEL
-    ============================================================ -->
-
-    <section class="auth-form-area">
-
-
-        <div class="login-card">
-
-
-            <!-- ====================================================
-                 FORM HEADER
-            ==================================================== -->
-
-            <div class="form-header">
-
-
-                <div class="form-icon">
-
-                    🔐
-
-                </div>
-
-
-                <span class="form-label">
-
-                    WELCOME BACK
-
-                </span>
-
-
-                <h2>
-
-                    Sign in to
-
-                    <span>
-                        RentBook
-                    </span>
-
-                </h2>
-
-
-                <p>
-
-                    Access your rentals, orders,
-                    saved books and account dashboard.
-
-                </p>
-
-
-            </div>
-
-
-
-            <!-- ====================================================
-                 FRONTEND MESSAGE AREA
-
-                 JavaScript can place validation messages here.
-
-                 Example:
-
-                     Invalid email
-                     Incorrect password
-                     Login successful
-
-            ===================================================== -->
-
-            <div
-                id="formMessage"
-                class="form-message"
-                role="alert"
-                aria-live="polite"
-            ></div>
-
-
-
-            <!-- ====================================================
-                 LOGIN FORM
-            ===================================================== -->
-
-            <form
-                id="loginForm"
-                class="auth-form"
-                novalidate
+            <a
+                href="/index.html"
+                class="auth-brand"
+                aria-label="RentBook India Home"
             >
 
+                <span class="auth-brand-icon">
+                    <img src="/assets/logo.png" alt="">
+                </span>
 
-                <!-- ==================================================
-                     EMAIL / MOBILE FIELD
-                ================================================== -->
+                <span class="auth-brand-text">
 
-                <div class="form-group">
+                    <strong>
+                        RentBook India
+                    </strong>
 
+                    <small>
+                        READ • RENT • RETURN
+                    </small>
 
-                    <label for="loginIdentifier">
+                </span>
 
-                        Email or Mobile Number
-
-                    </label>
-
-
-                    <div class="input-wrapper">
-
-
-                        <span class="input-icon">
-                            ✉
-                        </span>
+            </a>
 
 
-                        <input
-                            type="text"
-                            id="loginIdentifier"
-                            name="loginIdentifier"
-                            placeholder="Enter email or mobile number"
-                            autocomplete="username"
-                            required
-                        >
+            <div class="auth-header-right">
+
+                <span>
+                    Don't have an account?
+                </span>
+
+                <a
+                    href="signup.html"
+                    class="auth-signup-link"
+                >
+                    Sign Up
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN AUTH AREA
+    ====================================================== -->
+
+    <main class="auth-main">
+
+        <div class="auth-container">
+
+
+            <!-- =================================================
+                 LEFT INFORMATION PANEL
+            ================================================== -->
+
+            <section class="auth-intro">
+
+                <div class="auth-intro-content">
+
+                    <span class="auth-eyebrow">
+                        WELCOME BACK
+                    </span>
+
+
+                    <h1>
+                        Your books
+                        <span>are waiting.</span>
+                    </h1>
+
+
+                    <p>
+                        Login to continue renting affordable
+                        academic, competitive-exam, reference
+                        and rare books for exactly the time
+                        you need them.
+                    </p>
+
+
+                    <!-- Benefits -->
+
+                    <div class="auth-benefits">
+
+
+                        <div class="auth-benefit">
+
+                            <span class="benefit-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Affordable rentals
+                                </strong>
+
+                                <p>
+                                    Pay only for the time
+                                    you need the book.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-benefit">
+
+                            <span class="benefit-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Verified listings
+                                </strong>
+
+                                <p>
+                                    Discover books from
+                                    trusted owners and sellers.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="auth-benefit">
+
+                            <span class="benefit-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Reliable delivery
+                                </strong>
+
+                                <p>
+                                    Get your book delivered
+                                    and return it easily.
+                                </p>
+
+                            </div>
+
+                        </div>
 
 
                     </div>
 
 
-                    <small
-                        class="field-error"
-                        id="identifierError"
-                    ></small>
+                    <!-- Small visual -->
 
+                    <div class="auth-book-visual">
+
+                        <div class="mini-book mini-book-one">
+                            <span>CS</span>
+                        </div>
+
+                        <div class="mini-book mini-book-two">
+                            <span>MATH</span>
+                        </div>
+
+                        <div class="mini-book mini-book-three">
+                            <span>JEE</span>
+                        </div>
+
+                        <div class="mini-book mini-book-four">
+                            <span>MED</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
+            </section>
 
 
-                <!-- ==================================================
-                     PASSWORD FIELD
-                ================================================== -->
 
-                <div class="form-group">
+            <!-- =================================================
+                 LOGIN CARD
+            ================================================== -->
 
+            <section class="auth-card-section">
 
-                    <div class="label-row">
-
-
-                        <label for="loginPassword">
-
-                            Password
-
-                        </label>
+                <div class="auth-card">
 
 
-                        <a
-                            href="#forgot-password"
-                            class="forgot-link"
-                            id="forgotPasswordLink"
-                        >
+                    <!-- Card Header -->
 
-                            Forgot Password?
+                    <div class="auth-card-header">
 
-                        </a>
+                        <span class="mobile-auth-eyebrow">
+                            RENTBOOK INDIA
+                        </span>
 
+                        <h2>
+                            Welcome back
+                        </h2>
+
+                        <p>
+                            Login to access your RentBook account.
+                        </p>
 
                     </div>
 
 
-                    <div class="input-wrapper">
 
+                    <!-- =================================================
+                         ROLE SELECTOR
+                    ================================================== -->
 
-                        <span class="input-icon">
-                            🔑
-                        </span>
-
-
-                        <input
-                            type="password"
-                            id="loginPassword"
-                            name="password"
-                            placeholder="Enter your password"
-                            autocomplete="current-password"
-                            minlength="6"
-                            required
-                        >
-
-
-                        <!-- Show/hide password button -->
+                    <div class="role-selector">
 
                         <button
                             type="button"
-                            class="password-toggle"
-                            id="passwordToggle"
-                            aria-label="Show password"
+                            class="role-option active"
+                            data-role="user"
                         >
 
-                            👁
+                            <span class="role-icon">
+                                U
+                            </span>
+
+                            <span>
+                                User
+                            </span>
 
                         </button>
 
 
-                    </div>
-
-
-                    <small
-                        class="field-error"
-                        id="passwordError"
-                    ></small>
-
-
-                </div>
-
-
-
-                <!-- ==================================================
-                     REMEMBER ME
-                ================================================== -->
-
-                <div class="form-options">
-
-
-                    <label class="remember-option">
-
-
-                        <input
-                            type="checkbox"
-                            id="rememberMe"
-                            name="rememberMe"
+                        <button
+                            type="button"
+                            class="role-option"
+                            data-role="seller"
                         >
 
+                            <span class="role-icon">
+                                S
+                            </span>
 
-                        <span class="custom-checkbox"></span>
+                            <span>
+                                Seller
+                            </span>
 
-
-                        <span>
-                            Remember me
-                        </span>
-
-
-                    </label>
-
-
-                    <span class="security-note">
-
-                        🔒 Secure Login
-
-                    </span>
+                        </button>
 
 
-                </div>
+                        <button
+                            type="button"
+                            class="role-option"
+                            data-role="delivery"
+                        >
 
+                            <span class="role-icon">
+                                D
+                            </span>
 
+                            <span>
+                                Delivery
+                            </span>
 
-                <!-- ==================================================
-                     LOGIN BUTTON
-                ================================================== -->
-
-                <button
-                    type="submit"
-                    class="auth-submit"
-                    id="loginButton"
-                >
-
-                    <span>
-                        Sign In
-                    </span>
-
-                    <strong>
-                        →
-                    </strong>
-
-                </button>
-
-
-
-                <!-- ==================================================
-                     DIVIDER
-                ================================================== -->
-
-                <div class="auth-divider">
-
-                    <span>
-                        OR
-                    </span>
-
-                </div>
-
-
-
-                <!-- ==================================================
-                     GOOGLE LOGIN PLACEHOLDER
-
-                     IMPORTANT:
-                     ----------------
-                     This is only a frontend button right now.
-
-                     It will NOT actually authenticate a Google
-                     account until Google OAuth is integrated.
-                ================================================== -->
-
-                <button
-                    type="button"
-                    class="social-login"
-                    id="googleLogin"
-                >
-
-                    <span class="google-icon">
-                        G
-                    </span>
-
-                    Continue with Google
-
-                </button>
-
-
-
-                <!-- ==================================================
-                     SIGNUP CONNECTION
-                ================================================== -->
-
-                <div class="signup-prompt">
-
-
-                    <span>
-                        Don't have an account?
-                    </span>
-
-
-                    <a href="signup.html">
-
-                        Create an account
-
-                    </a>
-
-
-                </div>
-
-
-            </form>
-
-
-
-            <!-- ====================================================
-                 ACCOUNT BENEFITS
-            ==================================================== -->
-
-            <div class="login-benefits">
-
-
-                <div class="benefit">
-
-
-                    <span>
-                        📖
-                    </span>
-
-
-                    <div>
-
-                        <strong>
-                            Manage Rentals
-                        </strong>
-
-                        <small>
-                            Track active and previous rentals.
-                        </small>
+                        </button>
 
                     </div>
-
-
-                </div>
-
-
-
-                <div class="benefit">
-
-
-                    <span>
-                        ❤️
-                    </span>
-
-
-                    <div>
-
-                        <strong>
-                            Save Books
-                        </strong>
-
-                        <small>
-                            Keep interesting books in your list.
-                        </small>
-
-                    </div>
-
-
-                </div>
-
-
-
-                <div class="benefit">
-
-
-                    <span>
-                        🚚
-                    </span>
-
-
-                    <div>
-
-                        <strong>
-                            Track Delivery
-                        </strong>
-
-                        <small>
-                            Follow your book's rental journey.
-                        </small>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- ====================================================
-                 TERMS / PRIVACY NOTICE
-            ==================================================== -->
-
-            <p class="terms-text">
-
-                By continuing, you agree to RentBook India's
-                <a href="#">
-                    Terms of Service
-                </a>
-                and
-                <a href="#">
-                    Privacy Policy
-                </a>.
-
-            </p>
-
-
-        </div>
-
-
-    </section>
-
-
-</main>
-
-
-
-<!-- ================================================================
-     FORGOT PASSWORD MODAL
-     ----------------------------------------------------------------
-     This is a frontend prototype of the forgot-password interface.
-
-     Later it can be connected to a backend email OTP/password reset
-     system.
-================================================================ -->
-
-<div
-    class="modal-overlay"
-    id="forgotModal"
-    aria-hidden="true"
->
-
-
-    <div class="forgot-modal">
-
-
-        <button
-            type="button"
-            class="modal-close"
-            id="closeForgotModal"
-            aria-label="Close"
-        >
-            ×
-        </button>
-
-
-        <div class="form-icon">
-            🔑
-        </div>
-
-
-        <span class="form-label">
-            ACCOUNT RECOVERY
-        </span>
-
-
-        <h2>
-            Forgot your password?
-        </h2>
-
-
-        <p>
-
-            Enter your registered email address
-            and we can later connect this form
-            to a password-reset system.
-
-        </p>
-
-
-        <form id="forgotForm">
-
-
-            <div class="form-group">
-
-
-                <label for="forgotEmail">
-
-                    Email Address
-
-                </label>
-
-
-                <div class="input-wrapper">
-
-
-                    <span class="input-icon">
-                        ✉
-                    </span>
 
 
                     <input
-                        type="email"
-                        id="forgotEmail"
-                        placeholder="Enter your email"
-                        required
+                        type="hidden"
+                        id="selectedRole"
+                        name="role"
+                        value="user"
                     >
 
 
+
+                    <!-- =================================================
+                         LOGIN METHOD TABS
+                    ================================================== -->
+
+                    <div class="login-method-tabs">
+
+                        <button
+                            type="button"
+                            class="method-tab active"
+                            data-method="password"
+                        >
+                            Email & Password
+                        </button>
+
+                        <button
+                            type="button"
+                            class="method-tab"
+                            data-method="otp"
+                        >
+                            Mobile OTP
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PASSWORD LOGIN FORM
+                    ================================================== -->
+
+                    <form
+                        id="loginForm"
+                        class="auth-form"
+                        novalidate
+                    >
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    @
+                                </span>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="emailError"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- Password -->
+
+                        <div class="form-group">
+
+                            <div class="label-row">
+
+                                <label for="password">
+                                    Password
+                                </label>
+
+                                <a
+                                    href="forgot-password.html"
+                                    class="forgot-link"
+                                >
+                                    Forgot password?
+                                </a>
+
+                            </div>
+
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    •••
+                                </span>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="passwordToggle"
+                                    aria-label="Show password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="passwordError"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- Remember -->
+
+                        <div class="form-options">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="rememberMe"
+                                    name="rememberMe"
+                                >
+
+                                <span class="custom-checkbox">
+                                </span>
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- Login Button -->
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                            id="loginButton"
+                        >
+
+                            <span>
+                                Login to RentBook
+                            </span>
+
+                            <span class="submit-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <!-- Status -->
+
+                        <div
+                            class="form-message"
+                            id="formMessage"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+                    </form>
+
+
+
+                    <!-- =================================================
+                         OTP FORM
+                    ================================================== -->
+
+                    <form
+                        id="otpForm"
+                        class="auth-form otp-form hidden"
+                        novalidate
+                    >
+
+                        <div class="form-group">
+
+                            <label for="mobile">
+                                Mobile Number
+                            </label>
+
+                            <div class="mobile-input-wrapper">
+
+                                <span class="country-code">
+                                    +91
+                                </span>
+
+                                <input
+                                    type="tel"
+                                    id="mobile"
+                                    name="mobile"
+                                    placeholder="Enter 10-digit mobile number"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+                            <small
+                                class="field-error"
+                                id="mobileError"
+                            ></small>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="auth-submit-btn"
+                        >
+
+                            <span>
+                                Send OTP
+                            </span>
+
+                            <span class="submit-arrow">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <div
+                            class="otp-info"
+                        >
+
+                            <span>
+                                🔒
+                            </span>
+
+                            <p>
+                                We'll send a secure one-time
+                                password to your registered
+                                mobile number.
+                            </p>
+
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- =================================================
+                         DIVIDER
+                    ================================================== -->
+
+                    <div class="auth-divider">
+
+                        <span>
+                            OR
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         GOOGLE LOGIN
+                    ================================================== -->
+
+                    <button
+                        type="button"
+                        class="google-login-btn"
+                        id="googleLogin"
+                    >
+
+                        <span class="google-icon">
+                            G
+                        </span>
+
+                        <span>
+                            Continue with Google
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- =================================================
+                         SIGNUP
+                    ================================================== -->
+
+                    <p class="auth-bottom-text">
+
+                        Don't have a RentBook account?
+
+                        <a href="signup.html">
+                            Create an account
+                        </a>
+
+                    </p>
+
+
+                    <!-- Security note -->
+
+                    <div class="security-note">
+
+                        <span>
+                            🔒
+                        </span>
+
+                        <span>
+                            Your account information is
+                            protected with secure authentication.
+                        </span>
+
+                    </div>
+
                 </div>
 
+            </section>
 
-            </div>
+        </div>
 
+    </main>
 
-            <button
-                type="submit"
-                class="auth-submit"
-            >
 
-                Send Reset Link
 
-                <strong>
-                    →
-                </strong>
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-            </button>
+    <footer class="auth-footer">
 
+        <p>
+            © 2026 RentBook India. All rights reserved.
+        </p>
 
-        </form>
+        <div>
 
+            <a href="privacy.html">
+                Privacy
+            </a>
 
-    </div>
+            <a href="terms.html">
+                Terms
+            </a>
 
+            <a href="help.html">
+                Help
+            </a>
 
-</div>
+        </div>
 
+    </footer>
 
 
-<!-- ================================================================
-     FOOTER
-================================================================ -->
 
-<footer class="auth-footer">
+    <!-- =====================================================
+         AUTHENTICATION JAVASCRIPT
+    ====================================================== -->
 
+    <script>
 
-    <p>
+        /* ============================================
+           ROLE SELECTOR
+        ============================================ */
 
-        © 2026 RentBook India
+        const roleButtons =
+            document.querySelectorAll(".role-option");
 
-    </p>
+        const selectedRole =
+            document.getElementById("selectedRole");
 
 
-    <span>
-        Founded by Anuj Rao
-    </span>
+        roleButtons.forEach(button => {
 
+            button.addEventListener("click", () => {
 
-    <span>
-        Gorakhpur, Uttar Pradesh, India
-    </span>
+                roleButtons.forEach(item => {
+                    item.classList.remove("active");
+                });
 
+                button.classList.add("active");
 
-    <span>
-        +91 95800 03422
-    </span>
+                selectedRole.value =
+                    button.dataset.role;
 
+            });
 
-</footer>
+        });
 
 
 
-<!-- ================================================================
-     FRONTEND JAVASCRIPT
-     ----------------------------------------------------------------
-     IMPORTANT:
+        /* ============================================
+           LOGIN METHOD TABS
+        ============================================ */
 
-     This JavaScript does NOT perform real authentication.
+        const methodTabs =
+            document.querySelectorAll(".method-tab");
 
-     It currently provides:
+        const loginForm =
+            document.getElementById("loginForm");
 
-         • Input validation
-         • Password visibility toggle
-         • Loading animation
-         • Forgot-password modal
-         • Basic frontend login demonstration
+        const otpForm =
+            document.getElementById("otpForm");
 
-     REAL AUTHENTICATION WILL COME LATER.
 
-     Backend requirements:
+        methodTabs.forEach(tab => {
 
-         1. Node.js / Express
-         2. MongoDB
-         3. Password hashing
-         4. Authentication API
-         5. JWT/session
-         6. Email/mobile verification
-================================================================ -->
+            tab.addEventListener("click", () => {
 
-<script>
+                methodTabs.forEach(item => {
+                    item.classList.remove("active");
+                });
 
+                tab.classList.add("active");
 
-/* ================================================================
-   PASSWORD SHOW / HIDE
-================================================================ */
 
-const passwordInput =
-    document.getElementById("loginPassword");
+                if (tab.dataset.method === "otp") {
 
-const passwordToggle =
-    document.getElementById("passwordToggle");
+                    loginForm.classList.add("hidden");
 
+                    otpForm.classList.remove("hidden");
 
-passwordToggle.addEventListener(
-    "click",
-    function () {
+                } else {
 
+                    otpForm.classList.add("hidden");
 
-        const isPassword =
-            passwordInput.type === "password";
+                    loginForm.classList.remove("hidden");
 
+                }
 
-        if (isPassword) {
+            });
 
-            passwordInput.type = "text";
+        });
 
-            passwordToggle.textContent = "🙈";
 
-            passwordToggle.setAttribute(
-                "aria-label",
-                "Hide password"
-            );
 
-        } else {
-
-            passwordInput.type = "password";
-
-            passwordToggle.textContent = "👁";
-
-            passwordToggle.setAttribute(
-                "aria-label",
-                "Show password"
-            );
-
-        }
-
-    }
-);
-
-
-
-/* ================================================================
-   LOGIN FORM VALIDATION
-================================================================ */
-
-const loginForm =
-    document.getElementById("loginForm");
-
-const loginButton =
-    document.getElementById("loginButton");
-
-const formMessage =
-    document.getElementById("formMessage");
-
-const identifierError =
-    document.getElementById("identifierError");
-
-const passwordError =
-    document.getElementById("passwordError");
-
-
-loginForm.addEventListener(
-    "submit",
-    function (event) {
-
-
-        event.preventDefault();
-
-
-        /* Clear previous messages */
-
-        formMessage.textContent = "";
-
-        formMessage.className =
-            "form-message";
-
-
-        identifierError.textContent = "";
-
-        passwordError.textContent = "";
-
-
-        const identifier =
-            document
-                .getElementById("loginIdentifier")
-                .value
-                .trim();
-
+        /* ============================================
+           PASSWORD SHOW / HIDE
+        ============================================ */
 
         const password =
-            passwordInput
-                .value
-                .trim();
+            document.getElementById("password");
+
+        const passwordToggle =
+            document.getElementById("passwordToggle");
 
 
-        let valid = true;
+        passwordToggle.addEventListener("click", () => {
+
+            const isPassword =
+                password.type === "password";
 
 
-
-        /* ========================================================
-           CHECK USERNAME / EMAIL / MOBILE
-        ======================================================== */
-
-        if (!identifier) {
-
-            identifierError.textContent =
-                "Please enter your email or mobile number.";
-
-            valid = false;
-
-        }
+            password.type =
+                isPassword
+                    ? "text"
+                    : "password";
 
 
-
-        /* ========================================================
-           CHECK PASSWORD
-        ======================================================== */
-
-        if (!password) {
-
-            passwordError.textContent =
-                "Please enter your password.";
-
-            valid = false;
-
-        } else if (password.length < 6) {
-
-            passwordError.textContent =
-                "Password must contain at least 6 characters.";
-
-            valid = false;
-
-        }
+            passwordToggle.textContent =
+                isPassword
+                    ? "Hide"
+                    : "Show";
 
 
-
-        /* Stop if validation failed */
-
-        if (!valid) {
-
-            formMessage.textContent =
-                "Please correct the highlighted fields.";
-
-            formMessage.classList.add(
-                "error-message"
+            passwordToggle.setAttribute(
+                "aria-label",
+                isPassword
+                    ? "Hide password"
+                    : "Show password"
             );
 
-            return;
-
-        }
+        });
 
 
 
-        /* ========================================================
-           DEMONSTRATION LOGIN
+        /* ============================================
+           BASIC LOGIN FORM VALIDATION
+           
+           This is FRONTEND validation only.
+           Real authentication must happen through
+           your Node.js / Express backend.
+        ============================================ */
 
-           This does NOT connect to a database yet.
+        loginForm.addEventListener(
+            "submit",
+            async event => {
 
-           The loading state makes the frontend prototype behave
-           more like a real application.
-        ======================================================== */
+                event.preventDefault();
 
-        loginButton.disabled = true;
 
-        loginButton.classList.add(
-            "loading"
+                const email =
+                    document.getElementById("email");
+
+                const passwordInput =
+                    document.getElementById("password");
+
+                const emailError =
+                    document.getElementById("emailError");
+
+                const passwordError =
+                    document.getElementById("passwordError");
+
+                const formMessage =
+                    document.getElementById("formMessage");
+
+
+                emailError.textContent = "";
+
+                passwordError.textContent = "";
+
+                formMessage.textContent = "";
+
+                formMessage.className =
+                    "form-message";
+
+
+                let valid = true;
+
+
+                /* Email */
+
+                if (!email.value.trim()) {
+
+                    emailError.textContent =
+                        "Please enter your email address.";
+
+                    valid = false;
+
+                } else if (
+                    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                        .test(email.value.trim())
+                ) {
+
+                    emailError.textContent =
+                        "Please enter a valid email address.";
+
+                    valid = false;
+
+                }
+
+
+                /* Password */
+
+                if (!passwordInput.value) {
+
+                    passwordError.textContent =
+                        "Please enter your password.";
+
+                    valid = false;
+
+                }
+
+
+                if (!valid) {
+                    return;
+                }
+
+
+                const button =
+                    document.getElementById("loginButton");
+
+
+                button.disabled = true;
+
+                button.classList.add("loading");
+
+                button.querySelector("span:first-child")
+                    .textContent = "Signing in...";
+
+
+                /*
+                    BACKEND INTEGRATION:
+
+                    Later connect this form to:
+
+                    POST /api/auth/login
+
+                    Example:
+
+                    fetch("../backend/api/auth/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+                        body: JSON.stringify({
+                            email: email.value,
+                            password:
+                                passwordInput.value,
+                            role:
+                                selectedRole.value
+                        })
+                    });
+                */
+
+
+                setTimeout(() => {
+
+                    button.disabled = false;
+
+                    button.classList.remove("loading");
+
+                    button.querySelector(
+                        "span:first-child"
+                    ).textContent =
+                        "Login to RentBook";
+
+
+                    formMessage.textContent =
+                        "Login API is ready to be connected.";
+
+                    formMessage.classList.add(
+                        "info"
+                    );
+
+                }, 700);
+
+            }
         );
 
-        loginButton.innerHTML =
-            "<span>Signing in...</span>";
 
 
+        /* ============================================
+           OTP FORM
+        ============================================ */
 
-        setTimeout(
-            function () {
+        otpForm.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
 
 
-                loginButton.disabled = false;
+                const mobile =
+                    document.getElementById("mobile");
 
-                loginButton.classList.remove(
-                    "loading"
+                const mobileError =
+                    document.getElementById("mobileError");
+
+
+                mobileError.textContent = "";
+
+
+                const value =
+                    mobile.value.trim();
+
+
+                if (!/^[6-9]\d{9}$/.test(value)) {
+
+                    mobileError.textContent =
+                        "Enter a valid 10-digit Indian mobile number.";
+
+                    return;
+
+                }
+
+
+                /*
+                    Later connect to:
+
+                    POST /api/auth/send-otp
+                */
+
+                alert(
+                    "OTP API will be connected with the backend."
                 );
 
-                loginButton.innerHTML =
-                    "<span>Sign In</span><strong>→</strong>";
+            }
+        );
 
 
-                formMessage.textContent =
-                    "Frontend demo successful. Backend authentication will be connected next.";
 
-                formMessage.classList.add(
-                    "success-message"
+        /* ============================================
+           GOOGLE LOGIN
+        ============================================ */
+
+        const googleLogin =
+            document.getElementById("googleLogin");
+
+
+        googleLogin.addEventListener(
+            "click",
+            () => {
+
+                /*
+                    Later integrate Google OAuth.
+
+                    Example backend route:
+
+                    GET /api/auth/google
+                */
+
+                alert(
+                    "Google authentication will be connected here."
                 );
 
-
-            },
-            1200
+            }
         );
 
 
-    }
-);
 
+        /* ============================================
+           ONLY NUMBERS FOR MOBILE
+        ============================================ */
 
+        document
+            .getElementById("mobile")
+            .addEventListener(
+                "input",
+                event => {
 
-/* ================================================================
-   FORGOT PASSWORD MODAL
-================================================================ */
+                    event.target.value =
+                        event.target.value
+                            .replace(/\D/g, "")
+                            .slice(0, 10);
 
-const forgotLink =
-    document.getElementById(
-        "forgotPasswordLink"
-    );
-
-const forgotModal =
-    document.getElementById(
-        "forgotModal"
-    );
-
-const closeForgotModal =
-    document.getElementById(
-        "closeForgotModal"
-    );
-
-
-/* Open modal */
-
-forgotLink.addEventListener(
-    "click",
-    function (event) {
-
-        event.preventDefault();
-
-        forgotModal.classList.add(
-            "active"
-        );
-
-        forgotModal.setAttribute(
-            "aria-hidden",
-            "false"
-        );
-
-    }
-);
-
-
-/* Close modal */
-
-closeForgotModal.addEventListener(
-    "click",
-    function () {
-
-        forgotModal.classList.remove(
-            "active"
-        );
-
-        forgotModal.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-    }
-);
-
-
-/* Close modal by clicking outside */
-
-forgotModal.addEventListener(
-    "click",
-    function (event) {
-
-        if (
-            event.target ===
-            forgotModal
-        ) {
-
-            forgotModal.classList.remove(
-                "active"
+                }
             );
 
-            forgotModal.setAttribute(
-                "aria-hidden",
-                "true"
-            );
+    </script>
 
-        }
-
-    }
-);
-
-
-
-/* ================================================================
-   FORGOT PASSWORD DEMO
-================================================================ */
-
-const forgotForm =
-    document.getElementById(
-        "forgotForm"
-    );
-
-
-forgotForm.addEventListener(
-    "submit",
-    function (event) {
-
-
-        event.preventDefault();
-
-
-        const email =
-            document
-                .getElementById("forgotEmail")
-                .value
-                .trim();
-
-
-        if (!email) {
-
-            return;
-
-        }
-
-
-        alert(
-            "Password reset functionality will be connected to the backend."
-        );
-
-
-        forgotModal.classList.remove(
-            "active"
-        );
-
-
-    }
-);
-
-
-
-/* ================================================================
-   GOOGLE LOGIN PLACEHOLDER
-================================================================ */
-
-const googleLogin =
-    document.getElementById(
-        "googleLogin"
-    );
-
-
-googleLogin.addEventListener(
-    "click",
-    function () {
-
-
-        alert(
-            "Google authentication will be connected after the backend/OAuth setup."
-        );
-
-
-    }
-);
-
-
-</script>
-
-<script src="../js/common.js"></script>
-<script src="../js/auth.js"></script>
 </body>
 
 </html>
