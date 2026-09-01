@@ -1,1454 +1,2365 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <!-- =========================================================
-         BASIC DOCUMENT INFORMATION
-         ========================================================= -->
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Explore books available for rent on RentBook India."
+        content="Explore thousands of books available for affordable rental on RentBook India."
     >
 
     <title>Explore Books | RentBook India</title>
 
-
-    <!-- =========================================================
-         GOOGLE FONTS
-         ========================================================= -->
-
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
 
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
-    <!-- =========================================================
-         EXPLORE PAGE CSS
-         ========================================================= -->
-
-    <link
-        rel="stylesheet"
-        href="../css/explore.css"
-    >
-
+    <!-- Explore Page CSS -->
+    <link rel="stylesheet" href="../css/explore.css">
 </head>
-
 
 <body>
 
+<!-- =========================================================
+     TOP HEADER
+========================================================= -->
 
-    <!-- =========================================================
-         ANIMATED SCIENTIFIC BACKGROUND
+<header class="explore-header">
 
-         These layers create the same cosmic/3D atmosphere
-         used throughout the RentBook India website.
-         ========================================================= -->
+    <div class="header-container">
 
-    <div class="explore-background">
-
-        <div class="explore-stars stars-one"></div>
-
-        <div class="explore-stars stars-two"></div>
-
-        <div class="explore-stars stars-three"></div>
-
-        <div class="explore-glow glow-one"></div>
-
-        <div class="explore-glow glow-two"></div>
-
-        <div class="science-symbol symbol-atom">
-            ⚛
-        </div>
-
-        <div class="science-symbol symbol-pi">
-            π
-        </div>
-
-        <div class="science-symbol symbol-sigma">
-            Σ
-        </div>
-
-        <div class="science-symbol symbol-lambda">
-            λ
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================================================
-         HEADER / NAVIGATION
-         ========================================================= -->
-
-    <header class="explore-header">
-
-
-        <!-- LOGO -->
-
-        <a
-            href="../index.html"
-            class="explore-logo"
-        >
-
-            <div class="logo-box">
-
-                <img
-                    src="../assets/logo.png"
-                    alt="RentBook India Logo"
-                >
-
-            </div>
-
-
-            <div class="logo-text">
-
-                <strong>
-                    RentBook India
-                </strong>
-
-                <span>
-                    LEARN • RENT • RETURN
-                </span>
-
-            </div>
-
+        <!-- Logo -->
+        <a href="../index.html" class="brand-logo">
+            <img
+                src="../assets/logo.png"
+                alt="RentBook India"
+            >
         </a>
 
 
-
-        <!-- NAVIGATION -->
-
-        <nav class="explore-navigation">
+        <!-- Desktop Navigation -->
+        <nav class="main-navigation" id="mainNavigation">
 
             <a href="../index.html">
                 Home
             </a>
 
-            <a
-                href="explore.html"
-                class="active"
-            >
+            <a href="explore.html" class="active">
                 Explore
             </a>
 
-            <a href="book.html">
-                Books
+            <a href="books.html">
+                Categories
+            </a>
+
+            <a href="seller.html">
+                Sell Books
+            </a>
+
+            <a href="delivery.html">
+                Delivery
             </a>
 
             <a href="team.html">
                 Team
             </a>
 
-            <a href="login.html">
+            <a href="careers.html">
+                Careers
+            </a>
+
+        </nav>
+
+
+        <!-- Header Right -->
+        <div class="header-right">
+
+            <button
+                class="header-wishlist"
+                onclick="goToWishlist()"
+                aria-label="Wishlist"
+            >
+                ♡
+            </button>
+
+            <a
+                href="orders.html"
+                class="rental-link"
+            >
+                My Rentals
+            </a>
+
+            <a
+                href="login.html"
+                class="login-link"
+            >
                 Login
             </a>
 
             <a
                 href="signup.html"
-                class="nav-signup"
+                class="signup-link"
             >
                 Sign Up
             </a>
 
-        </nav>
-
-    </header>
+        </div>
 
 
+        <!-- Mobile Menu -->
+        <button
+            class="mobile-menu"
+            id="mobileMenu"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-    <!-- =========================================================
-         MAIN CONTENT
-         ========================================================= -->
+    </div>
 
-    <main>
+</header>
 
 
 
-        <!-- =====================================================
-             HERO SECTION
-             ===================================================== -->
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
 
-        <section class="explore-hero">
+<main>
 
 
-            <div class="hero-content">
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
 
-                <span class="hero-label">
-                    RENT • READ • RETURN
+<section class="explore-hero">
+
+    <div class="hero-background-shape shape-one"></div>
+    <div class="hero-background-shape shape-two"></div>
+
+    <div class="page-container">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                BOOKS MADE AFFORDABLE
+            </div>
+
+
+            <h1>
+                Find your next
+                <span>book to rent.</span>
+            </h1>
+
+
+            <p>
+                Explore academic, competitive exam, programming,
+                reference, fiction and thousands of other books
+                without buying them permanently.
+            </p>
+
+
+            <!-- SEARCH BOX -->
+
+            <form
+                class="main-search"
+                id="searchForm"
+            >
+
+                <div class="search-symbol">
+                    🔍
+                </div>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search books, authors, ISBN or subjects..."
+                    autocomplete="off"
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+
+            <!-- Quick Search -->
+
+            <div class="quick-search">
+
+                <span>
+                    Popular:
                 </span>
 
+                <button data-search="JEE">
+                    JEE
+                </button>
 
-                <h1>
+                <button data-search="NEET">
+                    NEET
+                </button>
 
-                    Explore
+                <button data-search="Programming">
+                    Programming
+                </button>
+
+                <button data-search="UPSC">
+                    UPSC
+                </button>
+
+                <button data-search="Engineering">
+                    Engineering
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TRUST BAR
+========================================================= -->
+
+<section class="trust-section">
+
+    <div class="page-container">
+
+        <div class="trust-grid">
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    📚
+                </div>
+
+                <div>
+                    <strong>
+                        Wide Collection
+                    </strong>
 
                     <span>
-                        Knowledge
+                        Academic & reference books
                     </span>
+                </div>
 
-                </h1>
+            </div>
 
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    💰
+                </div>
+
+                <div>
+                    <strong>
+                        Pay Less
+                    </strong>
+
+                    <span>
+                        Rent instead of buying
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    🚚
+                </div>
+
+                <div>
+                    <strong>
+                        Doorstep Delivery
+                    </strong>
+
+                    <span>
+                        Delivered to your location
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <div class="trust-icon">
+                    🔄
+                </div>
+
+                <div>
+                    <strong>
+                        Easy Returns
+                    </strong>
+
+                    <span>
+                        Return after your rental
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CATEGORIES
+========================================================= -->
+
+<section class="categories-section">
+
+    <div class="page-container">
+
+        <div class="section-heading-row">
+
+            <div>
+
+                <span class="section-kicker">
+                    DISCOVER
+                </span>
+
+                <h2>
+                    Browse by Category
+                </h2>
 
                 <p>
-
-                    Discover textbooks, reference books,
-                    competitive-exam material, rare books and
-                    academic resources available for rent.
-
-                    Find the book you need without buying it
-                    forever.
-
+                    Find books based on what you're studying or reading.
                 </p>
 
+            </div>
 
-                <!-- SEARCH -->
+            <a
+                href="books.html"
+                class="see-all-link"
+            >
+                View all categories →
+            </a>
 
-                <div class="search-container">
+        </div>
 
-                    <span class="search-icon">
-                        🔍
-                    </span>
 
-                    <input
-                        type="search"
-                        id="bookSearch"
-                        placeholder="Search by book name, author, subject..."
-                        autocomplete="off"
-                    >
+        <div class="category-grid">
+
+            <button
+                class="category-card active"
+                data-category="all"
+            >
+
+                <div class="category-icon blue">
+                    📚
+                </div>
+
+                <strong>
+                    All Books
+                </strong>
+
+                <span>
+                    Explore everything
+                </span>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="engineering"
+            >
+
+                <div class="category-icon cyan">
+                    ⚙️
+                </div>
+
+                <strong>
+                    Engineering
+                </strong>
+
+                <span>
+                    Technical books
+                </span>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="computer"
+            >
+
+                <div class="category-icon purple">
+                    💻
+                </div>
+
+                <strong>
+                    Computer Science
+                </strong>
+
+                <span>
+                    Coding & technology
+                </span>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="medical"
+            >
+
+                <div class="category-icon green">
+                    🩺
+                </div>
+
+                <strong>
+                    Medical
+                </strong>
+
+                <span>
+                    Medical studies
+                </span>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="mathematics"
+            >
+
+                <div class="category-icon orange">
+                    ∑
+                </div>
+
+                <strong>
+                    Mathematics
+                </strong>
+
+                <span>
+                    Maths & problems
+                </span>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="competitive"
+            >
+
+                <div class="category-icon red">
+                    🎯
+                </div>
+
+                <strong>
+                    Competitive Exams
+                </strong>
+
+                <span>
+                    Exam preparation
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BOOK EXPLORER
+========================================================= -->
+
+<section class="book-explorer">
+
+    <div class="page-container">
+
+        <div class="explorer-layout">
+
+
+            <!-- =================================================
+                 FILTER SIDEBAR
+            ================================================== -->
+
+            <aside
+                class="filter-panel"
+                id="filterPanel"
+            >
+
+                <div class="filter-title">
+
+                    <div>
+
+                        <span>
+                            FILTER
+                        </span>
+
+                        <h3>
+                            Refine Books
+                        </h3>
+
+                    </div>
 
                     <button
-                        type="button"
-                        id="searchButton"
+                        id="clearFilters"
+                        class="clear-button"
                     >
-                        Search
+                        Clear
                     </button>
 
                 </div>
 
 
-                <!-- QUICK STATS -->
+                <!-- Location -->
 
-                <div class="explore-stats">
+                <div class="filter-block">
 
-                    <div class="stat">
+                    <h4>
+                        Delivery Location
+                    </h4>
 
-                        <strong>
-                            500+
-                        </strong>
-
-                        <span>
-                            Books
-                        </span>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <strong>
-                            100+
-                        </strong>
+                    <div class="location-box">
 
                         <span>
-                            Sellers
+                            📍
                         </span>
 
-                    </div>
-
-
-                    <div class="stat">
-
-                        <strong>
-                            20+
-                        </strong>
-
-                        <span>
-                            Categories
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 3D BOOK VISUAL
-                 ================================================= -->
-
-            <div class="hero-book-scene">
-
-                <div class="book-orbit orbit-one"></div>
-
-                <div class="book-orbit orbit-two"></div>
-
-                <div class="book-orbit orbit-three"></div>
-
-
-                <div class="hero-book">
-
-                    <div class="book-cover">
-
-                        <small>
-                            RENTBOOK INDIA
-                        </small>
-
-                        <strong>
-                            KNOWLEDGE
-                        </strong>
-
-                        <span>
-                            AVAILABLE
-                            <br>
-                            FOR RENT
-                        </span>
-
-                        <b>
-                            01
-                        </b>
+                        <input
+                            type="text"
+                            id="locationInput"
+                            placeholder="Enter city or PIN"
+                        >
 
                     </div>
 
                 </div>
 
 
-                <div class="floating-book-tag tag-one">
-                    📚 Textbooks
-                </div>
+                <!-- Price -->
 
-                <div class="floating-book-tag tag-two">
-                    🧪 Science
-                </div>
+                <div class="filter-block">
 
-                <div class="floating-book-tag tag-three">
-                    📐 Mathematics
-                </div>
+                    <h4>
+                        Rental Price
+                    </h4>
 
-            </div>
+                    <div class="price-range">
 
-        </section>
+                        <input
+                            type="number"
+                            id="minimumPrice"
+                            placeholder="Min ₹"
+                            min="0"
+                        >
 
+                        <span>
+                            —
+                        </span>
 
+                        <input
+                            type="number"
+                            id="maximumPrice"
+                            placeholder="Max ₹"
+                            min="0"
+                        >
 
-        <!-- =====================================================
-             CATEGORY SECTION
-             ===================================================== -->
-
-        <section class="categories-section">
-
-
-            <div class="section-heading">
-
-                <span>
-                    FIND YOUR SUBJECT
-                </span>
-
-                <h2>
-                    Browse Categories
-                </h2>
-
-                <p>
-                    Explore books according to your academic
-                    requirements.
-                </p>
-
-            </div>
-
-
-            <div class="category-grid">
-
-
-                <button
-                    class="category-card active"
-                    data-category="all"
-                >
-
-                    <span>
-                        📚
-                    </span>
-
-                    <strong>
-                        All Books
-                    </strong>
-
-                    <small>
-                        Explore everything
-                    </small>
-
-                </button>
-
-
-                <button
-                    class="category-card"
-                    data-category="science"
-                >
-
-                    <span>
-                        ⚛
-                    </span>
-
-                    <strong>
-                        Science
-                    </strong>
-
-                    <small>
-                        Physics • Chemistry
-                    </small>
-
-                </button>
-
-
-                <button
-                    class="category-card"
-                    data-category="mathematics"
-                >
-
-                    <span>
-                        ∑
-                    </span>
-
-                    <strong>
-                        Mathematics
-                    </strong>
-
-                    <small>
-                        Maths • Statistics
-                    </small>
-
-                </button>
-
-
-                <button
-                    class="category-card"
-                    data-category="computer"
-                >
-
-                    <span>
-                        💻
-                    </span>
-
-                    <strong>
-                        Computer
-                    </strong>
-
-                    <small>
-                        Programming • CS
-                    </small>
-
-                </button>
-
-
-                <button
-                    class="category-card"
-                    data-category="competitive"
-                >
-
-                    <span>
-                        🎯
-                    </span>
-
-                    <strong>
-                        Competitive
-                    </strong>
-
-                    <small>
-                        SSC • UPSC • Exams
-                    </small>
-
-                </button>
-
-
-                <button
-                    class="category-card"
-                    data-category="engineering"
-                >
-
-                    <span>
-                        ⚙
-                    </span>
-
-                    <strong>
-                        Engineering
-                    </strong>
-
-                    <small>
-                        Technical books
-                    </small>
-
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             BOOK SECTION
-             ===================================================== -->
-
-        <section class="books-section">
-
-
-            <div class="section-heading books-heading">
-
-                <div>
-
-                    <span>
-                        AVAILABLE NOW
-                    </span>
-
-                    <h2>
-                        Explore Books
-                    </h2>
+                    </div>
 
                 </div>
 
 
-                <div class="sort-box">
+                <!-- Duration -->
 
-                    <label for="sortBooks">
-                        Sort:
+                <div class="filter-block">
+
+                    <h4>
+                        Rental Duration
+                    </h4>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="1"
+                            class="duration-option"
+                        >
+                        <span>1 Day</span>
                     </label>
 
-                    <select id="sortBooks">
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="5"
+                            class="duration-option"
+                        >
+                        <span>5 Days</span>
+                    </label>
 
-                        <option value="default">
-                            Recommended
-                        </option>
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="7"
+                            class="duration-option"
+                        >
+                        <span>7 Days</span>
+                    </label>
 
-                        <option value="low">
-                            Rent: Low to High
-                        </option>
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="15"
+                            class="duration-option"
+                        >
+                        <span>15 Days</span>
+                    </label>
 
-                        <option value="high">
-                            Rent: High to Low
-                        </option>
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="30"
+                            class="duration-option"
+                        >
+                        <span>30 Days</span>
+                    </label>
 
-                    </select>
+                </div>
+
+
+                <!-- Condition -->
+
+                <div class="filter-block">
+
+                    <h4>
+                        Book Condition
+                    </h4>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="Like New"
+                            class="condition-option"
+                        >
+                        <span>Like New</span>
+                    </label>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="Good"
+                            class="condition-option"
+                        >
+                        <span>Good Condition</span>
+                    </label>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="Used"
+                            class="condition-option"
+                        >
+                        <span>Used</span>
+                    </label>
+
+                </div>
+
+
+                <!-- Rating -->
+
+                <div class="filter-block">
+
+                    <h4>
+                        Customer Rating
+                    </h4>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="4"
+                            class="rating-option"
+                        >
+                        <span>
+                            <b class="stars">★★★★★</b>
+                            4 & above
+                        </span>
+                    </label>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            value="3"
+                            class="rating-option"
+                        >
+                        <span>
+                            <b class="stars">★★★★</b>
+                            3 & above
+                        </span>
+                    </label>
+
+                </div>
+
+
+                <!-- Availability -->
+
+                <div class="filter-block">
+
+                    <h4>
+                        Availability
+                    </h4>
+
+                    <label class="filter-option">
+                        <input
+                            type="checkbox"
+                            id="availableOnly"
+                        >
+                        <span>
+                            Available now
+                        </span>
+                    </label>
+
+                </div>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 BOOK RESULTS
+            ================================================== -->
+
+            <div class="results-area">
+
+
+                <!-- Results Header -->
+
+                <div class="results-header">
+
+                    <div>
+
+                        <span class="section-kicker">
+                            BOOK COLLECTION
+                        </span>
+
+                        <h2>
+                            Explore Books
+                        </h2>
+
+                        <p id="resultText">
+                            Discover books available for rental
+                        </p>
+
+                    </div>
+
+
+                    <div class="results-actions">
+
+                        <button
+                            class="mobile-filter"
+                            id="mobileFilter"
+                        >
+                            ☰ Filters
+                        </button>
+
+                        <select
+                            id="sortBooks"
+                            class="sort-books"
+                        >
+
+                            <option value="relevance">
+                                Relevance
+                            </option>
+
+                            <option value="low">
+                                Price: Low to High
+                            </option>
+
+                            <option value="high">
+                                Price: High to Low
+                            </option>
+
+                            <option value="rating">
+                                Highest Rated
+                            </option>
+
+                            <option value="popular">
+                                Most Popular
+                            </option>
+
+                            <option value="newest">
+                                Newest
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Active Filters -->
+
+                <div
+                    class="active-filters"
+                    id="activeFilters"
+                >
+                </div>
+
+
+
+                <!-- =================================================
+                     BOOK GRID
+                ================================================== -->
+
+                <div
+                    class="books-grid"
+                    id="booksGrid"
+                >
+
+
+                    <!-- BOOK 1 -->
+
+                    <article
+                        class="product-card"
+                        data-title="Clean Code"
+                        data-author="Robert C Martin"
+                        data-category="computer programming"
+                        data-price="35"
+                        data-rating="4.8"
+                        data-duration="30"
+                        data-condition="Like New"
+                        data-location="Gorakhpur"
+                        data-popular="98"
+                    >
+
+                        <div class="product-image">
+
+                            <div class="book-visual visual-blue">
+
+                                <small>
+                                    PROGRAMMING
+                                </small>
+
+                                <strong>
+                                    CLEAN
+                                    <br>
+                                    CODE
+                                </strong>
+
+                                <span>
+                                    Robert C. Martin
+                                </span>
+
+                            </div>
+
+
+                            <span class="product-tag">
+                                Popular
+                            </span>
+
+
+                            <button
+                                class="wishlist"
+                                aria-label="Add to wishlist"
+                            >
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                COMPUTER SCIENCE
+                            </span>
+
+                            <h3>
+                                Clean Code
+                            </h3>
+
+                            <p class="author">
+                                Robert C. Martin
+                            </p>
+
+
+                            <div class="rating-line">
+
+                                <span class="rating-number">
+                                    4.8
+                                </span>
+
+                                <span class="rating-stars">
+                                    ★★★★★
+                                </span>
+
+                                <span class="review-count">
+                                    128
+                                </span>
+
+                            </div>
+
+
+                            <div class="product-location">
+                                📍 Gorakhpur
+                            </div>
+
+
+                            <div class="product-footer">
+
+                                <div class="price">
+
+                                    <strong>
+                                        ₹35
+                                    </strong>
+
+                                    <span>
+                                        / 30 days
+                                    </span>
+
+                                    <small>
+                                        ₹300 refundable deposit
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                class="rent-now"
+                                onclick="rentBook('Clean Code')"
+                            >
+                                Rent Now
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOK 2 -->
+
+                    <article
+                        class="product-card"
+                        data-title="Higher Engineering Mathematics"
+                        data-author="B S Grewal"
+                        data-category="engineering mathematics"
+                        data-price="25"
+                        data-rating="4.7"
+                        data-duration="15"
+                        data-condition="Good"
+                        data-location="Gorakhpur"
+                        data-popular="95"
+                    >
+
+                        <div class="product-image">
+
+                            <div class="book-visual visual-teal">
+
+                                <small>
+                                    ENGINEERING
+                                </small>
+
+                                <strong>
+                                    HIGHER
+                                    <br>
+                                    MATHEMATICS
+                                </strong>
+
+                                <span>
+                                    B. S. Grewal
+                                </span>
+
+                            </div>
+
+                            <span class="product-tag">
+                                Academic
+                            </span>
+
+                            <button class="wishlist">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                MATHEMATICS
+                            </span>
+
+                            <h3>
+                                Higher Engineering Mathematics
+                            </h3>
+
+                            <p class="author">
+                                B. S. Grewal
+                            </p>
+
+                            <div class="rating-line">
+
+                                <span class="rating-number">
+                                    4.7
+                                </span>
+
+                                <span class="rating-stars">
+                                    ★★★★★
+                                </span>
+
+                                <span class="review-count">
+                                    96
+                                </span>
+
+                            </div>
+
+                            <div class="product-location">
+                                📍 Gorakhpur
+                            </div>
+
+                            <div class="product-footer">
+
+                                <div class="price">
+
+                                    <strong>
+                                        ₹25
+                                    </strong>
+
+                                    <span>
+                                        / 15 days
+                                    </span>
+
+                                    <small>
+                                        ₹250 refundable deposit
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="rent-now"
+                                onclick="rentBook('Higher Engineering Mathematics')"
+                            >
+                                Rent Now
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOK 3 -->
+
+                    <article
+                        class="product-card"
+                        data-title="Problems in General Physics"
+                        data-author="I E Irodov"
+                        data-category="jee physics competitive"
+                        data-price="30"
+                        data-rating="4.9"
+                        data-duration="15"
+                        data-condition="Good"
+                        data-location="Lucknow"
+                        data-popular="99"
+                    >
+
+                        <div class="product-image">
+
+                            <div class="book-visual visual-indigo">
+
+                                <small>
+                                    PHYSICS
+                                </small>
+
+                                <strong>
+                                    PROBLEMS
+                                    <br>
+                                    IN GENERAL
+                                    <br>
+                                    PHYSICS
+                                </strong>
+
+                                <span>
+                                    I. E. Irodov
+                                </span>
+
+                            </div>
+
+                            <span class="product-tag hot">
+                                Top Rated
+                            </span>
+
+                            <button class="wishlist">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                JEE / PHYSICS
+                            </span>
+
+                            <h3>
+                                Problems in General Physics
+                            </h3>
+
+                            <p class="author">
+                                I. E. Irodov
+                            </p>
+
+                            <div class="rating-line">
+
+                                <span class="rating-number">
+                                    4.9
+                                </span>
+
+                                <span class="rating-stars">
+                                    ★★★★★
+                                </span>
+
+                                <span class="review-count">
+                                    214
+                                </span>
+
+                            </div>
+
+                            <div class="product-location">
+                                📍 Lucknow
+                            </div>
+
+                            <div class="product-footer">
+
+                                <div class="price">
+
+                                    <strong>
+                                        ₹30
+                                    </strong>
+
+                                    <span>
+                                        / 15 days
+                                    </span>
+
+                                    <small>
+                                        ₹350 refundable deposit
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="rent-now"
+                                onclick="rentBook('Problems in General Physics')"
+                            >
+                                Rent Now
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOK 4 -->
+
+                    <article
+                        class="product-card"
+                        data-title="The C Programming Language"
+                        data-author="Brian Kernighan"
+                        data-category="computer programming"
+                        data-price="20"
+                        data-rating="4.6"
+                        data-duration="7"
+                        data-condition="Good"
+                        data-location="Delhi"
+                        data-popular="88"
+                    >
+
+                        <div class="product-image">
+
+                            <div class="book-visual visual-navy">
+
+                                <small>
+                                    PROGRAMMING
+                                </small>
+
+                                <strong>
+                                    THE C
+                                    <br>
+                                    PROGRAMMING
+                                    <br>
+                                    LANGUAGE
+                                </strong>
+
+                                <span>
+                                    Kernighan & Ritchie
+                                </span>
+
+                            </div>
+
+                            <button class="wishlist">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                COMPUTER SCIENCE
+                            </span>
+
+                            <h3>
+                                The C Programming Language
+                            </h3>
+
+                            <p class="author">
+                                Brian Kernighan
+                            </p>
+
+                            <div class="rating-line">
+
+                                <span class="rating-number">
+                                    4.6
+                                </span>
+
+                                <span class="rating-stars">
+                                    ★★★★★
+                                </span>
+
+                                <span class="review-count">
+                                    74
+                                </span>
+
+                            </div>
+
+                            <div class="product-location">
+                                📍 Delhi
+                            </div>
+
+                            <div class="product-footer">
+
+                                <div class="price">
+
+                                    <strong>
+                                        ₹20
+                                    </strong>
+
+                                    <span>
+                                        / 7 days
+                                    </span>
+
+                                    <small>
+                                        ₹200 refundable deposit
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="rent-now"
+                                onclick="rentBook('The C Programming Language')"
+                            >
+                                Rent Now
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOK 5 -->
+
+                    <article
+                        class="product-card"
+                        data-title="Guyton Hall Medical Physiology"
+                        data-author="John Hall"
+                        data-category="medical"
+                        data-price="45"
+                        data-rating="4.8"
+                        data-duration="30"
+                        data-condition="Like New"
+                        data-location="Varanasi"
+                        data-popular="91"
+                    >
+
+                        <div class="product-image">
+
+                            <div class="book-visual visual-green">
+
+                                <small>
+                                    MEDICAL
+                                </small>
+
+                                <strong>
+                                    MEDICAL
+                                    <br>
+                                    PHYSIOLOGY
+                                </strong>
+
+                                <span>
+                                    Guyton & Hall
+                                </span>
+
+                            </div>
+
+                            <span class="product-tag">
+                                Like New
+                            </span>
+
+                            <button class="wishlist">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                MEDICAL
+                            </span>
+
+                            <h3>
+                                Guyton & Hall Medical Physiology
+                            </h3>
+
+                            <p class="author">
+                                John E. Hall
+                            </p>
+
+                            <div class="rating-line">
+
+                                <span class="rating-number">
+                                    4.8
+                                </span>
+
+                                <span class="rating-stars">
+                                    ★★★★★
+                                </span>
+
+                                <span class="review-count">
+                                    156
+                                </span>
+
+                            </div>
+
+                            <div class="product-location">
+                                📍 Varanasi
+                            </div>
+
+                            <div class="product-footer">
+
+                                <div class="price">
+
+                                    <strong>
+                                        ₹45
+                                    </strong>
+
+                                    <span>
+                                        / 30 days
+                                    </span>
+
+                                    <small>
+                                        ₹500 refundable deposit
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="rent-now"
+                                onclick="rentBook('Guyton Hall Medical Physiology')"
+                            >
+                                Rent Now
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- BOOK 6 -->
+
+                    <article
+                        class="product-card"
+                        data-title="Indian Polity"
+                        data-author="M Laxmikanth"
+                        data-category="upsc competitive reference"
+                        data-price="28"
+                        data-rating="4.9"
+                        data-duration="15"
+                        data-condition="Like New"
+                        data-location="Prayagraj"
+                        data-popular="100"
+                    >
+
+                        <div class="product-image">
+
+                            <div class="book-visual visual-blue-dark">
+
+                                <small>
+                                    UPSC
+                                </small>
+
+                                <strong>
+                                    INDIAN
+                                    <br>
+                                    POLITY
+                                </strong>
+
+                                <span>
+                                    M. Laxmikanth
+                                </span>
+
+                            </div>
+
+                            <span class="product-tag hot">
+                                Bestseller
+                            </span>
+
+                            <button class="wishlist">
+                                ♡
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-content">
+
+                            <span class="product-category">
+                                UPSC
+                            </span>
+
+                            <h3>
+                                Indian Polity
+                            </h3>
+
+                            <p class="author">
+                                M. Laxmikanth
+                            </p>
+
+                            <div class="rating-line">
+
+                                <span class="rating-number">
+                                    4.9
+                                </span>
+
+                                <span class="rating-stars">
+                                    ★★★★★
+                                </span>
+
+                                <span class="review-count">
+                                    302
+                                </span>
+
+                            </div>
+
+                            <div class="product-location">
+                                📍 Prayagraj
+                            </div>
+
+                            <div class="product-footer">
+
+                                <div class="price">
+
+                                    <strong>
+                                        ₹28
+                                    </strong>
+
+                                    <span>
+                                        / 15 days
+                                    </span>
+
+                                    <small>
+                                        ₹300 refundable deposit
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <button
+                                class="rent-now"
+                                onclick="rentBook('Indian Polity')"
+                            >
+                                Rent Now
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- NO RESULTS -->
+
+                <div
+                    class="empty-results"
+                    id="emptyResults"
+                >
+
+                    <div class="empty-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        We couldn't find that book
+                    </h3>
+
+                    <p>
+                        Try another search term or remove some filters.
+                    </p>
+
+                    <button id="emptyClear">
+                        Clear Filters
+                    </button>
+
+                </div>
+
+
+
+                <!-- PAGINATION -->
+
+                <div class="pagination">
+
+                    <button
+                        class="pagination-button disabled"
+                    >
+                        ←
+                    </button>
+
+                    <button
+                        class="pagination-button active"
+                    >
+                        1
+                    </button>
+
+                    <button class="pagination-button">
+                        2
+                    </button>
+
+                    <button class="pagination-button">
+                        3
+                    </button>
+
+                    <span>
+                        ...
+                    </span>
+
+                    <button class="pagination-button">
+                        8
+                    </button>
+
+                    <button class="pagination-button">
+                        →
+                    </button>
 
                 </div>
 
             </div>
 
+        </div>
 
+    </div>
 
-            <!-- =================================================
-                 BOOK GRID
-                 ================================================= -->
+</section>
 
-            <div
-                class="books-grid"
-                id="booksGrid"
-            >
 
 
-                <!-- BOOK 01 -->
+<!-- =========================================================
+     HOW RENTING WORKS
+========================================================= -->
 
-                <article
-                    class="book-card"
-                    data-category="science"
-                    data-price="49"
-                >
+<section class="how-renting">
 
-                    <div class="book-image">
+    <div class="page-container">
 
-                        <img
-                            src="../assets/books/book1.jpg"
-                            alt="Physics book"
-                            onerror="this.style.display='none'"
-                        >
+        <div class="how-heading">
 
-                        <div class="book-placeholder">
-                            PHYSICS
-                        </div>
+            <span class="section-kicker">
+                HOW IT WORKS
+            </span>
 
-                        <span class="availability">
-                            Available
-                        </span>
+            <h2>
+                A simpler way to get your books.
+            </h2>
 
-                    </div>
+            <p>
+                Get the books you need for exactly the time
+                you need them.
+            </p>
 
+        </div>
 
-                    <div class="book-information">
 
-                        <span class="book-category">
-                            SCIENCE
-                        </span>
+        <div class="process-grid">
 
-                        <h3>
-                            Fundamentals of Physics
-                        </h3>
+            <div class="process-card">
 
-                        <p class="book-author">
-                            Academic Reference Book
-                        </p>
+                <div class="process-number">
+                    01
+                </div>
 
-
-                        <div class="book-pricing">
-
-                            <div>
-
-                                <small>
-                                    Rent
-                                </small>
-
-                                <strong>
-                                    ₹49
-                                </strong>
-
-                                <span>
-                                    / week
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <small>
-                                    Security
-                                </small>
-
-                                <strong>
-                                    ₹500
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="book-actions">
-
-                            <a
-                                href="book-detail.html"
-                                class="view-button"
-                            >
-                                View Details
-                            </a>
-
-                            <a
-                                href="rent.html"
-                                class="rent-button"
-                            >
-                                Rent Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BOOK 02 -->
-
-                <article
-                    class="book-card"
-                    data-category="mathematics"
-                    data-price="39"
-                >
-
-                    <div class="book-image">
-
-                        <img
-                            src="../assets/books/book2.jpg"
-                            alt="Mathematics book"
-                            onerror="this.style.display='none'"
-                        >
-
-                        <div class="book-placeholder">
-                            MATHEMATICS
-                        </div>
-
-                        <span class="availability">
-                            Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="book-information">
-
-                        <span class="book-category">
-                            MATHEMATICS
-                        </span>
-
-                        <h3>
-                            Advanced Mathematics
-                        </h3>
-
-                        <p class="book-author">
-                            University Level
-                        </p>
-
-
-                        <div class="book-pricing">
-
-                            <div>
-
-                                <small>
-                                    Rent
-                                </small>
-
-                                <strong>
-                                    ₹39
-                                </strong>
-
-                                <span>
-                                    / week
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <small>
-                                    Security
-                                </small>
-
-                                <strong>
-                                    ₹450
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="book-actions">
-
-                            <a
-                                href="book-detail.html"
-                                class="view-button"
-                            >
-                                View Details
-                            </a>
-
-                            <a
-                                href="rent.html"
-                                class="rent-button"
-                            >
-                                Rent Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BOOK 03 -->
-
-                <article
-                    class="book-card"
-                    data-category="computer"
-                    data-price="59"
-                >
-
-                    <div class="book-image">
-
-                        <img
-                            src="../assets/books/book3.jpg"
-                            alt="Computer science book"
-                            onerror="this.style.display='none'"
-                        >
-
-                        <div class="book-placeholder">
-                            COMPUTER
-                        </div>
-
-                        <span class="availability">
-                            Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="book-information">
-
-                        <span class="book-category">
-                            COMPUTER
-                        </span>
-
-                        <h3>
-                            Programming with C++
-                        </h3>
-
-                        <p class="book-author">
-                            Computer Application
-                        </p>
-
-
-                        <div class="book-pricing">
-
-                            <div>
-
-                                <small>
-                                    Rent
-                                </small>
-
-                                <strong>
-                                    ₹59
-                                </strong>
-
-                                <span>
-                                    / week
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <small>
-                                    Security
-                                </small>
-
-                                <strong>
-                                    ₹600
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="book-actions">
-
-                            <a
-                                href="book-detail.html"
-                                class="view-button"
-                            >
-                                View Details
-                            </a>
-
-                            <a
-                                href="rent.html"
-                                class="rent-button"
-                            >
-                                Rent Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BOOK 04 -->
-
-                <article
-                    class="book-card"
-                    data-category="competitive"
-                    data-price="45"
-                >
-
-                    <div class="book-image">
-
-                        <img
-                            src="../assets/books/book4.jpg"
-                            alt="Competitive exam book"
-                            onerror="this.style.display='none'"
-                        >
-
-                        <div class="book-placeholder">
-                            EXAM
-                        </div>
-
-                        <span class="availability">
-                            Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="book-information">
-
-                        <span class="book-category">
-                            COMPETITIVE
-                        </span>
-
-                        <h3>
-                            Competitive Exam Guide
-                        </h3>
-
-                        <p class="book-author">
-                            Government Exam Preparation
-                        </p>
-
-
-                        <div class="book-pricing">
-
-                            <div>
-
-                                <small>
-                                    Rent
-                                </small>
-
-                                <strong>
-                                    ₹45
-                                </strong>
-
-                                <span>
-                                    / week
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <small>
-                                    Security
-                                </small>
-
-                                <strong>
-                                    ₹400
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="book-actions">
-
-                            <a
-                                href="book-detail.html"
-                                class="view-button"
-                            >
-                                View Details
-                            </a>
-
-                            <a
-                                href="rent.html"
-                                class="rent-button"
-                            >
-                                Rent Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BOOK 05 -->
-
-                <article
-                    class="book-card"
-                    data-category="engineering"
-                    data-price="79"
-                >
-
-                    <div class="book-image">
-
-                        <img
-                            src="../assets/books/book5.jpg"
-                            alt="Engineering book"
-                            onerror="this.style.display='none'"
-                        >
-
-                        <div class="book-placeholder">
-                            ENGINEERING
-                        </div>
-
-                        <span class="availability">
-                            Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="book-information">
-
-                        <span class="book-category">
-                            ENGINEERING
-                        </span>
-
-                        <h3>
-                            Engineering Mechanics
-                        </h3>
-
-                        <p class="book-author">
-                            Technical Reference
-                        </p>
-
-
-                        <div class="book-pricing">
-
-                            <div>
-
-                                <small>
-                                    Rent
-                                </small>
-
-                                <strong>
-                                    ₹79
-                                </strong>
-
-                                <span>
-                                    / week
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <small>
-                                    Security
-                                </small>
-
-                                <strong>
-                                    ₹700
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="book-actions">
-
-                            <a
-                                href="book-detail.html"
-                                class="view-button"
-                            >
-                                View Details
-                            </a>
-
-                            <a
-                                href="rent.html"
-                                class="rent-button"
-                            >
-                                Rent Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- BOOK 06 -->
-
-                <article
-                    class="book-card"
-                    data-category="science"
-                    data-price="55"
-                >
-
-                    <div class="book-image">
-
-                        <img
-                            src="../assets/books/book6.jpg"
-                            alt="Chemistry book"
-                            onerror="this.style.display='none'"
-                        >
-
-                        <div class="book-placeholder">
-                            CHEMISTRY
-                        </div>
-
-                        <span class="availability">
-                            Available
-                        </span>
-
-                    </div>
-
-
-                    <div class="book-information">
-
-                        <span class="book-category">
-                            SCIENCE
-                        </span>
-
-                        <h3>
-                            Modern Chemistry
-                        </h3>
-
-                        <p class="book-author">
-                            Science Reference
-                        </p>
-
-
-                        <div class="book-pricing">
-
-                            <div>
-
-                                <small>
-                                    Rent
-                                </small>
-
-                                <strong>
-                                    ₹55
-                                </strong>
-
-                                <span>
-                                    / week
-                                </span>
-
-                            </div>
-
-
-                            <div>
-
-                                <small>
-                                    Security
-                                </small>
-
-                                <strong>
-                                    ₹550
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="book-actions">
-
-                            <a
-                                href="book-detail.html"
-                                class="view-button"
-                            >
-                                View Details
-                            </a>
-
-                            <a
-                                href="rent.html"
-                                class="rent-button"
-                            >
-                                Rent Now
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-
-            <!-- NO RESULTS MESSAGE -->
-
-            <div
-                class="no-results"
-                id="noResults"
-            >
-
-                <span>
+                <div class="process-icon">
                     🔎
-                </span>
+                </div>
 
                 <h3>
-                    No books found
+                    Find a Book
                 </h3>
 
                 <p>
-                    Try another book name or category.
+                    Search for your book by title, author,
+                    subject or ISBN.
                 </p>
 
             </div>
 
-        </section>
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <div class="process-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Choose Duration
+                </h3>
+
+                <p>
+                    Select the rental period that works
+                    for your studies.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <div class="process-icon">
+                    🚚
+                </div>
+
+                <h3>
+                    Get It Delivered
+                </h3>
+
+                <p>
+                    Your selected book is delivered to
+                    your chosen location.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <div class="process-icon">
+                    🔄
+                </div>
+
+                <h3>
+                    Return It
+                </h3>
+
+                <p>
+                    Return the book after your rental
+                    period ends.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
-        <!-- =====================================================
-             SELLER CTA
-             ===================================================== -->
+<!-- =========================================================
+     CALL TO ACTION
+========================================================= -->
 
-        <section class="seller-cta">
+<section class="explore-cta">
 
-            <div class="seller-cta-content">
+    <div class="page-container">
+
+        <div class="cta-box">
+
+            <div>
 
                 <span>
                     HAVE BOOKS YOU DON'T USE?
                 </span>
 
                 <h2>
-                    Turn Your Books Into Income.
+                    Turn your books into rental income.
                 </h2>
 
                 <p>
-                    Students can rent your books for a limited
-                    period. You decide the rent price and make
-                    your books useful again.
+                    List your books on RentBook India and
+                    earn whenever someone rents them.
                 </p>
 
-                <a
-                    href="seller.html"
-                    class="seller-button"
+            </div>
+
+            <a
+                href="seller.html"
+                class="cta-button"
+            >
+                Start Selling →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="explore-footer">
+
+    <div class="page-container">
+
+        <div class="footer-main">
+
+
+            <div class="footer-about">
+
+                <img
+                    src="../assets/logo.png"
+                    alt="RentBook India"
                 >
-                    Become a Seller →
+
+                <p>
+                    Rent the books you need.
+                    Return them when you're done.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="explore.html">
+                    Explore Books
+                </a>
+
+                <a href="books.html">
+                    Categories
+                </a>
+
+                <a href="orders.html">
+                    My Rentals
                 </a>
 
             </div>
 
-        </section>
 
-    </main>
+            <div class="footer-column">
+
+                <h4>
+                    Partners
+                </h4>
+
+                <a href="seller.html">
+                    Sell Books
+                </a>
+
+                <a href="delivery.html">
+                    Delivery Partner
+                </a>
+
+                <a href="careers.html">
+                    Careers
+                </a>
+
+            </div>
 
 
+            <div class="footer-column">
 
-    <!-- =========================================================
-         FOOTER
-         ========================================================= -->
+                <h4>
+                    Company
+                </h4>
 
-    <footer class="explore-footer">
+                <a href="team.html">
+                    Our Team
+                </a>
 
-        <div>
+                <a href="#">
+                    About Us
+                </a>
 
-            <strong>
-                RentBook India
-            </strong>
+                <a href="#">
+                    Support
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
 
             <span>
-                A smarter way to access knowledge.
+                © 2026 RentBook India
             </span>
 
-        </div>
+            <div>
 
+                <a href="#">
+                    Privacy
+                </a>
 
-        <div class="footer-links">
+                <a href="#">
+                    Terms
+                </a>
 
-            <a href="../index.html">
-                Home
-            </a>
-
-            <a href="team.html">
-                Team
-            </a>
-
-            <a href="login.html">
-                Login
-            </a>
-
-            <a href="signup.html">
-                Sign Up
-            </a>
+            </div>
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
 
-    <!-- =========================================================
-         EXPLORE PAGE JAVASCRIPT
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
-         This is only frontend functionality for the MVP:
-         • Search
-         • Category filtering
-         • Sorting
+<script>
 
-         Later this can be connected to MongoDB/backend.
-         ========================================================= -->
+const searchForm =
+    document.getElementById("searchForm");
 
-    <script>
+const searchInput =
+    document.getElementById("searchInput");
 
-        const searchInput =
-            document.getElementById("bookSearch");
+const books =
+    Array.from(
+        document.querySelectorAll(".product-card")
+    );
 
-        const searchButton =
-            document.getElementById("searchButton");
+const booksGrid =
+    document.getElementById("booksGrid");
 
-        const booksGrid =
-            document.getElementById("booksGrid");
+const emptyResults =
+    document.getElementById("emptyResults");
 
-        const noResults =
-            document.getElementById("noResults");
+const resultText =
+    document.getElementById("resultText");
 
-        const categoryButtons =
-            document.querySelectorAll(".category-card");
+const sortBooks =
+    document.getElementById("sortBooks");
 
-        const sortBooks =
-            document.getElementById("sortBooks");
+const locationInput =
+    document.getElementById("locationInput");
 
-        let selectedCategory = "all";
+const minimumPrice =
+    document.getElementById("minimumPrice");
 
+const maximumPrice =
+    document.getElementById("maximumPrice");
 
-        /* =====================================================
-           FILTER BOOKS
-        ===================================================== */
+const availableOnly =
+    document.getElementById("availableOnly");
 
-        function filterBooks() {
+const clearFilters =
+    document.getElementById("clearFilters");
 
-            const searchTerm =
-                searchInput.value
-                .toLowerCase()
-                .trim();
+const emptyClear =
+    document.getElementById("emptyClear");
 
-            const cards =
-                Array.from(
-                    document.querySelectorAll(".book-card")
-                );
+const filterPanel =
+    document.getElementById("filterPanel");
 
-            let visibleBooks = [];
+const mobileFilter =
+    document.getElementById("mobileFilter");
 
+const mobileMenu =
+    document.getElementById("mobileMenu");
 
-            cards.forEach(card => {
-
-                const text =
-                    card.innerText.toLowerCase();
-
-                const category =
-                    card.dataset.category;
-
-                const matchesSearch =
-                    text.includes(searchTerm);
-
-                const matchesCategory =
-                    selectedCategory === "all" ||
-                    category === selectedCategory;
+const mainNavigation =
+    document.getElementById("mainNavigation");
 
 
-                if (
-                    matchesSearch &&
-                    matchesCategory
-                ) {
 
-                    card.style.display = "";
-
-                    visibleBooks.push(card);
-
-                }
-
-                else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
+let selectedCategory = "all";
 
 
-            noResults.style.display =
-                visibleBooks.length === 0
-                    ? "block"
-                    : "none";
+
+/* =========================================================
+   SEARCH + FILTER
+========================================================= */
+
+function applyFilters() {
+
+    const search =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
+
+    const location =
+        locationInput.value
+            .toLowerCase()
+            .trim();
+
+
+    const min =
+        Number(minimumPrice.value) || 0;
+
+
+    const max =
+        Number(maximumPrice.value) || Infinity;
+
+
+    const durations =
+        Array.from(
+            document.querySelectorAll(
+                ".duration-option:checked"
+            )
+        ).map(
+            checkbox =>
+                Number(checkbox.value)
+        );
+
+
+    const conditions =
+        Array.from(
+            document.querySelectorAll(
+                ".condition-option:checked"
+            )
+        ).map(
+            checkbox =>
+                checkbox.value
+        );
+
+
+    const ratings =
+        Array.from(
+            document.querySelectorAll(
+                ".rating-option:checked"
+            )
+        ).map(
+            checkbox =>
+                Number(checkbox.value)
+        );
+
+
+    let visibleCount = 0;
+
+
+    books.forEach(book => {
+
+        const title =
+            book.dataset.title.toLowerCase();
+
+
+        const author =
+            book.dataset.author.toLowerCase();
+
+
+        const category =
+            book.dataset.category.toLowerCase();
+
+
+        const bookLocation =
+            book.dataset.location.toLowerCase();
+
+
+        const price =
+            Number(book.dataset.price);
+
+
+        const rating =
+            Number(book.dataset.rating);
+
+
+        const duration =
+            Number(book.dataset.duration);
+
+
+        const condition =
+            book.dataset.condition;
+
+
+        let visible = true;
+
+
+
+        /* Search */
+
+        if (
+            search &&
+            !title.includes(search) &&
+            !author.includes(search) &&
+            !category.includes(search)
+        ) {
+
+            visible = false;
 
         }
 
 
-        /* =====================================================
-           SEARCH BUTTON
-        ===================================================== */
 
-        searchButton.addEventListener(
+        /* Category */
+
+        if (
+            selectedCategory !== "all" &&
+            !category.includes(
+                selectedCategory
+            )
+        ) {
+
+            visible = false;
+
+        }
+
+
+
+        /* Location */
+
+        if (
+            location &&
+            !bookLocation.includes(location)
+        ) {
+
+            visible = false;
+
+        }
+
+
+
+        /* Price */
+
+        if (
+            price < min ||
+            price > max
+        ) {
+
+            visible = false;
+
+        }
+
+
+
+        /* Duration */
+
+        if (
+            durations.length &&
+            !durations.includes(duration)
+        ) {
+
+            visible = false;
+
+        }
+
+
+
+        /* Condition */
+
+        if (
+            conditions.length &&
+            !conditions.includes(condition)
+        ) {
+
+            visible = false;
+
+        }
+
+
+
+        /* Rating */
+
+        if (ratings.length) {
+
+            const minimumRating =
+                Math.max(...ratings);
+
+            if (
+                rating < minimumRating
+            ) {
+
+                visible = false;
+
+            }
+
+        }
+
+
+
+        /* Display */
+
+        if (visible) {
+
+            book.style.display = "";
+
+            visibleCount++;
+
+        } else {
+
+            book.style.display = "none";
+
+        }
+
+    });
+
+
+    resultText.textContent =
+        `${visibleCount} book${
+            visibleCount === 1
+                ? ""
+                : "s"
+        } available for rental`;
+
+
+    emptyResults.classList.toggle(
+        "show",
+        visibleCount === 0
+    );
+
+}
+
+
+
+/* =========================================================
+   SEARCH FORM
+========================================================= */
+
+searchForm.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        applyFilters();
+
+    }
+);
+
+
+searchInput.addEventListener(
+    "input",
+    applyFilters
+);
+
+
+
+/* =========================================================
+   QUICK SEARCH
+========================================================= */
+
+document
+    .querySelectorAll(
+        "[data-search]"
+    )
+    .forEach(button => {
+
+        button.addEventListener(
             "click",
-            filterBooks
-        );
+            function() {
 
+                searchInput.value =
+                    this.dataset.search;
 
-        /* =====================================================
-           LIVE SEARCH
-        ===================================================== */
+                applyFilters();
 
-        searchInput.addEventListener(
-            "input",
-            filterBooks
-        );
-
-
-        /* =====================================================
-           ENTER KEY SEARCH
-        ===================================================== */
-
-        searchInput.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "Enter") {
-
-                    filterBooks();
-
-                }
+                document
+                    .querySelector(
+                        ".book-explorer"
+                    )
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
 
             }
         );
 
-
-        /* =====================================================
-           CATEGORY FILTER
-        ===================================================== */
-
-        categoryButtons.forEach(button => {
-
-            button.addEventListener(
-                "click",
-                function() {
-
-                    categoryButtons.forEach(
-                        btn =>
-                        btn.classList.remove("active")
-                    );
+    });
 
 
-                    this.classList.add("active");
 
+/* =========================================================
+   CATEGORY
+========================================================= */
 
-                    selectedCategory =
-                        this.dataset.category;
+document
+    .querySelectorAll(
+        ".category-card"
+    )
+    .forEach(button => {
 
-
-                    filterBooks();
-
-                }
-            );
-
-        });
-
-
-        /* =====================================================
-           SORT BOOKS
-        ===================================================== */
-
-        sortBooks.addEventListener(
-            "change",
+        button.addEventListener(
+            "click",
             function() {
 
-                const cards =
-                    Array.from(
-                        document.querySelectorAll(".book-card")
+                document
+                    .querySelectorAll(
+                        ".category-card"
+                    )
+                    .forEach(item =>
+                        item.classList.remove(
+                            "active"
+                        )
                     );
 
 
-                if (this.value === "low") {
+                this.classList.add("active");
 
-                    cards.sort(
-                        (a,b) =>
+
+                selectedCategory =
+                    this.dataset.category;
+
+
+                applyFilters();
+
+            }
+        );
+
+    });
+
+
+
+/* =========================================================
+   FILTER INPUTS
+========================================================= */
+
+[
+    locationInput,
+    minimumPrice,
+    maximumPrice,
+    availableOnly
+].forEach(element => {
+
+    element.addEventListener(
+        "input",
+        applyFilters
+    );
+
+    element.addEventListener(
+        "change",
+        applyFilters
+    );
+
+});
+
+
+document
+    .querySelectorAll(
+        ".duration-option, .condition-option, .rating-option"
+    )
+    .forEach(element => {
+
+        element.addEventListener(
+            "change",
+            applyFilters
+        );
+
+    });
+
+
+
+/* =========================================================
+   SORTING
+========================================================= */
+
+sortBooks.addEventListener(
+    "change",
+    function() {
+
+        const type =
+            this.value;
+
+
+        const visibleBooks =
+            books.filter(
+                book =>
+                    book.style.display !==
+                    "none"
+            );
+
+
+        visibleBooks.sort(
+            (a, b) => {
+
+                if (type === "low") {
+
+                    return (
                         Number(a.dataset.price) -
                         Number(b.dataset.price)
                     );
@@ -1456,10 +2367,9 @@
                 }
 
 
-                if (this.value === "high") {
+                if (type === "high") {
 
-                    cards.sort(
-                        (a,b) =>
+                    return (
                         Number(b.dataset.price) -
                         Number(a.dataset.price)
                     );
@@ -1467,19 +2377,267 @@
                 }
 
 
-                cards.forEach(card =>
-                    booksGrid.appendChild(card)
-                );
+                if (type === "rating") {
+
+                    return (
+                        Number(b.dataset.rating) -
+                        Number(a.dataset.rating)
+                    );
+
+                }
 
 
-                filterBooks();
+                if (type === "popular") {
+
+                    return (
+                        Number(b.dataset.popular) -
+                        Number(a.dataset.popular)
+                    );
+
+                }
+
+
+                return 0;
 
             }
         );
 
-    </script>
-<script src="../js/common.js"></script>
-<script src="../js/books.js"></script>
-</body>
 
+        visibleBooks.forEach(
+            book =>
+                booksGrid.appendChild(book)
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   CLEAR FILTERS
+========================================================= */
+
+function resetFilters() {
+
+    searchInput.value = "";
+
+    locationInput.value = "";
+
+    minimumPrice.value = "";
+
+    maximumPrice.value = "";
+
+    availableOnly.checked = false;
+
+
+    document
+        .querySelectorAll(
+            ".duration-option, .condition-option, .rating-option"
+        )
+        .forEach(
+            checkbox =>
+                checkbox.checked = false
+        );
+
+
+    selectedCategory =
+        "all";
+
+
+    document
+        .querySelectorAll(
+            ".category-card"
+        )
+        .forEach(
+            card =>
+                card.classList.remove(
+                    "active"
+                )
+        );
+
+
+    document
+        .querySelector(
+            '.category-card[data-category="all"]'
+        )
+        .classList.add(
+            "active"
+        );
+
+
+    sortBooks.value =
+        "relevance";
+
+
+    applyFilters();
+
+}
+
+
+clearFilters.addEventListener(
+    "click",
+    resetFilters
+);
+
+
+emptyClear.addEventListener(
+    "click",
+    resetFilters
+);
+
+
+
+/* =========================================================
+   WISHLIST
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".wishlist"
+    )
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                this.classList.toggle(
+                    "liked"
+                );
+
+
+                this.textContent =
+                    this.classList.contains(
+                        "liked"
+                    )
+                        ? "♥"
+                        : "♡";
+
+            }
+        );
+
+    });
+
+
+
+/* =========================================================
+   RENT BOOK
+========================================================= */
+
+function rentBook(bookName) {
+
+    const encoded =
+        encodeURIComponent(
+            bookName
+        );
+
+
+    window.location.href =
+        `book-details.html?book=${encoded}`;
+
+}
+
+
+
+/* =========================================================
+   WISHLIST LINK
+========================================================= */
+
+function goToWishlist() {
+
+    window.location.href =
+        "profile.html#wishlist";
+
+}
+
+
+
+/* =========================================================
+   MOBILE FILTER
+========================================================= */
+
+mobileFilter.addEventListener(
+    "click",
+    function() {
+
+        filterPanel.classList.toggle(
+            "mobile-open"
+        );
+
+        document.body.classList.toggle(
+            "filter-active"
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+mobileMenu.addEventListener(
+    "click",
+    function() {
+
+        const opened =
+            mainNavigation.classList.toggle(
+                "mobile-visible"
+            );
+
+
+        this.classList.toggle(
+            "open"
+        );
+
+
+        this.setAttribute(
+            "aria-expanded",
+            opened
+        );
+
+    }
+);
+
+
+
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
+
+mainNavigation
+    .querySelectorAll("a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            function() {
+
+                mainNavigation.classList.remove(
+                    "mobile-visible"
+                );
+
+                mobileMenu.classList.remove(
+                    "open"
+                );
+
+            }
+        );
+
+    });
+
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+applyFilters();
+
+</script>
+
+</body>
 </html>
