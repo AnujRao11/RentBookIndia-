@@ -1,0 +1,502 @@
+/* =========================
+   BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #17324d;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5edf4;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand span {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand strong {
+    font-size: 20px;
+    color: #0b5fa5;
+}
+
+.brand small {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #64788a;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.desktop-nav a {
+    font-size: 14px;
+    color: #40576b;
+    transition: 0.3s;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    color: #0878c9;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 9px 17px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.login-btn {
+    border: 1px solid #0b6fae;
+    color: #0b6fae;
+}
+
+.signup-btn {
+    background: #0b6fae;
+    color: white;
+}
+
+.login-btn:hover {
+    background: #eef7fd;
+}
+
+.signup-btn:hover {
+    background: #095c91;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.seller-hero {
+    background: linear-gradient(135deg, #eef8ff, #ffffff);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.small-heading {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #0878c9;
+    margin-bottom: 18px;
+}
+
+.seller-hero h1 {
+    max-width: 750px;
+    margin: auto;
+    font-size: 52px;
+    line-height: 1.15;
+    color: #0b2d4d;
+}
+
+.seller-hero p {
+    max-width: 650px;
+    margin: 22px auto;
+    color: #62778a;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #0878c9;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #075f9e;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    border: 1px solid #0878c9;
+    color: #0878c9;
+    background: white;
+}
+
+.secondary-btn:hover {
+    background: #eef8ff;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-sell {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #0878c9;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    margin-top: 10px;
+    font-size: 34px;
+    color: #0b2d4d;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.step {
+    padding: 30px;
+    border: 1px solid #e1ebf2;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(20, 70, 100, 0.08);
+}
+
+.step-number {
+    font-size: 14px;
+    font-weight: bold;
+    color: #0878c9;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    color: #17324d;
+}
+
+.step p {
+    color: #687c8e;
+    font-size: 15px;
+}
+
+
+/* =========================
+   BOOK TYPES
+========================= */
+
+.book-types {
+    padding: 90px 0;
+    background: #f7fbfe;
+}
+
+.book-type-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.type-card {
+    background: white;
+    border: 1px solid #e2edf4;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.type-card h3 {
+    color: #0b5f9c;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.type-card p {
+    font-size: 14px;
+    color: #687c8e;
+}
+
+
+/* =========================
+   SELLER BENEFITS
+========================= */
+
+.seller-benefits {
+    padding: 100px 0;
+}
+
+.benefit-content {
+    max-width: 750px;
+}
+
+.benefit-content > span {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #0878c9;
+}
+
+.benefit-content h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    color: #0b2d4d;
+    margin: 15px 0 25px;
+}
+
+.benefit-content ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.benefit-content li {
+    margin-bottom: 12px;
+    color: #526b7e;
+}
+
+.benefit-content li::before {
+    content: "✓";
+    color: #0878c9;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.seller-final {
+    padding: 80px 20px;
+    background: #0b5f9c;
+    text-align: center;
+    color: white;
+}
+
+.seller-final h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.seller-final p {
+    margin-bottom: 25px;
+    color: #e5f3fc;
+}
+
+.seller-final .primary-btn {
+    background: white;
+    color: #0b5f9c;
+}
+
+.seller-final .primary-btn:hover {
+    background: #eef8ff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background: #08263f;
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-content h3 {
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.footer-content p {
+    max-width: 300px;
+    color: #b8cad8;
+    font-size: 14px;
+}
+
+.footer-content a {
+    display: block;
+    color: #b8cad8;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #31516a;
+    text-align: center;
+    color: #9db2c1;
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .book-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: 65px;
+    }
+
+    .header-buttons {
+        display: none;
+    }
+
+    .seller-hero {
+        padding: 70px 0;
+    }
+
+    .seller-hero h1 {
+        font-size: 36px;
+    }
+
+    .seller-hero p {
+        font-size: 15px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .book-type-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-content h2 {
+        font-size: 30px;
+    }
+
+    .seller-final h2 {
+        font-size: 28px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .seller-hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
