@@ -19,48 +19,42 @@ Required environment variables:
 - `JWT_ACCESS_SECRET`
 - `JWT_ACCESS_EXPIRES`
 
-## Endpoints
+## Marketplace APIs
 
-### Health
+All successful responses use `{ "success": true, ... }`. Protected routes require `Authorization: Bearer <accessToken>`.
 
-`GET /api/health`
+### Sellers
 
-### Register
+- `GET /api/sellers/me` — seller account profile
+- `POST /api/sellers/me` — create seller storefront profile (seller role required)
+- `PATCH /api/sellers/me` — update seller storefront profile
+- `GET /api/sellers/:id` — public storefront summary
 
-`POST /api/auth/register`
+Seller accounts must be provisioned as `role: "seller"` through a trusted administrative process; public registration remains customer-only.
 
-```json
-{
-  "name": "Anuj Rao",
-  "email": "anuj@example.com",
-  "mobile": "9876543210",
-  "password": "StrongPassword123",
-  "accountType": "student"
-}
-```
+### Books
 
-Public registration creates a `customer` role. Seller, delivery and admin roles must be provisioned through controlled server/admin flows.
+- `GET /api/books` — public search/filter and paginated available catalog
+  - Query: `q`, `category`, `author`, `language`, `city`, `condition`, `minRent`, `maxRent`, `page`, `limit`, `sort` (`newest|title|rent-low|rent-high`)
+- `GET /api/books/categories` — available catalog category values
+- `GET /api/books/:id` — public book details with active seller offers
 
-### Login
+### Seller inventory
 
-`POST /api/auth/login`
+All inventory operations require an authenticated seller with an active seller profile.
 
-```json
-{
-  "email": "anuj@example.com",
-  "password": "StrongPassword123"
-}
-```
+- `GET /api/inventory` — own inventory
+- `POST /api/inventory` — add an existing book with `bookId`, or create a catalog entry with `book`, plus `quantity`, `condition`, `rentPricePerDay`, and/or `salePrice`
+- `PATCH /api/inventory/:id` — update own quantity, availability, condition, prices, or notes
+- `DELETE /api/inventory/:id` — remove own inventory listing
 
-Returns an access token.
+Inventory writes always scope by the authenticated seller profile. Book search only returns books with an active seller offer and positive available quantity.
 
-### Current user
+## Authentication APIs
 
-`GET /api/auth/me`
-
-Header:
-
-`Authorization: Bearer <accessToken>`
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+- `GET /api/auth/me`
 
 ## Security notes
 
