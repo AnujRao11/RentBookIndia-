@@ -50,6 +50,20 @@ All inventory operations require an authenticated seller with an active seller p
 
 Inventory writes always scope by the authenticated seller profile. Book search only returns books with an active seller offer and positive available quantity.
 
+### Rentals
+
+Rental creation and inventory reservation require a customer token. Dates must be ISO 8601 timestamps with a timezone; rental periods must be at least one hour and no longer than 365 days, billed in rounded-up 24-hour days. The price is snapshotted at booking time. A conditional inventory update atomically reserves available quantity. Payment is not processed by this module.
+
+- `POST /api/rentals` — request a rental. Body: `inventoryId`, `quantity` (optional, default 1), `startAt`, `endAt`, `renterNote` (optional)
+- `GET /api/rentals/me` — customer's rentals; optional `status`, `page`, `limit`
+- `GET /api/rentals/:id` — rental detail for the renter, listing seller, or admin
+- `PATCH /api/rentals/:id/cancel` — customer cancels a requested or accepted future rental. Optional body: `{ "note": "..." }`; reserved quantity is restored
+- `GET /api/rentals/seller` — seller's rental requests; optional `status`, `page`, `limit`
+- `PATCH /api/rentals/:id/decision` — seller accepts or rejects a request. Body: `decision` (`accept|reject`), optional `note`
+- `PATCH /api/rentals/:id/complete` — seller marks an accepted rental as completed and restores quantity
+
+Rental statuses: `requested`, `accepted`, `rejected`, `cancelled`, `completed`. Invalid state changes return `409`. Role provisioning remains restricted to trusted server/admin operations.
+
 ## Authentication APIs
 
 - `POST /api/auth/register`
