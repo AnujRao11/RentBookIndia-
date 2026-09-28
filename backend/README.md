@@ -62,7 +62,19 @@ Rental creation and inventory reservation require a customer token. Dates must b
 - `PATCH /api/rentals/:id/decision` — seller accepts or rejects a request. Body: `decision` (`accept|reject`), optional `note`
 - `PATCH /api/rentals/:id/complete` — seller marks an accepted rental as completed and restores quantity
 
-Rental statuses: `requested`, `accepted`, `rejected`, `cancelled`, `completed`. Invalid state changes return `409`. Role provisioning remains restricted to trusted server/admin operations.
+Rental statuses: `requested`, `accepted`, `rejected`, `cancelled`, `completed`. Invalid state changes return `409`.
+
+### Orders
+
+Orders can be created only by the renter from an accepted rental that has not started. The customer supplies the delivery address; book details, rental dates and price are copied into the order so later catalog changes do not alter the order total. Creating an order does not collect payment.
+
+- `POST /api/orders` — create or retrieve the order for an accepted rental. Body: `rentalId`, `deliveryAddress`, optional `deliveryInstructions`
+- `GET /api/orders/me` — customer's orders; optional `status`, `page`, `limit`
+- `GET /api/orders/seller` — seller's orders; optional `status`, `page`, `limit`
+- `GET /api/orders/:id` — order detail for the customer, seller, or admin
+- `PATCH /api/orders/:id/cancel` — customer cancels an unpaid order; the accepted rental is cancelled and reserved stock is released. Optional body: `{ "note": "..." }`
+
+New orders start as `pending_payment` with payment status `pending`. Payment and fulfillment state transitions will be added with the payment and delivery modules.
 
 ## Authentication APIs
 

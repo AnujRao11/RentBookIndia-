@@ -9,6 +9,7 @@ import sellerRoutes from "./routes/seller.routes.js";
 import bookRoutes from "./routes/book.routes.js";
 import inventoryRoutes from "./routes/inventory.routes.js";
 import rentalRoutes from "./routes/rental.routes.js";
+import orderRoutes from "./routes/order.routes.js";
 import { notFound, errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
@@ -24,6 +25,7 @@ app.use("/api/sellers", sellerRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/rentals", rentalRoutes);
+app.use("/api/orders", orderRoutes);
 
 app.get("/api/health", (req, res) => res.json({ success: true, service: "rentbook-india-api", status: "healthy" }));
 

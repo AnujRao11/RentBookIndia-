@@ -1,5 +1,6 @@
 import Book from "../models/Book.js";
 import Inventory from "../models/Inventory.js";
+import Order from "../models/Order.js";
 import Rental from "../models/Rental.js";
 import Seller from "../models/Seller.js";
 import { asyncHandler, httpError } from "../utils/validation.js";
@@ -135,6 +136,9 @@ export const getRentalById = asyncHandler(async (req, res) => {
 });
 
 export const cancelRental = asyncHandler(async (req, res) => {
+  const pendingOrder = await Order.exists({ rental: req.params.id, status: "pending_payment" });
+  if (pendingOrder) throw httpError("Cancel the pending order before cancelling this rental", 409);
+
   const updated = await Rental.findOneAndUpdate(
     { _id: req.params.id, renter: req.user._id, status: { $in: ["requested", "accepted"] }, startAt: { $gt: new Date() } },
     {
@@ -184,6 +188,9 @@ export const decideRental = asyncHandler(async (req, res) => {
 
 export const completeRental = asyncHandler(async (req, res) => {
   const seller = await getActiveSeller(req.user._id);
+  const pendingOrder = await Order.exists({ rental: req.params.id, status: "pending_payment" });
+  if (pendingOrder) throw httpError("Complete payment before closing the rental", 409);
+
   const updated = await Rental.findOneAndUpdate(
     { _id: req.params.id, seller: seller._id, status: "accepted" },
     {
