@@ -28,4 +28,7 @@ export const rentalDecisionSchema = z.object({
   note
 }).strict();
 
-export const rentalCancelSchema = z.object({ note }).strict();
+export const rentalCancelSchema = z.preprocess(
+  (value) => value ?? {},
+  z.object({ note }).strict()
+);
