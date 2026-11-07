@@ -26,7 +26,7 @@ Required environment variables:
 - `JWT_ACCESS_SECRET`
 - `JWT_ACCESS_EXPIRES`
 
-Start MongoDB locally before starting the API. The default local URI in `.env.example` uses database `rentbookindia` on port `27017`. Serve the static project root with VS Code Live Server (port `5500`) or another local static server; do not open the HTML as a `file://` URL. The login and registration pages call `http://localhost:5000`.
+Start MongoDB locally before starting the API. The default local URI in `.env.example` uses database `RENTBOOKINDIA` on port `27017`. Keep the database name capitalization consistent with MongoDB Compass. Serve the static project root with VS Code Live Server (port `5500`) or another local static server; do not open the HTML as a `file://` URL. The login and registration pages call `http://localhost:5000`.
 
 ## Endpoints
 

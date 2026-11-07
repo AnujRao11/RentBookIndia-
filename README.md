@@ -9,7 +9,7 @@ Requirements: Node.js/npm, MongoDB Community Server running on `127.0.0.1:27017`
 2. Edit `backend/.env`: set `JWT_ACCESS_SECRET` to a private random string at least 32 characters long. Keep this file private.
 3. Start MongoDB, then run `npm install` and `npm run dev` in `backend`. The API is `http://localhost:5000`; `http://localhost:5000/api/health` is its health endpoint.
 4. Open the project root in VS Code and start Live Server on port `5500`. Open `http://127.0.0.1:5500/`.
-5. Register or log in through the site. The auth forms use the API URL in [`JS/config.js`](JS/config.js), and the backend stores users in MongoDB database `rentbookindia`.
+5. Register or log in through the site. The auth forms use the API URL in [`JS/config.js`](JS/config.js), and the backend stores users in MongoDB database `RENTBOOKINDIA`.
 
 The backend currently implements authentication only. Book search/listings, rentals, orders, delivery, payment and admin workflows still need API routes, MongoDB models, and authorization before those marketplace features can operate on real data.
 
