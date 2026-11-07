@@ -677,6 +677,13 @@
     font-weight: 800;
 }
 
+.role-notice {
+    margin: 9px 2px 0;
+    color: #64748b;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
 
 /* =========================================================
    13. LOGIN METHODS

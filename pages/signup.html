@@ -377,6 +377,8 @@
                         value="user"
                     >
 
+                    <p class="role-notice">New sign-ups start as customer accounts. Seller and delivery access requires approval.</p>
+
 
 
                     <!-- =================================================
@@ -1094,7 +1096,7 @@
 
         signupForm.addEventListener(
             "submit",
-            event => {
+            async event => {
 
                 event.preventDefault();
 
@@ -1343,82 +1345,33 @@
 
 
 
-                /* ============================================
-                   BACKEND CONNECTION
-                   
-                   Later connect this form to:
-
-                   POST /api/auth/register
-                ============================================ */
-
-
-                /*
-                    Example:
-
-                    fetch("../api/auth/register", {
+                try {
+                    const response = await fetch("http://localhost:5000/api/auth/register", {
                         method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-
+                        headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
-
-                            fullName:
-                                nameValue,
-
-                            email:
-                                emailValue,
-
-                            mobile:
-                                mobileValue,
-
-                            password:
-                                password.value,
-
-                            role:
-                                selectedRole.value,
-
-                            referralCode:
-                                document
-                                    .getElementById(
-                                        "referralCode"
-                                    )
-                                    .value
-                                    .trim()
-
+                            name: nameValue,
+                            email: emailValue,
+                            mobile: mobileValue,
+                            password: password.value
                         })
-
                     });
-                */
-
-
-                setTimeout(() => {
-
+                    const result = await response.json();
+                    if (!response.ok) throw new Error(result.message || "Registration failed");
+                    sessionStorage.setItem("rentbookAccessToken", result.accessToken);
+                    message.textContent = "Account created. Welcome to RentBook India!";
+                    message.classList.add("success");
+                    setTimeout(() => { window.location.href = "../index.html"; }, 700);
+                } catch (error) {
+                    message.textContent = error.message === "Failed to fetch"
+                        ? "Cannot reach the API. Start the backend and check its MongoDB connection."
+                        : error.message;
+                    message.classList.add("error");
+                } finally {
                     signupButton.disabled = false;
-
-                    signupButton.classList.remove(
-                        "loading"
-                    );
-
-
-                    signupButton
-                        .querySelector(
-                            "span:first-child"
-                        )
-                        .textContent =
-                        "Create Account";
-
-
-                    message.textContent =
-                        "Registration API is ready to be connected.";
-
-                    message.classList.add(
-                        "info"
-                    );
-
-                }, 700);
+                    signupButton.classList.remove("loading");
+                    signupButton.querySelector("span:first-child").textContent = "Create Account";
+                }
 
             }
         );

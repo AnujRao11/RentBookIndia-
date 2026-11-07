@@ -2,6 +2,20 @@ import User from "../models/User.js";
 import { hashPassword, comparePassword } from "../utils/password.js";
 import { signAccessToken } from "../utils/jwt.js";
 import { ROLES } from "../constants/roles.js";
+import { z } from "zod";
+
+const registerSchema = z.object({
+  name: z.string().trim().min(2).max(100),
+  email: z.string().trim().email().max(254),
+  mobile: z.string().trim().regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit Indian mobile number"),
+  password: z.string().min(8).max(72),
+  accountType: z.enum(["student", "bookstore", "delivery_partner", "admin"]).optional()
+}).strict();
+
+const loginSchema = z.object({
+  email: z.string().trim().email().max(254),
+  password: z.string().min(1).max(72)
+}).strict();
 
 function publicUser(user) {
   return {
@@ -20,16 +34,13 @@ function normalizeEmail(email) {
 
 export async function register(req, res, next) {
   try {
-    const { name, email, mobile, password, role = ROLES.CUSTOMER, accountType = "student" } = req.body;
-    if (!name || !email || !mobile || !password) {
-      return res.status(400).json({ success: false, message: "name, email, mobile and password are required" });
+    const parsed = registerSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ success: false, message: "Invalid registration details", errors: parsed.error.issues.map((issue) => issue.message) });
     }
-    if (password.length < 8) {
-      return res.status(400).json({ success: false, message: "Password must contain at least 8 characters" });
-    }
-    if (role !== ROLES.CUSTOMER) {
-      return res.status(403).json({ success: false, message: "Public registration can only create customer accounts" });
-    }
+    const { name, email, mobile, password } = parsed.data;
+    // Public sign-up always creates the least-privileged role.
+    const accountType = "student";
 
     const normalizedEmail = normalizeEmail(email);
     const normalizedMobile = String(mobile).trim();
@@ -55,10 +66,11 @@ export async function register(req, res, next) {
 
 export async function login(req, res, next) {
   try {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(400).json({ success: false, message: "Email and password are required" });
+    const parsed = loginSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ success: false, message: "A valid email and password are required" });
     }
+    const { email, password } = parsed.data;
 
     const user = await User.findOne({ email: normalizeEmail(email) }).select("+passwordHash");
     if (!user || !user.isActive) {

@@ -915,52 +915,28 @@
                     .textContent = "Signing in...";
 
 
-                /*
-                    BACKEND INTEGRATION:
-
-                    Later connect this form to:
-
-                    POST /api/auth/login
-
-                    Example:
-
-                    fetch("../backend/api/auth/login", {
+                try {
+                    const response = await fetch("http://localhost:5000/api/auth/login", {
                         method: "POST",
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
-                        body: JSON.stringify({
-                            email: email.value,
-                            password:
-                                passwordInput.value,
-                            role:
-                                selectedRole.value
-                        })
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email: email.value.trim(), password: passwordInput.value })
                     });
-                */
-
-
-                setTimeout(() => {
-
+                    const result = await response.json();
+                    if (!response.ok) throw new Error(result.message || "Login failed");
+                    sessionStorage.setItem("rentbookAccessToken", result.accessToken);
+                    formMessage.textContent = "Login successful. Welcome to RentBook India!";
+                    formMessage.classList.add("success");
+                    setTimeout(() => { window.location.href = "../index.html"; }, 700);
+                } catch (error) {
+                    formMessage.textContent = error.message === "Failed to fetch"
+                        ? "Cannot reach the API. Start the backend and check its MongoDB connection."
+                        : error.message;
+                    formMessage.classList.add("error");
+                } finally {
                     button.disabled = false;
-
                     button.classList.remove("loading");
-
-                    button.querySelector(
-                        "span:first-child"
-                    ).textContent =
-                        "Login to RentBook";
-
-
-                    formMessage.textContent =
-                        "Login API is ready to be connected.";
-
-                    formMessage.classList.add(
-                        "info"
-                    );
-
-                }, 700);
+                    button.querySelector("span:first-child").textContent = "Login to RentBook";
+                }
 
             }
         );

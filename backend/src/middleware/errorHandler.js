@@ -3,6 +3,7 @@ export function notFound(req, res) {
 }
 
 export function errorHandler(error, req, res, next) {
+  if (res.headersSent) return next(error);
   console.error(error);
   if (error?.code === 11000) {
     const fields = Object.keys(error.keyPattern || {});
@@ -11,5 +12,7 @@ export function errorHandler(error, req, res, next) {
   if (error?.name === "ValidationError") {
     return res.status(400).json({ success: false, message: "Validation failed", errors: Object.values(error.errors).map((e) => e.message) });
   }
-  return res.status(error.statusCode || 500).json({ success: false, message: error.message || "Internal server error" });
+  const status = error.statusCode || 500;
+  const message = status >= 500 ? "Internal server error" : (error.message || "Request failed");
+  return res.status(status).json({ success: false, message });
 }
