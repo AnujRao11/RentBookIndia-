@@ -14,7 +14,7 @@ const allowedOrigins = (process.env.CLIENT_URL || "http://127.0.0.1:5500,http://
   .filter(Boolean);
 
 app.use(helmet());
-app.use(cors({ origin: allowedOrigins, credentials: true }));
+app.use(cors({ origin: allowedOrigins }));
 app.use(express.json({ limit: "1mb" }));
 app.use(cookieParser());
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));

@@ -877,6 +877,7 @@
          SIGNUP JAVASCRIPT
     ====================================================== -->
 
+    <script src="../JS/config.js"></script>
     <script>
 
 
@@ -1346,7 +1347,7 @@
 
 
                 try {
-                    const response = await fetch("http://localhost:5000/api/auth/register", {
+                    const response = await fetch(`${window.RENTBOOK_CONFIG.apiBaseUrl}/api/auth/register`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({
